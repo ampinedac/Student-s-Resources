@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Dear Students! - Math Resources</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background animations -->
+    <div class="background-shapes">
+        <div class="shape shape-1">📐</div>
+        <div class="shape shape-2">🧮</div>
+        <div class="shape shape-3">📏</div>
+        <div class="shape shape-4">📊</div>
+        <div class="shape shape-5">🎯</div>
+        <div class="shape shape-6">📈</div>
+    </div>
+
+        <!-- Seasonal Decorations -->
+    <div class="seasonal-decorations" id="seasonalDecorations">
+        <!-- Dynamic decorations will be added here -->
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <h1><i class="fas fa-graduation-cap"></i> <span id="seasonalGreeting">Hello Dear Students!</span></h1>
+            <p class="subtitle" id="seasonalSubtitle">Welcome to our amazing math learning adventure! 🌟</p>
+            
+            <!-- Text-to-Speech Button -->
+            <div class="voice-controls">
+                <button class="voice-btn" id="readPageBtn" onclick="readPageContent()" title="Click to hear Angela read this page!">
+                    <i class="fas fa-volume-up"></i>
+                    <span id="listenBtnText">🎧 Listen to Angela!</span>
+                </button>
+                <button class="voice-btn stop-btn" id="stopReadingBtn" onclick="stopReading()" style="display: none;" title="Stop reading">
+                    <i class="fas fa-stop"></i>
+                    <span id="stopBtnText">Stop Reading</span>
+                </button>
+            </div>
+            <!-- Language controls (icon buttons) positioned top-right via CSS -->
+            <div class="lang-controls header-lang">
+                <button class="lang-btn" id="btn-en" aria-label="English" title="English">
+                    <img src="images/en-icon.svg" alt="EN" loading="lazy" />
+                </button>
+                <button class="lang-btn" id="btn-es" aria-label="Español" title="Español">
+                    <img src="images/colombia-icon.svg" alt="ES" loading="lazy" />
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Angela's Personal Section -->
+    <section class="teacher-intro">
+        <div class="container">
+            <div class="teacher-welcome-card">
+                <div class="welcome-content">
+                        <div class="teacher-image">
+                        <img src="images/profile.png" alt="Angela - Your trusted math teacher" loading="lazy" />
+                    </div>
+                    <div class="teacher-info">
+                        <h2 id="teacherName">Hello! I'm Angela 👩‍🏫</h2>
+                        <p class="teacher-phrase" id="teacherPhrase">Your trusted teacher</p>
+                        <p class="teacher-description" id="teacherDescription">
+                            Welcome to our mathematical learning space! 
+                            Choose your grade level to start exploring fun and educational resources. 
+                            Let's make mathematics an exciting adventure together! 💖📚
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="grade-selection-section">
+                <h2 class="section-title">
+                    <i class="fas fa-star"></i>
+                    <span id="gradeSelectionTitle">Choose Your Grade Level</span>
+                    <i class="fas fa-star"></i>
+                </h2>
+                
+                <div class="grade-buttons">
+                    <div class="grade-card">
+                        <div class="grade-icon">1️⃣</div>
+                        <h3 id="grade1Name">First Grade</h3>
+                        <p id="grade1Desc">Perfect for beginners! Learn sets, patterns, numbers, and more!</p>
+                        <button id="grade1Btn" class="grade-btn" onclick="window.open('first-grade.html', '_blank')">
+                            <span id="grade1BtnText">Start First Grade!</span> <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="grade-card">
+                        <div class="grade-icon">2️⃣</div>
+                        <h3 id="grade2Name">Second Grade</h3>
+                        <p id="grade2Desc">Ready for more challenges? Explore the full Second Grade — First Term resources now.</p>
+                        <button id="grade2Btn" class="grade-btn" onclick="window.open('second-grade.html', '_blank')">
+                            <span id="grade2BtnText">Start Second Grade!</span> <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="grade-card">
+                        <div class="grade-icon">3️⃣</div>
+                        <h3 id="grade3Name">Third Grade</h3>
+                        <p id="grade3Desc">Advanced mathematical adventures are ready — explore Third Grade First Term resources today.</p>
+                        <button id="grade3Btn" class="grade-btn" onclick="window.open('third-grade.html', '_blank')">
+                            <span id="grade3BtnText">Start Third Grade!</span> <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Acknowledgments Section -->
+    <section class="acknowledgments-section">
+        <div class="container">
+            <form class="thanks-form" id="thanksForm">
+                <h2><i class="fas fa-heart"></i> Send Your Thanks to Angela</h2>
+                <p>If these resources have helped your child learn, we'd love to hear from you! 🌟</p>
+                <div class="form-group">
+                    <label for="studentName">Student's Name:</label>
+                    <input type="text" id="studentName" name="studentName" placeholder="Your child's name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="parentName">Your Name:</label>
+                    <input type="text" id="parentName" name="parentName" placeholder="Your name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Your Message of Thanks:</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Tell us how these resources helped your child..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-heart"></i> Send Thanks to Angela
+                </button>
+                
+                <div class="privacy-note">
+                    <i class="fas fa-heart"></i>
+                    <small>Your message will be reviewed by Angela and may be featured on this website to inspire other families!</small>
+                </div>
+            </form>
+            
+            <div class="thanks-display" id="thanksDisplay">
+                <h3><i class="fas fa-star"></i> Recent Thanks from Families:</h3>
+                <div id="thanksList" class="thanks-list">
+                    <!-- Thanks messages will appear here -->
+                </div>
+            </div>
+            
+            <!-- Admin Panel (Hidden by default) -->
+            <div class="admin-panel" id="adminPanel" style="display: none;">
+                <div class="admin-header">
+                    <h3><i class="fas fa-user-shield"></i> Angela's Message Review Panel</h3>
+                    <button class="close-admin-btn" onclick="hideAdminPanel()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="pending-messages">
+                    <h4><i class="fas fa-clock"></i> Pending Messages (Click to Approve/Reject):</h4>
+                    <div id="pendingList" class="pending-list">
+                        <!-- Pending messages will appear here -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Secret Admin Access -->
+            <div class="admin-access">
+                <small>👩‍🏫 Teacher access: Click 
+                    <span class="secret-trigger" onclick="showAdminAccess()">here</span>
+                </small>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>✨ Keep learning and having fun with math! ✨</p>
+            <div class="footer-emojis">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <p class="author-credit">Created by: <strong>Angela Pineda</strong> 👩‍🏫</p>
+            <div class="seasonal-info" id="seasonalInfo">
+                <!-- Current month theme will be displayed here -->
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
