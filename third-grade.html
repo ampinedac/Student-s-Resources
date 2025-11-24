@@ -1,16 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Third Grade Math - Angela's Learning Space</title>
+    <!-- dynamic base: use project root on GitHub Pages, local relative path when opened from file:// or a local server -->
+    <script>
+    (function(){
+        try {
+            var b = document.createElement('base');
+            var host = location.hostname || '';
+            if (host.indexOf('github.io') !== -1) {
+                b.href = '/Student-s-Resources/';
+            } else {
+                b.href = './';
+            }
+            document.head.appendChild(b);
+        } catch (e) {
+            var b2 = document.createElement('base'); b2.href = './'; document.head.appendChild(b2);
+        }
+    })();
+    </script>
+    <title>Tercer Grado — Primer periodo | Espacio de Aprendizaje</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Background animations -->
-    <div class="background-shapes">
+    <div class="background-shapes" aria-hidden="true">
         <div class="shape shape-1">📐</div>
         <div class="shape shape-2">🧮</div>
         <div class="shape shape-3">📏</div>
@@ -19,35 +35,29 @@
         <div class="shape shape-6">📈</div>
     </div>
 
-    <!-- Seasonal Decorations -->
-    <div class="seasonal-decorations" id="seasonalDecorations">
-        <!-- Dynamic decorations will be added here -->
-    </div>
+    <div class="seasonal-decorations" id="seasonalDecorations" aria-hidden="true"></div>
 
     <header class="header">
         <div class="container">
-            <h1><i class="fas fa-rocket"></i> <span id="seasonalGreeting">Third Grade Math Adventures!</span></h1>
-            <p class="subtitle" id="seasonalSubtitle">Advanced mathematical concepts and exciting challenges await! 🌟</p>
-            
-            <!-- Navigation -->
+            <h1 class="main-title"><i class="fas fa-rocket" aria-hidden="true"></i> <span id="seasonalGreeting">Tercer Grado — ¡Aventuras Matemáticas!</span></h1>
+            <p class="subtitle" id="t3_intro">Recursos seleccionados para Tercer Grado — Primer periodo. Haz clic en un tema para abrir actividades, plantillas y práctica interactiva.</p>
+
             <div class="navigation">
-                <a href="index.html" class="nav-btn"><i class="fas fa-home"></i> <span id="navBackText">Back to Home</span></a>
+                <a href="index.html" class="nav-btn"><i class="fas fa-home" aria-hidden="true"></i> <span id="navBackText">Volver al inicio</span></a>
             </div>
 
-
-            <!-- Text-to-Speech Button -->
             <div class="voice-controls">
-                <button class="voice-btn" id="readPageBtn" onclick="readPageContent()" title="Click to hear Angela read this page!">
-                    <i class="fas fa-volume-up"></i>
-                    <span>🎧 Listen to Angela!</span>
+                <button class="voice-btn" id="readPageBtn" onclick="readPageContent()" title="Escuchar la página">
+                    <i class="fas fa-volume-up" aria-hidden="true"></i>
+                    <span id="listenBtnText" data-i18n-en="🎧 Listen to Angela!" data-i18n-es="🎧 Escucha a Angela">Escuchar</span>
                 </button>
-                <button class="voice-btn stop-btn" id="stopReadingBtn" onclick="stopReading()" style="display: none;" title="Stop reading">
-                    <i class="fas fa-stop"></i>
-                    <span>Stop Reading</span>
+                <button class="voice-btn stop-btn" id="stopReadingBtn" onclick="stopReading()" style="display:none;" title="Detener lectura">
+                    <i class="fas fa-stop" aria-hidden="true"></i>
+                    <span id="stopBtnText" data-i18n-en="Stop Reading" data-i18n-es="Detener lectura">Detener</span>
                 </button>
             </div>
-            <!-- Language controls (icon buttons) - added so language toggle is available on grade pages -->
-            <div class="lang-controls header-lang">
+
+            <div class="lang-controls header-lang" role="navigation" aria-label="Selector de idioma">
                 <button class="lang-btn" id="btn-en" aria-label="English" title="English">
                     <img src="images/en-icon.svg" alt="EN" loading="lazy" />
                 </button>
@@ -62,83 +72,70 @@
         <div class="container">
             <section class="resources-section">
                 <div class="resources-card">
-                    <div class="section-hero">
-                        <h2 id="t3_title">Third Grade — First Term</h2>
-                        <p id="t3_intro" class="intro">Below are the curated resources for Third Grade — First Term. Click a topic to open activities, worksheets and interactive practice.</p>
+                        <div class="section-hero">
+                        <h2 id="t3_title">Tercer Grado — Primer periodo</h2>
+                        <p class="intro" data-i18n-en="Click a topic to open activities, videos and printable material." data-i18n-es="Haz clic en un tema para abrir las actividades, videos y material imprimible.">Haz clic en un tema para abrir las actividades, videos y material imprimible.</p>
                     </div>
 
                     <div class="topics-grid">
                         <div class="topic-card" data-topic="t3_mathsymbol">
-                            <div class="card-icon"><i class="fas fa-font" aria-hidden="true"></i></div>
-                            <h3 id="t3_mathsymbol_title">1. Math Symbols</h3>
-                            <p id="t3_mathsymbol_desc">Visual aids and printable symbols to support classroom instruction.</p>
-                            <button class="topic-btn" id="t3_mathsymbol_btn" onclick="showResources('t3_mathsymbol')"><span id="t3_mathsymbol_btn_text">Open Math Symbols</span></button>
+                            <div class="card-icon" aria-hidden="true"><i class="fas fa-font"></i></div>
+                            <h3 id="t3_mathsymbol_title">1. Símbolos Matemáticos</h3>
+                            <p id="t3_mathsymbol_desc">Recursos visuales y símbolos imprimibles para el aula.</p>
+                            <button class="topic-btn" id="t3_mathsymbol_btn" onclick="showResources('t3_mathsymbol')">Abrir Símbolos <i class="fas fa-external-link-alt" aria-hidden="true"></i></button>
                         </div>
 
                         <div class="topic-card" data-topic="t3_sets">
-                            <div class="card-icon"><i class="fas fa-box" aria-hidden="true"></i></div>
-                            <h3 id="t3_sets_title">2. Sets & Cardinality</h3>
-                            <p id="t3_sets_desc">Understanding sets and the size (cardinality) with interactive practice.</p>
-                            <button class="topic-btn" id="t3_sets_btn" onclick="showResources('t3_sets')"><span id="t3_sets_btn_text">Open Sets</span></button>
+                            <div class="card-icon" aria-hidden="true"><i class="fas fa-box"></i></div>
+                            <h3 id="t3_sets_title">2. Conjuntos y Cardinalidad</h3>
+                            <p id="t3_sets_desc">Qué es un conjunto y cómo encontrar su cardinalidad. Incluye práctica interactiva.</p>
+                            <button class="topic-btn" id="t3_sets_btn" onclick="showResources('t3_sets')">Abrir Conjuntos <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
                         </div>
 
                         <div class="topic-card" data-topic="t3_wordproblems">
-                            <div class="card-icon"><i class="fas fa-file-lines" aria-hidden="true"></i></div>
-                            <h3 id="t3_wordproblems_title">3. Word Problems (UPAC)</h3>
-                            <p id="t3_wordproblems_desc">UPAC problem solving template, worksheets and problem games for addition, subtraction and multiplication.</p>
-                            <button class="topic-btn" id="t3_wordproblems_btn" onclick="showResources('t3_wordproblems')"><span id="t3_wordproblems_btn_text">Open Word Problems</span></button>
+                            <div class="card-icon" aria-hidden="true"><i class="fas fa-file-lines"></i></div>
+                            <h3 id="t3_wordproblems_title">3. Problemas de palabras (UPAC)</h3>
+                            <p id="t3_wordproblems_desc">Plantilla UPAC, hojas de trabajo y juegos sobre sumas, restas y multiplicaciones.</p>
+                            <button class="topic-btn" id="t3_wordproblems_btn" onclick="showResources('t3_wordproblems')">Abrir Problemas <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
                         </div>
 
                         <div class="topic-card" data-topic="t3_multiplication">
-                            <div class="card-icon"><i class="fas fa-times" aria-hidden="true"></i></div>
-                            <h3 id="t3_multiplication_title">4. Multiplication & Times Tables</h3>
-                            <p id="t3_multiplication_desc">Interactive multiplication grid, games and printable Pythagorean table.</p>
-                            <button class="topic-btn" id="t3_multiplication_btn" onclick="showResources('t3_multiplication')"><span id="t3_multiplication_btn_text">Open Multiplication</span></button>
+                            <div class="card-icon" aria-hidden="true"><i class="fas fa-times"></i></div>
+                            <h3 id="t3_multiplication_title">4. Multiplicación y Tablas</h3>
+                            <p id="t3_multiplication_desc">Práctica interactiva de multiplicación (problemas aleatorios), tabla imprimible y juegos.</p>
+                            <button class="topic-btn" id="t3_multiplication_btn" onclick="showResources('t3_multiplication')">Abrir Multiplicación <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+                        </div>
+                        
+                        <div class="topic-card" data-topic="t3_addsub_regroup">
+                            <div class="card-icon" aria-hidden="true"><i class="fas fa-calculator"></i></div>
+                            <h3 id="t3_addsub_regroup_title">5. Sumas y Restas — Reagrupando</h3>
+                            <p id="t3_addsub_regroup_desc">Hojas de trabajo y juegos para practicar suma y resta con reagrupamiento (3 dígitos).</p>
+                            <button class="topic-btn" id="t3_addsub_regroup_btn" onclick="showResources('t3_addsub_regroup')">Abrir Sumas/Restas <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
                         </div>
                     </div>
-
                 </div>
             </section>
         </div>
     </main>
 
-    <!-- Modal for resources (shared pattern) -->
+    <!-- Modal compartido: overlay y diálogo al final del body para asegurar overlay correcto -->
     <div id="modalOverlay" class="modal-overlay" aria-hidden="true" tabindex="-1"></div>
-    <div id="resourcesModal" class="resources-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
-        <div class="resources-modal-inner">
-            <button class="close-btn" onclick="closeModal()" aria-label="Close dialog" title="Close dialog"><i class="fas fa-times" aria-hidden="true"></i></button>
-            <h3 id="modalTitle">Resources</h3>
-            <div id="resourcesContainer" class="resources-container"></div>
+    <div id="resourcesModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Recursos</h2>
+                <button class="close-btn" onclick="closeModal()" aria-label="Cerrar diálogo" title="Cerrar diálogo"><i class="fas fa-times" aria-hidden="true"></i></button>
+            </div>
+            <div class="modal-body">
+                <div id="resourcesContainer" class="resources-container" role="document"></div>
+            </div>
         </div>
     </div>
 
-    <!-- Thanks Redirect Section -->
-    <section class="thanks-redirect">
-        <div class="container">
-            <div class="thanks-redirect-card">
-                <h3><i class="fas fa-heart"></i> Want to Thank Angela?</h3>
-                <p>Share your thoughts about Angela's educational resources!</p>
-                <a href="index.html#thanksForm" class="redirect-btn">
-                    <i class="fas fa-arrow-left"></i> Send Thanks from Main Page
-                </a>
-            </div>
-        </div>
-    </section>
-
     <footer class="footer">
         <div class="container">
-            <p>✨ Exciting Third Grade math adventures are being crafted! ✨</p>
-            <div class="footer-emojis">
-                <span>✖️</span>
-                <span>📚</span>
-                <span>🧩</span>
-                <span>🎯</span>
-                <span>🚀</span>
-            </div>
-            <p class="author-credit">Created by: <strong>Angela Pineda</strong> 👩‍🏫</p>
-            <div class="seasonal-info" id="seasonalInfo">
-                <!-- Current month theme will be displayed here -->
-            </div>
+            <p data-i18n-en="✨ Keep learning with Third Grade! ✨" data-i18n-es="✨ ¡Sigue aprendiendo con Tercer Grado! ✨">✨ ¡Sigue aprendiendo con Tercer Grado! ✨</p>
+            <p class="author-credit">Creado por: <strong>Angela Pineda</strong> 👩‍🏫</p>
         </div>
     </footer>
 
