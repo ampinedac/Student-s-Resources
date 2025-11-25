@@ -865,17 +865,566 @@ function showResources(topicId) {
     // Get resources for this topic
     const resources = mathResources[topicId] || [];
     
-    // Create resource items
-    resources.forEach(resource => {
-        const resourceDiv = document.createElement('div');
-        resourceDiv.className = 'resource-item';
+    // Render resources as grouped simple lists: What is a set?, Videos, Worksheets, Games, Templates, Other
+    const langPref = localStorage.getItem('preferredLang') || 'en';
+    const labels = {
+        introduction: { en: 'What is a set?', es: '¿Qué es un conjunto?' },
+        interactive: { en: 'Games:', es: 'Juegos:' },
+        worksheets: { en: 'Worksheets', es: 'Hojas de trabajo' },
+        videos: { en: 'Videos', es: 'Videos' },
+        templates: { en: 'Strategy to solve problems', es: 'Estrategia para resolver problemas' },
+        other: { en: 'Other Resources', es: 'Otros recursos' }
+    };
+
+    // Classify resources
+    const grouped = {
+        introduction: [],
+        interactive: [],
+        worksheets: [],
+        videos: [],
+        templates: [],
+        other: []
+    };
+
+    resources.forEach(r => {
+        if (r.isVideo) {
+            grouped.videos.push(r);
+        } else if (r.interactiveType || r.isActivity) {
+            grouped.interactive.push(r);
+        } else if (r.hasTemplate || r.hasImage) {
+            grouped.templates.push(r);
+        } else if (r.type && /work/i.test(r.type)) {
+            grouped.worksheets.push(r);
+        } else if (r.type && /(article|explanation|resource|presentation)/i.test(r.type)) {
+            grouped.introduction.push(r);
+        } else {
+            grouped.other.push(r);
+        }
+    });
+
+    // Small helper to safely build watch URL / thumbnail for videos
+    function getVideoMeta(url) {
+        if (!url) return { watch: '#', thumb: '' };
+        const m = url.match(/[?&]v=([A-Za-z0-9_-]{6,})/) || url.match(/youtu\.be\/([A-Za-z0-9_-]{6,})/) || url.match(/embed\/([A-Za-z0-9_-]{6,})/);
+        const id = m && m[1] ? m[1] : null;
+        return { watch: id ? `https://www.youtube.com/watch?v=${id}` : url, thumb: id ? `https://img.youtube.com/vi/${id}/mqdefault.jpg` : '' };
+    }
+
+    let html = '';
+
+    // 1. INTRODUCTION / WHAT IS A SET? (First - educational content)
+    if (grouped.introduction.length) {
+        html += `<section class="resource-section"><h3>${labels.introduction[langPref]}</h3><ul class="resource-list">`;
+        grouped.introduction.forEach(r => {
+            // Check if this resource should be embedded (like Canva presentations)
+            if (r.isEmbed && r.embedUrl) {
+                html += `<li class="resource-list-item" style="display:block;">
+                    <div style="font-weight:700; color:#1565c0; margin-bottom:8px;">${r.title}</div>
+                    ${r.description? `<div class="resource-desc" style="margin-bottom:12px;">${r.description}</div>` : ''}
+                    <div style="position:relative; width:100%; padding-bottom:56.25%; background:#f5f5f5; border-radius:10px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
+                        <iframe src="${r.embedUrl}" loading="lazy" style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;" allowfullscreen allow="fullscreen"></iframe>
+                    </div>
+                    <div style="margin-top:8px; text-align:center;">
+                        <a href="${r.url||'#'}" target="_blank" rel="noopener" class="topic-btn" style="display:inline-block; padding:8px 16px; font-size:0.9rem;">
+                            <i class="fas fa-external-link-alt"></i> ${langPref === 'es' ? 'Abrir en nueva pestaña' : 'Open in new tab'}
+                        </a>
+                    </div>
+                </li>`;
+            } else {
+                html += `<li class="resource-list-item"><a href="${r.url||'#'}" target="_blank" rel="noopener">${r.title}</a>${r.description? `<div class="resource-desc">${r.description}</div>` : ''}</li>`;
+            }
+        });
+        html += `</ul></section>`;
+    }
+
+    // 2. Videos (Second - visual learning)
+    if (grouped.videos.length) {
+        html += `<section class="resource-section"><h3>${labels.videos[langPref]}</h3><ul class="resource-list">`;
+        grouped.videos.forEach(r => {
+            const meta = getVideoMeta(r.url);
+            html += `<li class="resource-list-item video-item"><a href="${meta.watch}" target="_blank" rel="noopener">${r.title}</a>${r.description? `<div class="resource-desc">${r.description}</div>` : ''}`;
+            // small thumbnail preview if available
+            if (meta.thumb) html += `<div class="thumb" style="display:inline-block; margin-left:10px; vertical-align:middle;"><img src="${meta.thumb}" alt="${r.title}" loading="lazy" style="width:120px; height:68px; object-fit:cover; border-radius:6px; border:1px solid #eee;"></div>`;
+            html += `</li>`;
+        });
+        html += `</ul></section>`;
+    }
+
+    // 3. Worksheets (Third - written practice)
+    if (grouped.worksheets.length) {
+        html += `<section class="resource-section"><h3>${labels.worksheets[langPref]}</h3><ul class="resource-list">`;
+        grouped.worksheets.forEach(r => {
+            html += `<li class="resource-list-item"><a href="${r.url||'#'}" target="_blank" rel="noopener">${r.title}</a>${r.description? `<div class="resource-desc">${r.description}</div>` : ''}</li>`;
+        });
+        html += `</ul></section>`;
+    }
+
+    // 4. INTERACTIVE GAMES (Fourth - hands-on practice through play)
+    if (grouped.interactive.length) {
+        html += `<section class="resource-section"><h3>${labels.interactive[langPref]}</h3><ul class="resource-list">`;
+        grouped.interactive.forEach(r => {
+            // Check if this is an activity with checkboxes
+            if (r.isActivity && r.activities) {
+                html += `<li class="resource-list-item" style="display:block;">
+                    <div style="font-weight:600; color:#1565c0; margin-bottom:8px;">${r.title}</div>
+                    ${r.description? `<div class="resource-desc" style="margin-bottom:12px;">${r.description}</div>` : ''}
+                    <div style="margin-left:8px;">`;
+                r.activities.forEach(activity => {
+                    const activityText = langPref === 'es' ? (activity.textEs || activity.text) : activity.text;
+                    html += `<div style="display:flex; flex-direction:column; gap:8px; margin-bottom:12px; padding:12px; background:#f9f9f9; border-radius:6px;">
+                        <div style="display:flex; align-items:start; gap:8px;">
+                            <input type="checkbox" id="${activity.id}" style="margin-top:3px; cursor:pointer; width:18px; height:18px;" onchange="saveActivityState('${activity.id}', this.checked)">
+                            <label for="${activity.id}" style="cursor:pointer; flex:1; line-height:1.4;">${activityText}</label>
+                        </div>`;
+                    // Add counter input if activity has counter
+                    if (activity.hasCounter) {
+                        const counterLabel = langPref === 'es' ? (activity.counterLabelEs || activity.counterLabel) : activity.counterLabel;
+                        html += `<div style="margin-left:26px; display:flex; align-items:center; gap:8px;">
+                            <label for="${activity.id}_count" style="font-size:0.9rem; color:#555;">${counterLabel}</label>
+                            <input type="number" id="${activity.id}_count" min="0" max="100" value="0" style="width:70px; padding:4px 8px; border:1px solid #ccc; border-radius:4px; font-size:0.9rem;" onchange="saveActivityCount('${activity.id}', this.value)">
+                        </div>`;
+                    }
+                    html += `</div>`;
+                });
+                html += `</div></li>`;
+            } else {
+                // Regular interactive content (multiplication, cardinality, etc.)
+                let actionBtn = '';
+                if (r.interactiveType === 'cardinality') {
+                    const startCardText = (i18n.startCardinality && i18n.startCardinality[langPref]) ? i18n.startCardinality[langPref] : 'Start Cardinality Practice';
+                    actionBtn = `<button class="topic-btn" onclick="showCardinalityPractice()">${startCardText}</button>`;
+                } else if (r.interactiveType === 'multiplication') {
+                    const startMultText = (i18n.startMultiplication && i18n.startMultiplication[langPref]) ? i18n.startMultiplication[langPref] : 'Start Multiplication Grid';
+                    actionBtn = `<button class="topic-btn" onclick="showMultiplicationPractice()">${startMultText}</button>`;
+                }
+                html += `<li class="resource-list-item">${r.title}${r.description? `<div class="resource-desc">${r.description}</div>` : ''}<div style="margin-top:8px;">${actionBtn}</div></li>`;
+            }
+        });
+        html += `</ul></section>`;
+    }
+
+    // 5. Templates / Images (Strategy to solve problems)
+    if (grouped.templates.length) {
+        html += `<section class="resource-section"><h3>${labels.templates[langPref]}</h3>`;
+        grouped.templates.forEach(r => {
+            if (r.hasTemplate && r.templates) {
+                // Show main description first if available
+                if (r.description) {
+                    html += `<div style="margin-bottom:16px; padding:12px; background:#f0f7ff; border-left:4px solid #1565c0; border-radius:6px; font-size:0.95rem;">${r.description}</div>`;
+                }
+                // Then show templates with image previews
+                html += `<ul class="resource-list">`;
+                r.templates.forEach(t => {
+                    html += `<li class="resource-list-item" style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">`;
+                    // Image preview thumbnail
+                    if (t.imagePath) {
+                        html += `<a href="${t.imagePath}" target="_blank" rel="noopener" style="flex-shrink:0;">
+                            <img src="${t.imagePath}" alt="${t.title}" loading="lazy" style="width:150px; height:auto; border-radius:8px; border:2px solid #e0e0e0; box-shadow:0 2px 8px rgba(0,0,0,0.1); transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                        </a>`;
+                    }
+                    // Title and description
+                    html += `<div style="flex:1;">
+                        <a href="${t.imagePath||'#'}" target="_blank" rel="noopener" style="font-weight:600; color:#1565c0; font-size:1rem; text-decoration:none; display:block; margin-bottom:4px;">${t.title}</a>
+                        <div class="resource-desc">${t.description||''}</div>
+                    </div>`;
+                    html += `</li>`;
+                });
+                html += `</ul>`;
+            } else {
+                html += `<ul class="resource-list">`;
+                html += `<li class="resource-list-item"><a href="${r.url||'#'}" target="_blank" rel="noopener">${r.title}</a>${r.description? `<div class="resource-desc">${r.description}</div>` : ''}</li>`;
+                html += `</ul>`;
+            }
+        });
+        html += `</section>`;
+    }
+
+    // Other resources (including embeddable presentations)
+    if (grouped.other.length) {
+        // Check if all items in "other" are games - if so, use "Games:" label
+        const allGames = grouped.other.every(r => r.type && /game/i.test(r.type));
+        const sectionLabel = allGames ? labels.interactive[langPref] : labels.other[langPref];
+        html += `<section class="resource-section"><h3>${sectionLabel}</h3><ul class="resource-list">`;
+        grouped.other.forEach(r => {
+            // Check if this resource should be embedded (like Canva presentations)
+            if (r.isEmbed && r.embedUrl) {
+                html += `<li class="resource-list-item" style="display:block;">
+                    <div style="font-weight:700; color:#1565c0; margin-bottom:8px;">${r.title}</div>
+                    ${r.description? `<div class="resource-desc" style="margin-bottom:12px;">${r.description}</div>` : ''}
+                    <div style="position:relative; width:100%; padding-bottom:56.25%; background:#f5f5f5; border-radius:10px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
+                        <iframe src="${r.embedUrl}" loading="lazy" style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;" allowfullscreen allow="fullscreen"></iframe>
+                    </div>
+                    <div style="margin-top:8px; text-align:center;">
+                        <a href="${r.url||'#'}" target="_blank" rel="noopener" class="topic-btn" style="display:inline-block; padding:8px 16px; font-size:0.9rem;">
+                            <i class="fas fa-external-link-alt"></i> ${langPref === 'es' ? 'Abrir en nueva pestaña' : 'Open in new tab'}
+                        </a>
+                    </div>
+                </li>`;
+            } else {
+                html += `<li class="resource-list-item"><a href="${r.url||'#'}" target="_blank" rel="noopener">${r.title}</a>${r.description? `<div class="resource-desc">${r.description}</div>` : ''}</li>`;
+            }
+        });
+        html += `</ul></section>`;
+    }
+
+    // Insert generated HTML into container
+    container.innerHTML = html || `<p style="color:#666; text-align:center;">${(i18n.openResource && i18n.openResource[langPref])? i18n.openResource[langPref] : 'No resources available yet.'}</p>`;
+
+    // Restore activity checkbox states from localStorage
+    setTimeout(() => restoreActivityStates(), 100);
+
+    // Inject small styles for list layout if not already present
+    if (!document.getElementById('__resource_list_styles')) {
+        const listStyle = document.createElement('style');
+        listStyle.id = '__resource_list_styles';
+        listStyle.textContent = `
+            .resource-section { margin-bottom: 18px; }
+            .resource-section h3 { margin: 6px 0 10px 0; font-size: 1.05rem; color: var(--seasonal-primary, #333); }
+            .resource-list { list-style: none; padding-left: 0; margin: 0; display: block; }
+            .resource-list-item { padding: 10px 12px; border-bottom: 1px dashed #e9eef2; display:flex; align-items:center; gap:12px; }
+            .resource-list-item a { font-weight: 700; color: #1565c0; text-decoration: none; }
+            .resource-desc { font-size: 0.9rem; color: #666; margin-top:6px; }
+            .video-item .thumb { margin-left: auto; }
+            .resource-list-item .topic-btn { margin-left: 12px; }
+        `;
+        document.head.appendChild(listStyle);
+    }
+    
+    // Accessibility: save previously focused element and enable focus trap
+    try {
+        window._lastFocusedElement = document.activeElement;
+    } catch (e) { window._lastFocusedElement = null; }
+
+    // Make modal and overlay visible to assistive tech
+    modal.setAttribute('aria-hidden', 'false');
+    overlay.setAttribute('aria-hidden', 'false');
+
+    // Show modal visually
+    modal.classList.add('show');
+    overlay.classList.add('show');
+
+    // Enable focus trap inside the modal
+    enableModalFocusTrap(modal);
+
+    // Mark the opener button as expanded (for assistive tech) if applicable
+    try {
+        const opener = document.activeElement;
+        if (opener && opener.classList && opener.classList.contains('topic-btn')) {
+            opener.setAttribute('aria-expanded', 'true');
+            window._modalOpenedBy = opener;
+        } else {
+            window._modalOpenedBy = null;
+        }
+    } catch (e) { window._modalOpenedBy = null; }
+    
+    // Add fade-in animation to resources
+    setTimeout(() => {
+        const items = container.querySelectorAll('.resource-item');
+        items.forEach((item, index) => {
+            setTimeout(() => {
+                item.style.animation = 'fadeIn 0.5s ease-out forwards';
+            }, index * 100);
+        });
+    }, 100);
+}
+
+// --- Interactive helpers for second grade ---
+function showCardinalityPractice() {
+    const container = document.getElementById('resourcesContainer');
+    if (!container) return;
+
+    // Example sets (some with duplicates to demonstrate unique counting)
+    // Each item now has [text, emoji] for visual representation
+    const sets = [
+        [['red block','🟥'], ['blue block','🟦'], ['yellow block','🟨']],
+        [['apple','🍎'], ['banana','🍌'], ['apple','🍎']],
+        [['cat','🐱'], ['dog','🐶'], ['bird','🐦'], ['fish','🐟']],
+        [['star','⭐'], ['star','⭐'], ['star','⭐'], ['moon','🌙']],
+        [['one','1️⃣'], ['two','2️⃣'], ['three','3️⃣'], ['four','4️⃣'], ['five','5️⃣']],
+        [['circle','🔵'], ['square','🟪'], ['triangle','🔺'], ['circle','🔵'], ['hexagon','⬡']],
+        [['ball','⚽'], ['bat','🏏'], ['glove','🧤']],
+        [['cup','☕'], ['plate','🍽️'], ['spoon','🥄'], ['fork','🍴']]
+    ];
+
+    let html = `<h3>Cardinality Practice</h3><p>Count the number of UNIQUE items in each set. Type your answer and click Check.</p>`;
+    html += '<div style="display:grid; grid-template-columns: repeat(1, 1fr); gap:16px;">';
+
+    sets.forEach((s, idx) => {
+        // Build visual representation of the set
+        let visualSet = '<div class="visual-set" style="display:flex; flex-wrap:wrap; gap:10px; margin:12px 0; padding:15px; background:#fff; border:3px dashed #2196F3; border-radius:12px; min-height:80px; align-items:center; justify-content:center;">';
+        s.forEach((item, itemIdx) => {
+            const [text, emoji] = item;
+            visualSet += `
+                <div class="set-item" style="display:flex; flex-direction:column; align-items:center; padding:8px; background:#e3f2fd; border-radius:10px; min-width:70px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="font-size:2rem; margin-bottom:4px;">${emoji}</div>
+                    <div style="font-size:0.75rem; color:#1565c0; text-align:center; font-weight:600;">${text}</div>
+                </div>
+            `;
+        });
+        visualSet += '</div>';
+
+        html += `
+            <div style="background:#f8f9fa; padding:16px; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,0.08);">
+                <div style="font-weight:700; margin-bottom:10px; color:#1976d2; font-size:1.05rem;">Set ${idx+1}</div>
+                ${visualSet}
+                <div style="display:flex; gap:8px; align-items:center; margin-top:12px;">
+                    <label style="font-weight:600; color:#555;">Cardinality:</label>
+                    <input id="card-input-${idx}" type="number" min="0" style="padding:10px; width:90px; border:2px solid #2196F3; border-radius:8px; font-size:1rem; font-weight:700;" placeholder="?">
+                    <button class="topic-btn" onclick="checkCardinality(${idx})" style="padding:10px 20px;">Check ✓</button>
+                    <span id="card-result-${idx}" style="margin-left:10px; font-weight:700; font-size:1.05rem;"></span>
+                </div>
+            </div>
+        `;
+    });
+
+    html += `</div><p style="margin-top:16px; padding:12px; background:#fff3cd; border-left:4px solid #ffc107; border-radius:6px; color:#856404;"><strong>💡 Tip:</strong> If an item repeats in the set, count it only once! The cardinality is the number of UNIQUE items.</p>`;
+    container.innerHTML = html;
+
+    // store sets for checking (extract just the text for comparison)
+    window._cardinalitySets = sets.map(s => s.map(item => item[0]));
+}
+
+// Video embed handling removed: simplified direct iframe rendering is used inside showResources now.
+
+function checkCardinality(index) {
+    const sets = window._cardinalitySets || [];
+    const s = sets[index] || [];
+    const uniqueCount = new Set(s).size;
+    const input = document.getElementById(`card-input-${index}`);
+    const result = document.getElementById(`card-result-${index}`);
+    if (!input || !result) return;
+    const val = parseInt(input.value, 10);
+    if (isNaN(val)) {
+        result.textContent = 'Please enter a number.';
+        result.style.color = '#e65100';
+        return;
+    }
+    if (val === uniqueCount) {
+        result.textContent = 'Correct! ✅';
+        result.style.color = '#2e7d32';
+    } else {
+        result.textContent = `Incorrect — correct is ${uniqueCount}`;
+        result.style.color = '#c62828';
+    }
+}
+
+function showMultiplicationPractice() {
+    const container = document.getElementById('resourcesContainer');
+    if (!container) return;
+
+    // choose random factors 1-10
+    const a = Math.floor(Math.random()*10)+1;
+    const b = Math.floor(Math.random()*10)+1;
+    const product = a*b;
+
+    let html = `<h3>Multiplication Grid Practice</h3><p>Solve: <strong>${a} × ${b} = ?</strong></p>`;
+    html += `<p>Click cells to select the rectangle of size ${a} by ${b}. The selection count should equal the product.</p>`;
+    html += `<div id="mult-grid" style="display:grid; grid-template-columns: repeat(10, 28px); gap:4px; justify-content:center;">`;
+
+    for (let r=1;r<=10;r++){
+        for (let c=1;c<=10;c++){
+            html += `<button class="mult-cell" data-r="${r}" data-c="${c}" style="width:28px; height:28px; border-radius:6px; background:#fff; border:1px solid #ddd;">`+`</button>`;
+        }
+    }
+    html += `</div>`;
+    html += `<div style="display:flex; gap:10px; justify-content:center; margin-top:12px;"><button class="topic-btn" onclick="checkMultiplication(${product})">Check Answer</button><button class="topic-btn" onclick="resetMultiplicationGrid()">Reset</button><a class="topic-btn" href="https://matemovil.com/wp-content/uploads/2022/01/Tabla-Pitagorica-Matemovil.pdf" target="_blank">Download Pythagorean Table</a></div>`;
+    html += `<div id="mult-result" style="text-align:center; margin-top:10px; font-weight:600;"></div>`;
+
+    container.innerHTML = html;
+
+    // add selection logic
+    const cells = document.querySelectorAll('.mult-cell');
+    cells.forEach(cell=>{
+        cell.addEventListener('click', ()=>{
+            cell.classList.toggle('mult-selected');
+            cell.style.background = cell.classList.contains('mult-selected') ? '#4ecdc4' : '#fff';
+            cell.style.color = cell.classList.contains('mult-selected') ? '#fff' : '#000';
+        });
+    });
+}
+
+function checkMultiplication(expected) {
+    const selected = document.querySelectorAll('.mult-cell.mult-selected').length;
+    const el = document.getElementById('mult-result');
+    if (!el) return;
+    if (selected === expected) {
+        el.textContent = `Great! ${selected} selected — correct ✅`;
+        el.style.color = '#2e7d32';
+    } else {
+        el.textContent = `Not yet — selected ${selected}, but correct is ${expected}. Try again.`;
+        el.style.color = '#c62828';
+    }
+}
+
+function resetMultiplicationGrid(){
+    // Regenerate the multiplication practice with new random numbers so the student
+    // can practice more problems when they click Reset.
+    showMultiplicationPractice();
+}
+
+// Function to close modal
+function closeModal() {
+    const modal = document.getElementById('resourcesModal');
+    const overlay = document.getElementById('modalOverlay');
+    
+    // Hide visually
+    modal.classList.remove('show');
+    overlay.classList.remove('show');
+
+    // Mark as hidden for assistive tech
+    modal.setAttribute('aria-hidden', 'true');
+    overlay.setAttribute('aria-hidden', 'true');
+
+    // Remove custom title marker
+    const title = document.getElementById('modalTitle');
+    if (title && title.dataset) delete title.dataset.custom;
+
+    // Disable focus trap and restore focus
+    disableModalFocusTrap();
+    try {
+        if (window._lastFocusedElement && typeof window._lastFocusedElement.focus === 'function') {
+            window._lastFocusedElement.focus();
+        }
+    } catch (e) { /* ignore */ }
+
+    // Clear aria-expanded on opener button if we recorded it
+    try {
+        if (window._modalOpenedBy && window._modalOpenedBy.setAttribute) {
+            window._modalOpenedBy.setAttribute('aria-expanded', 'false');
+        }
+        window._modalOpenedBy = null;
+    } catch (e) { /* ignore */ }
+}
+
+// Save and restore activity checkbox states
+function saveActivityState(activityId, isChecked) {
+    try {
+        const activities = JSON.parse(localStorage.getItem('completedActivities') || '{}');
+        activities[activityId] = isChecked;
+        localStorage.setItem('completedActivities', JSON.stringify(activities));
+    } catch (e) {
+        console.error('Could not save activity state:', e);
+    }
+}
+
+// Save activity count (how many problems created, etc.)
+function saveActivityCount(activityId, count) {
+    try {
+        const counts = JSON.parse(localStorage.getItem('activityCounts') || '{}');
+        counts[activityId] = parseInt(count) || 0;
+        localStorage.setItem('activityCounts', JSON.stringify(counts));
+    } catch (e) {
+        console.error('Could not save activity count:', e);
+    }
+}
+
+function restoreActivityStates() {
+    try {
+        // Restore checkboxes
+        const activities = JSON.parse(localStorage.getItem('completedActivities') || '{}');
+        Object.keys(activities).forEach(activityId => {
+            const checkbox = document.getElementById(activityId);
+            if (checkbox && activities[activityId]) {
+                checkbox.checked = true;
+            }
+        });
         
-        let videoContent = '';
-        let imageContent = '';
-        let interactiveContent = '';
-        
-        // Video handling
-        if (resource.isVideo) {
+        // Restore counters
+        const counts = JSON.parse(localStorage.getItem('activityCounts') || '{}');
+        Object.keys(counts).forEach(activityId => {
+            const counter = document.getElementById(activityId + '_count');
+            if (counter && counts[activityId]) {
+                counter.value = counts[activityId];
+            }
+        });
+    } catch (e) {
+        console.error('Could not restore activity states:', e);
+    }
+}
+
+// Function to open external resources
+function openResource(url) {
+    if (url && url !== '#') {
+        window.open(url, '_blank');
+    } else {
+        alert('🚧 This resource is coming soon! Check back later for more exciting content!');
+    }
+}
+
+// Function to download template images
+function downloadTemplate(imagePath, fileName) {
+    const link = document.createElement('a');
+    link.href = imagePath;
+    link.download = fileName;
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Show success message
+    showSuccessMessage('Template downloaded successfully! 📥 Check your Downloads folder.');
+}
+
+// Add keyboard support for modal
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeModal();
+    }
+});
+
+// Focus trap helpers for modal accessibility
+let _modalTrapHandler = null;
+function enableModalFocusTrap(modal) {
+    if (!modal) return;
+    const focusableSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, [tabindex]:not([tabindex="-1"])';
+    const focusable = Array.from(modal.querySelectorAll(focusableSelector)).filter(el => el.offsetParent !== null);
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    // Focus the close button or first focusable
+    const closeBtn = modal.querySelector('.close-btn');
+    if (closeBtn) {
+        closeBtn.focus();
+    } else if (first) {
+        first.focus();
+    }
+
+    // Trap tab inside modal
+    _modalTrapHandler = function(e) {
+        if (e.key !== 'Tab') return;
+        const focusableNow = Array.from(modal.querySelectorAll(focusableSelector)).filter(el => el.offsetParent !== null);
+        if (focusableNow.length === 0) {
+            e.preventDefault();
+            return;
+        }
+        const firstNow = focusableNow[0];
+        const lastNow = focusableNow[focusableNow.length -1];
+
+        if (e.shiftKey) { // Shift + Tab
+            if (document.activeElement === firstNow) {
+                e.preventDefault();
+                lastNow.focus();
+            }
+        } else { // Tab
+            if (document.activeElement === lastNow) {
+                e.preventDefault();
+                firstNow.focus();
+            }
+        }
+    };
+
+    document.addEventListener('keydown', _modalTrapHandler);
+}
+
+function disableModalFocusTrap() {
+    if (_modalTrapHandler) {
+        document.removeEventListener('keydown', _modalTrapHandler);
+        _modalTrapHandler = null;
+    }
+}
+
+// BELOW IS OLD DUPLICATE CODE THAT NEEDS TO BE REMOVED
+// Skip everything until we find unique new code
             const getYoutubeId = (url) => {
                 if (!url) return null;
                 try {
