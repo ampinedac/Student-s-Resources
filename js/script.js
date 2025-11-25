@@ -2114,9 +2114,9 @@ const seasonalThemes = {
     11: { // November - Thanksgiving
         name: 'Thanksgiving',
         greeting: 'Thankful for Learning, Students!',
-        subtitle: 'We\'re grateful for math adventures together! ­­',
+        subtitle: 'We\'re grateful for math adventures together! 🦃🍂',
         background: 'linear-gradient(135deg, #d2691e, #8b4513, #cd853f)',
-        decorations: ['­', '­', '­¢', '­', '­'],
+        decorations: ['🦃', '🍂', '🌽', '🥧', '🍁'],
         colors: {
             primary: '#d2691e',
             secondary: '#8b4513',
@@ -2126,9 +2126,9 @@ const seasonalThemes = {
     12: { // December - Christmas
         name: 'Christmas',
         greeting: 'Merry Math-mas, Dear Students!',
-        subtitle: 'The gift of learning lasts all year! ­­',
+        subtitle: 'The gift of learning lasts all year! 🎄🎅',
         background: 'linear-gradient(135deg, #0f4c75, #3282b8, #bbe1fa)',
-        decorations: ['­', '­', '', 'ÔØ´©Å', '­'],
+        decorations: ['🎄', '🎅', '⛄', '❄️', '🎁'],
         colors: {
             primary: '#0f4c75',
             secondary: '#3282b8',
