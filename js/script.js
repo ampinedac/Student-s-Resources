@@ -711,36 +711,110 @@ mathResources['t3_mathsymbol'] = [
 
 mathResources['t3_sets'] = [
     {
-        title: 'What is a set?  Twinkl',
+        title: 'Introduction to Sets & Cardinality',
+        type: 'Introduction',
+        description: `
+            <h3>📊 What is a Set?</h3>
+            <p>A <strong>set</strong> is a collection of things that belong together. Think of it like a group or a category!</p>
+            
+            <p><strong>Examples of sets:</strong></p>
+            <ul>
+                <li>A set of toys in a toy box</li>
+                <li>A set of books on a shelf</li>
+                <li>A set of fruits: {apple, banana, orange}</li>
+                <li>A set of numbers: {2, 4, 6, 8, 10}</li>
+            </ul>
+            
+            <p>Sets are often shown using curly brackets <strong>{ }</strong> and the items inside are called <strong>elements</strong> or <strong>members</strong> of the set.</p>
+            
+            <h4>🔢 What is Cardinality?</h4>
+            <p>The <strong>cardinality</strong> of a set is simply how many items are in it, like counting how many toys are in a box.</p>
+            
+            <p><strong>For example:</strong></p>
+            <ul>
+                <li>If you have the set {a, b, c}, it has <strong>3 items</strong>, so its cardinality is <strong>3</strong>.</li>
+                <li>For the set {red block, blue block, yellow block}, the cardinality is <strong>3</strong>.</li>
+            </ul>
+            
+            <h4>📏 How to Find Cardinality:</h4>
+            <ol>
+                <li>Count all the objects in the set</li>
+                <li>The last number you say is the cardinality</li>
+                <li>It's the "how many" number for a group of things</li>
+            </ol>
+            
+            <h4>⚠️ Important: Unique Items Only!</h4>
+            <p>If an item is listed more than once in a set, you <strong>only count it once</strong>.</p>
+            <p><strong>Example:</strong> For the set {apple, banana, apple}, there are only <strong>2 unique items</strong>, so the cardinality is <strong>2</strong>, not 3!</p>
+            
+            <h4>✨ Key Points to Remember:</h4>
+            <ul>
+                <li>Cardinality is the "size" of a set</li>
+                <li>Count each unique item only once</li>
+                <li>The order of items in a set doesn't matter</li>
+                <li>Sets help us organize and understand groups of things</li>
+            </ul>
+        `,
+        isVideo: false
+    },
+    {
+        title: 'What is a Set? — Twinkl',
         type: 'Article',
-        description: 'Simple explanation of sets.',
+        description: 'Simple and clear explanation of what sets are in mathematics.',
         url: 'https://www.twinkl.com.co/teaching-wiki/set-mathematics',
         isVideo: false
     },
     {
-        title: 'What is a set?  Math is Fun',
+        title: 'Sets Introduction — Math is Fun',
         type: 'Article',
-        description: 'An approachable introduction to sets.',
+        description: 'An approachable introduction to sets with examples and diagrams.',
         url: 'https://www.mathsisfun.com/sets/sets-introduction.html',
-        isVideo: false
-    },
-    {
-        title: 'Cardinality  Explanation',
-        type: 'Explanation',
-        description: 'The cardinality of a set is how many unique items are in it. Count unique items only once.',
         isVideo: false
     },
     {
         title: 'Cardinality Practice (Interactive)',
         type: 'Interactive',
-        description: 'Practice sets where students type their answer and check if it is correct (opens interactive modal).',
+        description: 'Practice counting cardinality! You will see 8 different sets. Count the unique items and type your answer to check if it is correct.',
         interactiveType: 'cardinality'
     },
     {
-        title: 'Sets Games - Wordwall (Objects)',
+        title: 'Match the Sets — Worksheet',
+        type: 'Worksheet',
+        description: 'Practice matching sets and understanding set relationships.',
+        url: 'https://www.mathsdiary.com/match-the-sets/#google_vignette',
+        isVideo: false
+    },
+    {
+        title: 'Create Your Own Set (Activity)',
+        type: 'Activity',
+        description: 'Create your own set at home! Think about: What makes it a set? What do the items have in common? Write down your set using curly brackets { }.',
+        isVideo: false
+    },
+    {
+        title: 'Identify 6 Sets at Home (Activity)',
+        type: 'Activity',
+        description: 'Look around your house and identify 6 different sets. For each set, explain why it is a set. What do all the items have in common? Example: A set of forks in a drawer, a set of shoes in a closet, a set of books on a shelf.',
+        isVideo: false
+    },
+    {
+        title: 'Sets of Objects — Game',
         type: 'Game',
-        description: 'Interactive game to identify sets of objects.',
+        description: 'Interactive game to identify and group sets of objects.',
         url: 'https://wordwall.net/es/resource/78528970/math/sets-of-objects',
+        isVideo: false
+    },
+    {
+        title: 'Number Sets — Game',
+        type: 'Game',
+        description: 'Practice identifying and working with number sets.',
+        url: 'https://wordwall.net/es/resource/7178922/math/number-sets',
+        isVideo: false
+    },
+    {
+        title: 'Shape Sets — Game',
+        type: 'Game',
+        description: 'Group shapes into sets based on their properties.',
+        url: 'https://wordwall.net/es/resource/62246840/shape-sets',
         isVideo: false
     }
 ];
