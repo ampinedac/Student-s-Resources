@@ -747,6 +747,39 @@ mathResources['t3_sets'] = [
 
 mathResources['t3_wordproblems'] = [
     {
+        title: 'Introduction to UPAC Method',
+        type: 'Introduction',
+        description: `
+            <h3>📝 The UPAC Problem Solving Method</h3>
+            <p>UPAC is a powerful strategy to solve word problems in Math. It helps students organize their thinking and approach any problem step by step.</p>
+            
+            <h4>What is UPAC?</h4>
+            <ul>
+                <li><strong>U</strong> = <strong>Understand</strong> the problem</li>
+                <li><strong>P</strong> = <strong>Plan</strong> how to solve it</li>
+                <li><strong>A</strong> = <strong>Answer</strong> the problem</li>
+                <li><strong>C</strong> = <strong>Check</strong> your work</li>
+            </ul>
+            
+            <h4>📚 How to use UPAC:</h4>
+            <p><strong>1️⃣ Understand:</strong> Read the problem carefully. What is the question asking? What information do you have?</p>
+            <p><strong>2️⃣ Plan:</strong> What operation will you use? Addition? Subtraction? Multiplication? Draw a picture or write a number sentence.</p>
+            <p><strong>3️⃣ Answer:</strong> Solve the problem. Show your work!</p>
+            <p><strong>4️⃣ Check:</strong> Does your answer make sense? Read the problem again and check your math.</p>
+            
+            <h4>✨ Tips for Success:</h4>
+            <ul>
+                <li>Circle or underline the important numbers</li>
+                <li>Look for key words: "altogether" (add), "left" (subtract), "each" (multiply)</li>
+                <li>Draw pictures or diagrams to help visualize the problem</li>
+                <li>Write your answer in a complete sentence</li>
+            </ul>
+            
+            <p>Use the UPAC templates below to practice this method with any word problem!</p>
+        `,
+        isVideo: false
+    },
+    {
         title: 'UPAC Problem Solving Template',
         type: 'Method',
         description: 'Use UPAC (Understand, Plan, Answer, Check) to solve word problems. Template and guide included.',
@@ -759,39 +792,94 @@ mathResources['t3_wordproblems'] = [
         ]
     },
     {
-        title: 'Addition & Subtraction Worksheets (collection)',
-        type: 'Worksheets',
-        description: 'Printable worksheets for addition and subtraction practice.',
-        url: 'https://www.superteacherworksheets.com/addition/adding-2digit-noregroup_TTWTN.pdf',
-        isVideo: false
-    },
-    {
-        title: 'K5  Word Problems Collection',
-        type: 'Worksheet',
-        description: 'K5 Learning word problems for practice.',
-        url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/adding-single-digit-numbers',
-        isVideo: false
-    },
-    {
-        title: 'Create & Share Problems (Activity)',
-        type: 'Activity',
-        description: 'Create your own problem and share with your family.',
-        isVideo: false
-    }
-    ,
-    {
-        title: 'Word Problems - Video A',
+        title: 'Word Problems Tutorial — Video 1',
         type: 'Video',
-        description: 'Walkthrough: solving word problems (Video A).',
+        description: 'Learn how to solve addition and subtraction word problems step by step.',
         url: 'https://www.youtube.com/watch?v=C229LUk380Q',
         isVideo: true
     },
     {
-        title: 'Word Problems - Video B',
+        title: 'Word Problems Strategy — Video 2',
         type: 'Video',
-        description: 'Walkthrough: solving word problems (Video B).',
+        description: 'More examples of solving word problems with clear strategies.',
         url: 'https://www.youtube.com/watch?v=s3jP0vnFSxE',
         isVideo: true
+    },
+    {
+        title: 'Adding 2-Digit Numbers (No Regrouping)',
+        type: 'Worksheet',
+        description: 'Practice adding 2-digit numbers without regrouping.',
+        url: 'https://www.superteacherworksheets.com/addition/adding-2digit-noregroup_TTWTN.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Adding Columns (3-Digit)',
+        type: 'Worksheet',
+        description: 'Practice adding numbers in column format.',
+        url: 'https://www.superteacherworksheets.com/addition/adding-columns3_TTZDN.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Adding Single-Digit Numbers — K5',
+        type: 'Worksheet',
+        description: 'Word problems with single-digit addition.',
+        url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/adding-single-digit-numbers',
+        isVideo: false
+    },
+    {
+        title: 'Addition Sums to 50 — K5',
+        type: 'Worksheet',
+        description: 'Word problems with addition up to 50.',
+        url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/addition-sums-50',
+        isVideo: false
+    },
+    {
+        title: 'Addition with 3 Addends — K5',
+        type: 'Worksheet',
+        description: 'Practice adding three numbers together.',
+        url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/addition-3-addends',
+        isVideo: false
+    },
+    {
+        title: 'Daily Word Problems — Super Teacher',
+        type: 'Worksheet',
+        description: 'Collection of daily word problems for regular practice.',
+        url: 'https://www.superteacherworksheets.com/daily-word-problems-a.html',
+        isVideo: false
+    },
+    {
+        title: 'Subtraction Word Problems — K5',
+        type: 'Worksheet',
+        description: 'Practice subtraction with word problems.',
+        url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/subtraction',
+        isVideo: false
+    },
+    {
+        title: 'Subtraction 2-Digits — K5',
+        type: 'Worksheet',
+        description: 'Word problems with 2-digit subtraction.',
+        url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/subtraction-2-digits',
+        isVideo: false
+    },
+    {
+        title: 'Create Your Own Problem (Activity)',
+        type: 'Activity',
+        description: 'Create your own word problem and share it with your family. Practice writing and solving!',
+        isVideo: false
+    },
+    {
+        title: 'Math Word Problems for First Grade',
+        type: 'Game',
+        description: 'Interactive word problems game.',
+        url: 'https://wordwall.net/es/resource/51869249/math/math-word-problems-for-first-grade',
+        isVideo: false
+    },
+    {
+        title: 'Addition & Subtraction Word Problems Within 20',
+        type: 'Game',
+        description: 'Interactive practice with word problems (sums and differences within 20).',
+        url: 'https://www.iknowit.com/lessons/a-addition-subtraction-word-problems-within-20.html',
+        isVideo: false
     }
 ];
 
