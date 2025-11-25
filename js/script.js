@@ -847,10 +847,17 @@ mathResources['t3_addsub_regroup'] = [
         isVideo: true
     },
     {
-        title: 'Subtraction with Regrouping — Video Tutorial',
+        title: 'Subtraction with Regrouping — Video 1',
         type: 'Video',
         description: 'Learn how to subtract with borrowing/regrouping.',
         url: 'https://www.youtube.com/watch?v=8_X680JiWDc',
+        isVideo: true
+    },
+    {
+        title: 'Subtraction with Regrouping — Video 2',
+        type: 'Video',
+        description: 'More practice with subtraction and regrouping.',
+        url: 'https://www.youtube.com/watch?v=1Al2Fc3wOIQ',
         isVideo: true
     },
     {
