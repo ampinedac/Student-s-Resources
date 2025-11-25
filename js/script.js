@@ -1035,13 +1035,15 @@ function createResourceItem(resource, container) {
             const isVimeo = !!(resource.url && /vimeo\.com/.test(resource.url));
 
             if (id) {
-                // Use the YouTube thumbnail and a button linking to the watch page (opens in new tab)
+                // Show YouTube thumbnail as clickable link (no button overlay since section header already says "Videos")
                 videoContent = `
                     <div style="text-align:center; margin-top:10px;">
-                        <div style="position:relative; display:inline-block; max-width:560px; width:100%;">
-                            <img src="${thumb}" alt="${resource.title}" loading="lazy" style="width:100%; height:315px; object-fit:cover; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
-                            <a class="topic-btn" href="${watchUrl}" target="_blank" rel="noopener" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);">${openText}</a>
-                        </div>
+                        <a href="${watchUrl}" target="_blank" rel="noopener" style="display:inline-block; max-width:560px; width:100%; position:relative; text-decoration:none;">
+                            <img src="${thumb}" alt="${resource.title}" loading="lazy" style="width:100%; height:315px; object-fit:cover; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.15); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.25)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.15)';">
+                            <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(0,0,0,0.7); border-radius:50%; width:80px; height:80px; display:flex; align-items:center; justify-content:center; pointer-events:none;">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </a>
                     </div>
                 `;
             } else if (isLocalVideo) {
@@ -1069,14 +1071,16 @@ function createResourceItem(resource, container) {
                     </div>
                 `;
             } else {
-                // Unknown video URL: show a fallback thumbnail if available or a simple link
+                // Unknown video URL: show clickable thumbnail
                 const genericThumb = 'images/video-poster.png';
                 videoContent = `
                     <div style="text-align:center; margin-top:10px;">
-                        <div style="position:relative; display:inline-block; max-width:560px; width:100%;">
-                            <img src="${thumb || genericThumb}" alt="${resource.title}" loading="lazy" style="width:100%; height:315px; object-fit:cover; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
-                            <a class="topic-btn" href="${watchUrl}" target="_blank" rel="noopener" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);">${openText}</a>
-                        </div>
+                        <a href="${watchUrl}" target="_blank" rel="noopener" style="display:inline-block; max-width:560px; width:100%; position:relative; text-decoration:none;">
+                            <img src="${thumb || genericThumb}" alt="${resource.title}" loading="lazy" style="width:100%; height:315px; object-fit:cover; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.15); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.25)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.15)';">
+                            <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(0,0,0,0.7); border-radius:50%; width:80px; height:80px; display:flex; align-items:center; justify-content:center; pointer-events:none;">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </a>
                     </div>
                 `;
             }
@@ -1133,7 +1137,6 @@ function createResourceItem(resource, container) {
         }
         
         resourceDiv.innerHTML = `
-            <div class="resource-type">${resource.type || ''}</div>
             <h4>${resource.title}</h4>
             <p>${resource.description || ''}</p>
             ${videoContent}
