@@ -38,26 +38,6 @@ const mathResources = {
             description: 'Learn about sets using different shapes.',
             url: 'https://wordwall.net/es/resource/62246840/shape-sets',
             isVideo: false
-        },
-        {
-            title: 'Suggested Activities',
-            type: 'Activity',
-            description: 'Complete these activities to practice sets:',
-            url: '#',
-            isActivity: true,
-            activities: [
-                {
-                    id: 'sets_activity_1',
-                    text: 'Create your own set, why is a set?',
-                    textEs: 'Crea tu propio conjunto, ¿por qué es un conjunto?'
-                },
-                {
-                    id: 'sets_activity_2',
-                    text: 'Identify 6 sets in your house and explain why they are sets.',
-                    textEs: 'Identifica 6 conjuntos en tu casa y explica por qué son conjuntos.'
-                }
-            ],
-            isVideo: false
         }
     ],
     comparison: [
@@ -69,87 +49,24 @@ const mathResources = {
             isVideo: false
         },
         {
-            title: 'More and Fewer Worksheet',
-            type: 'Worksheet',
-            description: 'Practice comparing quantities.',
-            url: 'https://www.superteacherworksheets.com/counting/more-and-fewer_BBAGT.pdf',
-            isVideo: false
-        },
-        {
-            title: 'Greater/Less 2-Digit Numbers',
-            type: 'Worksheet',
-            description: 'Compare 2-digit numbers.',
-            url: 'https://www.superteacherworksheets.com/place-value/greaterless-2digit_TWRBD.pdf',
-            isVideo: false
-        },
-        {
-            title: 'More Than Less Than Worksheets',
-            type: 'Worksheet',
-            description: 'K5 Learning comparison worksheets.',
+            title: 'Worksheets Collection',
+            type: 'Worksheets',
+            description: 'Selection of comparison worksheets and practice pages.',
             url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/comparing-numbers/more-than-less-than',
-            isVideo: false
-        },
-        {
-            title: 'Comparing Numbers Worksheets',
-            type: 'Worksheet',
-            description: 'Collection of number comparison worksheets.',
-            url: 'https://superstarworksheets.com/math-worksheets/comparing-numbers/comparing-numbers-worksheets/',
-            isVideo: false
-        },
-        {
-            title: 'Compare Numbers 0-100',
-            type: 'Worksheet',
-            description: 'Practice comparing numbers from 0 to 100.',
-            url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/comparing-numbers/compare-numbers-0-100',
-            isVideo: false
-        },
-        {
-            title: 'Greater Than / Less Than Game',
-            type: 'Game',
-            description: 'Interactive 3-digit comparison game.',
-            url: 'https://www.superteacherworksheets.com/place-value/gt-lt-game2-3-digits_GFDIW.pdf',
-            isVideo: false
-        },
-        {
-            title: 'Starfall Greater Less Equals',
-            type: 'Game',
-            description: 'Fun comparison game from Starfall.',
-            url: 'https://www.starfall.com/h/numbers/greater-less-equals/?sn=math0',
-            isVideo: false
-        },
-        {
-            title: 'ABCya Comparing Numbers Jr',
-            type: 'Game',
-            description: 'Comparing number values game.',
-            url: 'https://www.abcya.com/games/comparing_number_values_jr',
-            isVideo: false
-        },
-        {
-            title: 'Wordwall Greater/Less Game',
-            type: 'Game',
-            description: 'Interactive greater than or less than game.',
-            url: 'https://wordwall.net/resource/37870946/greater-than-or-less-than',
-            isVideo: false
-        },
-        {
-            title: 'Education.com Comparison Game',
-            type: 'Game',
-            description: 'Less than, greater than practice game.',
-            url: 'https://www.education.com/game/less-than-greater-than/',
             isVideo: false
         },
         {
             title: 'Greater Than / Less Than - Video A',
             type: 'Video',
-            description: 'Learn comparison symbols with examples.',
-            url: 'https://www.youtube.com/watch?v=M6Efzu2slaI',
+            description: 'Video A for greater than / less than (YouTube).',
+            url: 'https://www.youtube.com/embed/M6Efzu2slaI',
             isVideo: true
         },
         {
             title: 'Greater Than / Less Than - Video B',
             type: 'Video',
-            description: 'More comparison examples and practice.',
-            url: 'https://www.youtube.com/watch?v=q93lAp6Rh5g',
+            description: 'Video B for greater than / less than (YouTube).',
+            url: 'https://www.youtube-nocookie.com/embed/q93lAp6Rh5g?rel=0&modestbranding=1&fs=1',
             isVideo: true
         }
     ],
@@ -223,31 +140,6 @@ const mathResources = {
             type: 'Worksheet',
             description: 'Practice subtraction with word problems.',
             url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/subtraction',
-            isVideo: false
-        },
-        {
-            title: 'Subtraction 2-Digits Word Problems',
-            type: 'Worksheet',
-            description: 'Word problems with 2-digit subtraction.',
-            url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/subtraction-2-digits',
-            isVideo: false
-        },
-        {
-            title: 'Suggested Activity',
-            type: 'Activity',
-            description: 'Practice creating your own word problems:',
-            url: '#',
-            isActivity: true,
-            activities: [
-                {
-                    id: 'wordproblems_activity_create',
-                    text: 'Create your own word problem and share with your family',
-                    textEs: 'Crea tu propio problema matemático y compártelo con tu familia',
-                    hasCounter: true,
-                    counterLabel: 'How many did you create?',
-                    counterLabelEs: '¿Cuántos creaste?'
-                }
-            ],
             isVideo: false
         },
         {
@@ -424,11 +316,9 @@ const mathResources = {
 mathResources['s2_mathsymbol'] = [
     {
         title: 'Math Symbol - Canva Design',
-        type: 'Presentation',
-        description: 'Interactive Math Symbol visual from Canva (embedded).',
+        type: 'Resource',
+        description: 'Download or view the Math Symbol visual from Canva.',
         url: 'https://www.canva.com/design/DAG2oUrIL7U/chwfuCOTEIKxTB-mQU_cLQ/view?utm_content=DAG2oUrIL7U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks',
-        embedUrl: 'https://www.canva.com/design/DAG2oUrIL7U/chwfuCOTEIKxTB-mQU_cLQ/view?embed',
-        isEmbed: true,
         isVideo: false
     }
 ];
@@ -812,11 +702,9 @@ mathResources['s2_writing'] = [
 mathResources['t3_mathsymbol'] = [
     {
         title: 'Math Symbol - Canva Design',
-        type: 'Presentation',
-        description: 'Interactive Math Symbol visual from Canva (embedded).',
+        type: 'Resource',
+        description: 'Download or view the Math Symbol visual from Canva.',
         url: 'https://www.canva.com/design/DAG2oUrIL7U/chwfuCOTEIKxTB-mQU_cLQ/view?utm_content=DAG2oUrIL7U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks',
-        embedUrl: 'https://www.canva.com/design/DAG2oUrIL7U/chwfuCOTEIKxTB-mQU_cLQ/view?embed',
-        isEmbed: true,
         isVideo: false
     }
 ];
@@ -885,23 +773,12 @@ mathResources['t3_wordproblems'] = [
         isVideo: false
     },
     {
-        title: 'Suggested Activity',
+        title: 'Create & Share Problems (Activity)',
         type: 'Activity',
-        description: 'Practice creating your own word problems:',
-        url: '#',
-        isActivity: true,
-        activities: [
-            {
-                id: 't3_wordproblems_activity_create',
-                text: 'Create your own word problem and share with your family',
-                textEs: 'Crea tu propio problema matemático y compártelo con tu familia',
-                hasCounter: true,
-                counterLabel: 'How many did you create?',
-                counterLabelEs: '¿Cuántos creaste?'
-            }
-        ],
+        description: 'Create your own problem and share with your family.',
         isVideo: false
-    },
+    }
+    ,
     {
         title: 'Word Problems - Video A',
         type: 'Video',
@@ -948,27 +825,6 @@ mathResources['t3_multiplication'] = [
     }
 ];
 
-// --- Third Grade: Addition & Subtraction with Regrouping resources ---
-mathResources['t3_addsub_regroup'] = [
-    { title: 'Add/Subtract 3-digits A (worksheet)', type: 'Worksheet', description: 'Practice adding and subtracting 3-digit numbers with regrouping (set A).', url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-3-digits-a.pdf', isVideo: false },
-    { title: 'Add/Subtract 3-digits B (worksheet)', type: 'Worksheet', description: 'Practice adding and subtracting 3-digit numbers with regrouping (set B).', url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-3-digits-b.pdf', isVideo: false },
-    { title: 'Add/Subtract 3-digits C (worksheet)', type: 'Worksheet', description: 'Practice adding and subtracting 3-digit numbers with regrouping (set C).', url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-3-digits-c.pdf', isVideo: false },
-    { title: 'Add/Subtract 3-digits D (worksheet)', type: 'Worksheet', description: 'Practice adding and subtracting 3-digit numbers with regrouping (set D).', url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-3-digits-d.pdf', isVideo: false },
-    { title: 'Add/Subtract 3-digits E (worksheet)', type: 'Worksheet', description: 'Practice adding and subtracting 3-digit numbers with regrouping (set E).', url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-3-digits-e.pdf', isVideo: false },
-    { title: 'Add/Subtract 3-digits F (worksheet)', type: 'Worksheet', description: 'Practice adding and subtracting 3-digit numbers with regrouping (set F).', url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-3-digits-f.pdf', isVideo: false },
-    { title: 'Wordwall — Three-digit addition & subtraction (game 1)', type: 'Game', description: 'Interactive practice: three-digit subtraction and addition with regrouping.', url: 'https://wordwall.net/resource/12252034/math/three-digit-subtraction-and-addition-with-regrouping', isVideo: false },
-    { title: 'Wordwall — Three-digit regrouping (game 2)', type: 'Game', description: 'Interactive activities for regrouping practice.', url: 'https://wordwall.net/resource/10104496/math/3-digit-subtraction-and-addition-with-regrouping', isVideo: false },
-    { title: 'Wordwall — Three-digit regrouping (game 3)', type: 'Game', description: 'Practice regrouping with fun activities.', url: 'https://wordwall.net/resource/9984200/three-digit-subtraction-and-addition-with-regrouping', isVideo: false },
-    { title: 'Wordwall — Three-digit regrouping (game 4)', type: 'Game', description: 'More interactive regrouping practice.', url: 'https://wordwall.net/resource/8112100/math/three-digit-subtraction-and-addition-with-regrouping', isVideo: false }
-];
-
-// Added teacher-requested YouTube videos (Nov 2025)
-mathResources['t3_addsub_regroup'].push(
-    { title: 'Reagrupamiento - Video explicativo (1)', type: 'Video', description: 'Video sobre suma y resta con reagrupamiento — explicación paso a paso.', url: 'https://www.youtube.com/watch?v=cE-yrJv4TEs', isVideo: true },
-    { title: 'Suma y Resta con Reagrupamiento - Práctica (2)', type: 'Video', description: 'Ejemplos y práctica guiada para reagrupamiento.', url: 'https://www.youtube.com/watch?v=1Al2Fc3wOIQ', isVideo: true },
-    { title: 'Estrategias de Reagrupamiento - Tutorial (3)', type: 'Video', description: 'Técnicas visuales para sumar y restar con reagrupamiento.', url: 'https://www.youtube.com/watch?v=8_X680JiWDc', isVideo: true }
-);
-
 // Topic titles for the modal
 const topicTitles = {
     sets: '📦 1. Sets - What is a set?',
@@ -991,7 +847,6 @@ topicTitles['t3_mathsymbol'] = '🔣 Math Symbols (Third Grade)';
 topicTitles['t3_sets'] = '📦 Sets & Cardinality (Third Grade)';
 topicTitles['t3_wordproblems'] = '📝 Word Problems — UPAC (Third Grade)';
 topicTitles['t3_multiplication'] = '✖️ Multiplication & Times Tables (Third Grade)';
-topicTitles['t3_addsub_regroup'] = '➕➖ Sumas y Restas — Reagrupando (Third Grade)';
 
 // Function to show resources modal
 function showResources(topicId) {
@@ -1010,230 +865,186 @@ function showResources(topicId) {
     // Get resources for this topic
     const resources = mathResources[topicId] || [];
     
-    // Render resources as grouped simple lists: What is a set?, Videos, Worksheets, Games, Templates, Other
-    const langPref = localStorage.getItem('preferredLang') || 'en';
-    const labels = {
-        introduction: { en: 'What is a set?', es: '¿Qué es un conjunto?' },
-        interactive: { en: 'Games:', es: 'Juegos:' },
-        worksheets: { en: 'Worksheets', es: 'Hojas de trabajo' },
-        videos: { en: 'Videos', es: 'Videos' },
-        templates: { en: 'Strategy to solve problems', es: 'Estrategia para resolver problemas' },
-        other: { en: 'Other Resources', es: 'Otros recursos' }
-    };
+    // Create resource items
+    resources.forEach(resource => {
+        const resourceDiv = document.createElement('div');
+        resourceDiv.className = 'resource-item';
+        
+        let videoContent = '';
+        let imageContent = '';
+        let interactiveContent = '';
+        
+        // Video handling
+        if (resource.isVideo) {
+            const getYoutubeId = (url) => {
+                if (!url) return null;
+                try {
+                    let m = url.match(/embed\/([A-Za-z0-9_-]{6,})/);
+                    if (m && m[1]) return m[1];
+                    m = url.match(/[?&]v=([A-Za-z0-9_-]{6,})/);
+                    if (m && m[1]) return m[1];
+                    m = url.match(/youtu\.be\/([A-Za-z0-9_-]{6,})/);
+                    if (m && m[1]) return m[1];
+                    return null;
+                } catch (e) {
+                    return null;
+                }
+            };
 
-    // Classify resources
-    const grouped = {
-        introduction: [],
-        interactive: [],
-        worksheets: [],
-        videos: [],
-        templates: [],
-        other: []
-    };
+            const id = getYoutubeId(resource.url || '');
+            const watchUrl = id ? `https://www.youtube.com/watch?v=${id}` : (resource.url || '#');
+            const thumb = id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
 
-    resources.forEach(r => {
-        if (r.isVideo) {
-            grouped.videos.push(r);
-        } else if (r.interactiveType || r.isActivity) {
-            grouped.interactive.push(r);
-        } else if (r.hasTemplate || r.hasImage) {
-            grouped.templates.push(r);
-        } else if (r.type && /work/i.test(r.type)) {
-            grouped.worksheets.push(r);
-        } else if (r.type && /(article|explanation|resource|presentation)/i.test(r.type)) {
-            grouped.introduction.push(r);
-        } else {
-            grouped.other.push(r);
+            // determine current language for translations of dynamic buttons
+            const langPref = localStorage.getItem('preferredLang') || 'en';
+            const openText = (i18n.openOnYouTube && i18n.openOnYouTube[langPref]) ? i18n.openOnYouTube[langPref] : 'Open on YouTube';
+
+            // Preferred behavior: for YouTube videos show thumbnail + a button that opens YouTube (user requested no embedded player).
+            // For local videos or Vimeo, keep native behavior (HTML5 video or Vimeo iframe).
+            const isLocalVideo = !!(resource.url && resource.url.match(/\.(mp4|webm|ogg)$/i));
+            const isVimeo = !!(resource.url && /vimeo\.com/.test(resource.url));
+
+            if (id) {
+                // Use the YouTube thumbnail and a button linking to the watch page (opens in new tab)
+                videoContent = `
+                    <div style="text-align:center; margin-top:10px;">
+                        <div style="position:relative; display:inline-block; max-width:560px; width:100%;">
+                            <img src="${thumb}" alt="${resource.title}" loading="lazy" style="width:100%; height:315px; object-fit:cover; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+                            <a class="topic-btn" href="${watchUrl}" target="_blank" rel="noopener" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);">${openText}</a>
+                        </div>
+                    </div>
+                `;
+            } else if (isLocalVideo) {
+                // Render native HTML5 video for local-hosted files
+                videoContent = `
+                    <div style="text-align:center; margin-top:10px;">
+                        <div style="position:relative; display:inline-block; max-width:560px; width:100%;">
+                            <video class="video-preview" controls playsinline preload="metadata" style="width:100%; height:315px; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.15); background:#000;">
+                                <source src="${resource.url}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                `;
+            } else if (isVimeo) {
+                // Extract Vimeo ID and embed
+                const m = resource.url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+                const vimeoId = m && m[1] ? m[1] : null;
+                const vimeoEmbed = vimeoId ? `https://player.vimeo.com/video/${vimeoId}` : resource.url;
+                videoContent = `
+                    <div style="text-align:center; margin-top:10px;">
+                        <div style="position:relative; display:inline-block; max-width:560px; width:100%;">
+                            <iframe class="video-preview" src="${vimeoEmbed}" title="${resource.title}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="width:100%; height:315px; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.15);"></iframe>
+                        </div>
+                    </div>
+                `;
+            } else {
+                // Unknown video URL: show a fallback thumbnail if available or a simple link
+                const genericThumb = 'images/video-poster.png';
+                videoContent = `
+                    <div style="text-align:center; margin-top:10px;">
+                        <div style="position:relative; display:inline-block; max-width:560px; width:100%;">
+                            <img src="${thumb || genericThumb}" alt="${resource.title}" loading="lazy" style="width:100%; height:315px; object-fit:cover; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+                            <a class="topic-btn" href="${watchUrl}" target="_blank" rel="noopener" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);">${openText}</a>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        
+        
+        if (resource.hasTemplate && resource.templates) {
+            imageContent = `
+                <div class="templates-section">
+                    ${resource.templates.map(template => `
+                        <div class="template-item">
+                            <h5 style="color: #2196F3; margin-bottom: 8px;">${template.title}</h5>
+                            <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">${template.description}</p>
+                            <img src="${template.imagePath}" alt="${template.title}" loading="lazy" class="template-image" style="width: 100%; max-width: 450px; height: auto; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 6px 20px rgba(0,0,0,0.15); border: 2px solid #e3f2fd;">
+                            <button class="download-btn" onclick="downloadTemplate('${template.imagePath}', '${template.downloadName}')">
+                                <i class="fas fa-download"></i> Download High Quality Image
+                            </button>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        } else if (resource.hasImage && resource.imagePath) {
+            imageContent = `
+                <div class="template-section">
+                    <p style="font-weight: 600; color: #2196F3; margin-top: 15px;">You can use this template to solve problems:</p>
+                            <img src="${resource.imagePath}" alt="Template" loading="lazy" class="template-image" style="width: 100%; max-width: 400px; height: auto; border-radius: 10px; margin-top: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                </div>
+            `;
+        }
+
+        // Interactive handlers (cardinality, multiplication)
+        if (resource.interactiveType === 'cardinality') {
+            const langPref2 = localStorage.getItem('preferredLang') || 'en';
+            const startCardText = (i18n.startCardinality && i18n.startCardinality[langPref2]) ? i18n.startCardinality[langPref2] : 'Start Cardinality Practice';
+            interactiveContent = `
+                <div style="text-align:center; margin-top:10px;">
+                    <p style="color:#666;">Open the interactive cardinality practice inside this modal.</p>
+                    <button class="topic-btn" onclick="showCardinalityPractice()">${startCardText}</button>
+                </div>
+            `;
+        }
+
+        if (resource.interactiveType === 'multiplication') {
+            const langPref3 = localStorage.getItem('preferredLang') || 'en';
+            const startMultText = (i18n.startMultiplication && i18n.startMultiplication[langPref3]) ? i18n.startMultiplication[langPref3] : 'Start Multiplication Grid';
+            interactiveContent = `
+                <div style="text-align:center; margin-top:10px;">
+                    <p style="color:#666;">Try the interactive 10×10 grid practice. Select cells to match a multiplication problem.</p>
+                    <button class="topic-btn" onclick="showMultiplicationPractice()">${startMultText}</button>
+                    <p style="margin-top:10px;">Printable Pythagorean table available inside the same section.</p>
+                </div>
+            `;
+        }
+        
+        resourceDiv.innerHTML = `
+            <div class="resource-type">${resource.type || ''}</div>
+            <h4>${resource.title}</h4>
+            <p>${resource.description || ''}</p>
+            ${videoContent}
+            ${imageContent}
+            ${interactiveContent}
+            ${resource.url && !resource.isVideo && !resource.hasImage && !resource.hasTemplate && !resource.interactiveType ? `<button class="topic-btn" onclick="openResource('${resource.url}')">${(i18n.openResource && i18n.openResource[localStorage.getItem('preferredLang')||'en'])? i18n.openResource[localStorage.getItem('preferredLang')||'en'] : 'Open Resource'} <i class="fas fa-external-link-alt"></i></button>` : ''}
+        `;
+        
+        container.appendChild(resourceDiv);
+
+        // If this resource is a video embed, attach diagnostic listeners to the iframe
+        if (resource.isVideo) {
+            // small defer so DOM settles
+            setTimeout(() => {
+                try {
+                    const iframe = resourceDiv.querySelector('iframe.video-preview');
+                    if (!iframe) return;
+                    // Log iframe src for debugging
+                    console.log('[video-debug] iframe src', iframe.src, 'resource title:', resource.title);
+
+                    iframe.addEventListener('load', () => {
+                        console.log('[video-debug] iframe loaded OK for', iframe.src);
+                    });
+
+                    iframe.addEventListener('error', () => {
+                        console.warn('[video-debug] iframe load error for', iframe.src);
+                        const lang = localStorage.getItem('preferredLang') || 'en';
+                        const msg = (i18n.embedBlocked && i18n.embedBlocked[lang]) ? i18n.embedBlocked[lang] : 'Embedding blocked for this video.';
+                        // show a small inline warning (no button) so user knows it's a policy/block issue
+                        const warn = document.createElement('div');
+                        warn.className = 'embed-warning';
+                        warn.style.cssText = 'margin-top:10px; color:#b71c1c; font-weight:700; text-align:center;';
+                        warn.textContent = msg;
+                        resourceDiv.appendChild(warn);
+                    });
+                } catch (e) {
+                    console.warn('[video-debug] attach listeners failed', e);
+                }
+            }, 150);
         }
     });
-
-    // Small helper to safely build watch URL / thumbnail for videos
-    function getVideoMeta(url) {
-        if (!url) return { watch: '#', thumb: '' };
-        const m = url.match(/[?&]v=([A-Za-z0-9_-]{6,})/) || url.match(/youtu\.be\/([A-Za-z0-9_-]{6,})/) || url.match(/embed\/([A-Za-z0-9_-]{6,})/);
-        const id = m && m[1] ? m[1] : null;
-        return { watch: id ? `https://www.youtube.com/watch?v=${id}` : url, thumb: id ? `https://img.youtube.com/vi/${id}/mqdefault.jpg` : '' };
-    }
-
-    let html = '';
-
-    // 1. INTRODUCTION / WHAT IS A SET? (First - educational content)
-    if (grouped.introduction.length) {
-        html += `<section class="resource-section"><h3>${labels.introduction[langPref]}</h3><ul class="resource-list">`;
-        grouped.introduction.forEach(r => {
-            // Check if this resource should be embedded (like Canva presentations)
-            if (r.isEmbed && r.embedUrl) {
-                html += `<li class="resource-list-item" style="display:block;">
-                    <div style="font-weight:700; color:#1565c0; margin-bottom:8px;">${r.title}</div>
-                    ${r.description? `<div class="resource-desc" style="margin-bottom:12px;">${r.description}</div>` : ''}
-                    <div style="position:relative; width:100%; padding-bottom:56.25%; background:#f5f5f5; border-radius:10px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
-                        <iframe src="${r.embedUrl}" loading="lazy" style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;" allowfullscreen allow="fullscreen"></iframe>
-                    </div>
-                    <div style="margin-top:8px; text-align:center;">
-                        <a href="${r.url||'#'}" target="_blank" rel="noopener" class="topic-btn" style="display:inline-block; padding:8px 16px; font-size:0.9rem;">
-                            <i class="fas fa-external-link-alt"></i> ${langPref === 'es' ? 'Abrir en nueva pestaña' : 'Open in new tab'}
-                        </a>
-                    </div>
-                </li>`;
-            } else {
-                html += `<li class="resource-list-item"><a href="${r.url||'#'}" target="_blank" rel="noopener">${r.title}</a>${r.description? `<div class="resource-desc">${r.description}</div>` : ''}</li>`;
-            }
-        });
-        html += `</ul></section>`;
-    }
-
-    // 2. Videos (Second - visual learning)
-    if (grouped.videos.length) {
-        html += `<section class="resource-section"><h3>${labels.videos[langPref]}</h3><ul class="resource-list">`;
-        grouped.videos.forEach(r => {
-            const meta = getVideoMeta(r.url);
-            html += `<li class="resource-list-item video-item"><a href="${meta.watch}" target="_blank" rel="noopener">${r.title}</a>${r.description? `<div class="resource-desc">${r.description}</div>` : ''}`;
-            // small thumbnail preview if available
-            if (meta.thumb) html += `<div class="thumb" style="display:inline-block; margin-left:10px; vertical-align:middle;"><img src="${meta.thumb}" alt="${r.title}" loading="lazy" style="width:120px; height:68px; object-fit:cover; border-radius:6px; border:1px solid #eee;"></div>`;
-            html += `</li>`;
-        });
-        html += `</ul></section>`;
-    }
-
-    // 3. Worksheets (Third - written practice)
-    if (grouped.worksheets.length) {
-        html += `<section class="resource-section"><h3>${labels.worksheets[langPref]}</h3><ul class="resource-list">`;
-        grouped.worksheets.forEach(r => {
-            html += `<li class="resource-list-item"><a href="${r.url||'#'}" target="_blank" rel="noopener">${r.title}</a>${r.description? `<div class="resource-desc">${r.description}</div>` : ''}</li>`;
-        });
-        html += `</ul></section>`;
-    }
-
-    // 4. INTERACTIVE GAMES (Fourth - hands-on practice through play)
-    if (grouped.interactive.length) {
-        html += `<section class="resource-section"><h3>${labels.interactive[langPref]}</h3><ul class="resource-list">`;
-        grouped.interactive.forEach(r => {
-            // Check if this is an activity with checkboxes
-            if (r.isActivity && r.activities) {
-                html += `<li class="resource-list-item" style="display:block;">
-                    <div style="font-weight:600; color:#1565c0; margin-bottom:8px;">${r.title}</div>
-                    ${r.description? `<div class="resource-desc" style="margin-bottom:12px;">${r.description}</div>` : ''}
-                    <div style="margin-left:8px;">`;
-                r.activities.forEach(activity => {
-                    const activityText = langPref === 'es' ? (activity.textEs || activity.text) : activity.text;
-                    html += `<div style="display:flex; flex-direction:column; gap:8px; margin-bottom:12px; padding:12px; background:#f9f9f9; border-radius:6px;">
-                        <div style="display:flex; align-items:start; gap:8px;">
-                            <input type="checkbox" id="${activity.id}" style="margin-top:3px; cursor:pointer; width:18px; height:18px;" onchange="saveActivityState('${activity.id}', this.checked)">
-                            <label for="${activity.id}" style="cursor:pointer; flex:1; line-height:1.4;">${activityText}</label>
-                        </div>`;
-                    // Add counter input if activity has counter
-                    if (activity.hasCounter) {
-                        const counterLabel = langPref === 'es' ? (activity.counterLabelEs || activity.counterLabel) : activity.counterLabel;
-                        html += `<div style="margin-left:26px; display:flex; align-items:center; gap:8px;">
-                            <label for="${activity.id}_count" style="font-size:0.9rem; color:#555;">${counterLabel}</label>
-                            <input type="number" id="${activity.id}_count" min="0" max="100" value="0" style="width:70px; padding:4px 8px; border:1px solid #ccc; border-radius:4px; font-size:0.9rem;" onchange="saveActivityCount('${activity.id}', this.value)">
-                        </div>`;
-                    }
-                    html += `</div>`;
-                });
-                html += `</div></li>`;
-            } else {
-                // Regular interactive content (multiplication, cardinality, etc.)
-                let actionBtn = '';
-                if (r.interactiveType === 'cardinality') {
-                    const startCardText = (i18n.startCardinality && i18n.startCardinality[langPref]) ? i18n.startCardinality[langPref] : 'Start Cardinality Practice';
-                    actionBtn = `<button class="topic-btn" onclick="showCardinalityPractice()">${startCardText}</button>`;
-                } else if (r.interactiveType === 'multiplication') {
-                    const startMultText = (i18n.startMultiplication && i18n.startMultiplication[langPref]) ? i18n.startMultiplication[langPref] : 'Start Multiplication Grid';
-                    actionBtn = `<button class="topic-btn" onclick="showMultiplicationPractice()">${startMultText}</button>`;
-                }
-                html += `<li class="resource-list-item">${r.title}${r.description? `<div class="resource-desc">${r.description}</div>` : ''}<div style="margin-top:8px;">${actionBtn}</div></li>`;
-            }
-        });
-        html += `</ul></section>`;
-    }
-
-    // 5. Templates / Images (Strategy to solve problems)
-    if (grouped.templates.length) {
-        html += `<section class="resource-section"><h3>${labels.templates[langPref]}</h3>`;
-        grouped.templates.forEach(r => {
-            if (r.hasTemplate && r.templates) {
-                // Show main description first if available
-                if (r.description) {
-                    html += `<div style="margin-bottom:16px; padding:12px; background:#f0f7ff; border-left:4px solid #1565c0; border-radius:6px; font-size:0.95rem;">${r.description}</div>`;
-                }
-                // Then show templates with image previews
-                html += `<ul class="resource-list">`;
-                r.templates.forEach(t => {
-                    html += `<li class="resource-list-item" style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">`;
-                    // Image preview thumbnail
-                    if (t.imagePath) {
-                        html += `<a href="${t.imagePath}" target="_blank" rel="noopener" style="flex-shrink:0;">
-                            <img src="${t.imagePath}" alt="${t.title}" loading="lazy" style="width:150px; height:auto; border-radius:8px; border:2px solid #e0e0e0; box-shadow:0 2px 8px rgba(0,0,0,0.1); transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                        </a>`;
-                    }
-                    // Title and description
-                    html += `<div style="flex:1;">
-                        <a href="${t.imagePath||'#'}" target="_blank" rel="noopener" style="font-weight:600; color:#1565c0; font-size:1rem; text-decoration:none; display:block; margin-bottom:4px;">${t.title}</a>
-                        <div class="resource-desc">${t.description||''}</div>
-                    </div>`;
-                    html += `</li>`;
-                });
-                html += `</ul>`;
-            } else {
-                html += `<ul class="resource-list">`;
-                html += `<li class="resource-list-item"><a href="${r.url||'#'}" target="_blank" rel="noopener">${r.title}</a>${r.description? `<div class="resource-desc">${r.description}</div>` : ''}</li>`;
-                html += `</ul>`;
-            }
-        });
-        html += `</section>`;
-    }
-
-    // Other resources (including embeddable presentations)
-    if (grouped.other.length) {
-        // Check if all items in "other" are games - if so, use "Games:" label
-        const allGames = grouped.other.every(r => r.type && /game/i.test(r.type));
-        const sectionLabel = allGames ? labels.interactive[langPref] : labels.other[langPref];
-        html += `<section class="resource-section"><h3>${sectionLabel}</h3><ul class="resource-list">`;
-        grouped.other.forEach(r => {
-            // Check if this resource should be embedded (like Canva presentations)
-            if (r.isEmbed && r.embedUrl) {
-                html += `<li class="resource-list-item" style="display:block;">
-                    <div style="font-weight:700; color:#1565c0; margin-bottom:8px;">${r.title}</div>
-                    ${r.description? `<div class="resource-desc" style="margin-bottom:12px;">${r.description}</div>` : ''}
-                    <div style="position:relative; width:100%; padding-bottom:56.25%; background:#f5f5f5; border-radius:10px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
-                        <iframe src="${r.embedUrl}" loading="lazy" style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;" allowfullscreen allow="fullscreen"></iframe>
-                    </div>
-                    <div style="margin-top:8px; text-align:center;">
-                        <a href="${r.url||'#'}" target="_blank" rel="noopener" class="topic-btn" style="display:inline-block; padding:8px 16px; font-size:0.9rem;">
-                            <i class="fas fa-external-link-alt"></i> ${langPref === 'es' ? 'Abrir en nueva pestaña' : 'Open in new tab'}
-                        </a>
-                    </div>
-                </li>`;
-            } else {
-                html += `<li class="resource-list-item"><a href="${r.url||'#'}" target="_blank" rel="noopener">${r.title}</a>${r.description? `<div class="resource-desc">${r.description}</div>` : ''}</li>`;
-            }
-        });
-        html += `</ul></section>`;
-    }
-
-    // Insert generated HTML into container
-    container.innerHTML = html || `<p style="color:#666; text-align:center;">${(i18n.openResource && i18n.openResource[langPref])? i18n.openResource[langPref] : 'No resources available yet.'}</p>`;
-
-    // Restore activity checkbox states from localStorage
-    setTimeout(() => restoreActivityStates(), 100);
-
-    // Inject small styles for list layout if not already present
-    if (!document.getElementById('__resource_list_styles')) {
-        const listStyle = document.createElement('style');
-        listStyle.id = '__resource_list_styles';
-        listStyle.textContent = `
-            .resource-section { margin-bottom: 18px; }
-            .resource-section h3 { margin: 6px 0 10px 0; font-size: 1.05rem; color: var(--seasonal-primary, #333); }
-            .resource-list { list-style: none; padding-left: 0; margin: 0; display: block; }
-            .resource-list-item { padding: 10px 12px; border-bottom: 1px dashed #e9eef2; display:flex; align-items:center; gap:12px; }
-            .resource-list-item a { font-weight: 700; color: #1565c0; text-decoration: none; }
-            .resource-desc { font-size: 0.9rem; color: #666; margin-top:6px; }
-            .video-item .thumb { margin-left: auto; }
-            .resource-list-item .topic-btn { margin-left: 12px; }
-        `;
-        document.head.appendChild(listStyle);
-    }
     
     // Accessibility: save previously focused element and enable focus trap
     try {
@@ -1279,54 +1090,39 @@ function showCardinalityPractice() {
     if (!container) return;
 
     // Example sets (some with duplicates to demonstrate unique counting)
-    // Each item now has [text, emoji] for visual representation
     const sets = [
-        [['red block','🟥'], ['blue block','🟦'], ['yellow block','🟨']],
-        [['apple','🍎'], ['banana','🍌'], ['apple','🍎']],
-        [['cat','🐱'], ['dog','🐶'], ['bird','🐦'], ['fish','🐟']],
-        [['star','⭐'], ['star','⭐'], ['star','⭐'], ['moon','🌙']],
-        [['one','1️⃣'], ['two','2️⃣'], ['three','3️⃣'], ['four','4️⃣'], ['five','5️⃣']],
-        [['circle','🔵'], ['square','🟪'], ['triangle','🔺'], ['circle','🔵'], ['hexagon','⬡']],
-        [['ball','⚽'], ['bat','🏏'], ['glove','🧤']],
-        [['cup','☕'], ['plate','🍽️'], ['spoon','🥄'], ['fork','🍴']]
+        ['red block','blue block','yellow block'],
+        ['apple','banana','apple'],
+        ['cat','dog','bird','fish'],
+        ['star','star','star','moon'],
+        ['1','2','3','4','5'],
+        ['circle','square','triangle','circle','hexagon'],
+        ['ball','bat','glove'],
+        ['cup','plate','spoon','fork']
     ];
 
     let html = `<h3>Cardinality Practice</h3><p>Count the number of UNIQUE items in each set. Type your answer and click Check.</p>`;
-    html += '<div style="display:grid; grid-template-columns: repeat(1, 1fr); gap:16px;">';
+    html += '<div style="display:grid; grid-template-columns: repeat(1, 1fr); gap:12px;">';
 
     sets.forEach((s, idx) => {
-        // Build visual representation of the set
-        let visualSet = '<div class="visual-set" style="display:flex; flex-wrap:wrap; gap:10px; margin:12px 0; padding:15px; background:#fff; border:3px dashed #2196F3; border-radius:12px; min-height:80px; align-items:center; justify-content:center;">';
-        s.forEach((item, itemIdx) => {
-            const [text, emoji] = item;
-            visualSet += `
-                <div class="set-item" style="display:flex; flex-direction:column; align-items:center; padding:8px; background:#e3f2fd; border-radius:10px; min-width:70px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-                    <div style="font-size:2rem; margin-bottom:4px;">${emoji}</div>
-                    <div style="font-size:0.75rem; color:#1565c0; text-align:center; font-weight:600;">${text}</div>
-                </div>
-            `;
-        });
-        visualSet += '</div>';
-
+        const display = s.join(', ');
         html += `
-            <div style="background:#f8f9fa; padding:16px; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,0.08);">
-                <div style="font-weight:700; margin-bottom:10px; color:#1976d2; font-size:1.05rem;">Set ${idx+1}</div>
-                ${visualSet}
-                <div style="display:flex; gap:8px; align-items:center; margin-top:12px;">
-                    <label style="font-weight:600; color:#555;">Cardinality:</label>
-                    <input id="card-input-${idx}" type="number" min="0" style="padding:10px; width:90px; border:2px solid #2196F3; border-radius:8px; font-size:1rem; font-weight:700;" placeholder="?">
-                    <button class="topic-btn" onclick="checkCardinality(${idx})" style="padding:10px 20px;">Check ✓</button>
-                    <span id="card-result-${idx}" style="margin-left:10px; font-weight:700; font-size:1.05rem;"></span>
+            <div style="background:#f8f9fa; padding:12px; border-radius:10px;">
+                <div style="font-weight:600; margin-bottom:8px;">Set ${idx+1}: ${display}</div>
+                <div style="display:flex; gap:8px; align-items:center;">
+                    <input id="card-input-${idx}" type="number" min="0" style="padding:8px; width:80px;" placeholder="Answer">
+                    <button class="topic-btn" onclick="checkCardinality(${idx})">Check</button>
+                    <span id="card-result-${idx}" style="margin-left:10px; font-weight:600;"></span>
                 </div>
             </div>
         `;
     });
 
-    html += `</div><p style="margin-top:16px; padding:12px; background:#fff3cd; border-left:4px solid #ffc107; border-radius:6px; color:#856404;"><strong>💡 Tip:</strong> If an item repeats in the set, count it only once! The cardinality is the number of UNIQUE items.</p>`;
+    html += `</div><p style="margin-top:12px; color:#666;">Tip: If an item repeats, count it only once (unique items).</p>`;
     container.innerHTML = html;
 
-    // store sets for checking (extract just the text for comparison)
-    window._cardinalitySets = sets.map(s => s.map(item => item[0]));
+    // store sets for checking
+    window._cardinalitySets = sets;
 }
 
 // Video embed handling removed: simplified direct iframe rendering is used inside showResources now.
@@ -1439,52 +1235,6 @@ function closeModal() {
         }
         window._modalOpenedBy = null;
     } catch (e) { /* ignore */ }
-}
-
-// Save and restore activity checkbox states
-function saveActivityState(activityId, isChecked) {
-    try {
-        const activities = JSON.parse(localStorage.getItem('completedActivities') || '{}');
-        activities[activityId] = isChecked;
-        localStorage.setItem('completedActivities', JSON.stringify(activities));
-    } catch (e) {
-        console.error('Could not save activity state:', e);
-    }
-}
-
-// Save activity count (how many problems created, etc.)
-function saveActivityCount(activityId, count) {
-    try {
-        const counts = JSON.parse(localStorage.getItem('activityCounts') || '{}');
-        counts[activityId] = parseInt(count) || 0;
-        localStorage.setItem('activityCounts', JSON.stringify(counts));
-    } catch (e) {
-        console.error('Could not save activity count:', e);
-    }
-}
-
-function restoreActivityStates() {
-    try {
-        // Restore checkboxes
-        const activities = JSON.parse(localStorage.getItem('completedActivities') || '{}');
-        Object.keys(activities).forEach(activityId => {
-            const checkbox = document.getElementById(activityId);
-            if (checkbox && activities[activityId]) {
-                checkbox.checked = true;
-            }
-        });
-        
-        // Restore counters
-        const counts = JSON.parse(localStorage.getItem('activityCounts') || '{}');
-        Object.keys(counts).forEach(activityId => {
-            const counter = document.getElementById(activityId + '_count');
-            if (counter && counts[activityId]) {
-                counter.value = counts[activityId];
-            }
-        });
-    } catch (e) {
-        console.error('Could not restore activity states:', e);
-    }
 }
 
 // Function to open external resources
@@ -1623,8 +1373,6 @@ document.addEventListener('DOMContentLoaded', function() {
         t3_sets: '<i class="fas fa-box" aria-hidden="true"></i>',
         t3_wordproblems: '<i class="fas fa-file-lines" aria-hidden="true"></i>',
         t3_multiplication: '<i class="fas fa-times" aria-hidden="true"></i>'
-    ,
-    t3_addsub_regroup: '<i class="fas fa-calculator" aria-hidden="true"></i>'
         };
 
         // Fallback emoji list (keeps previous visual if topic data missing)
@@ -1791,27 +1539,6 @@ function setLanguage(lang) {
         const el = document.getElementById(id);
         if (el && i18n[id][lang]) {
             el.textContent = i18n[id][lang];
-        }
-    });
-
-    // Also support elements annotated with data-i18n-en / data-i18n-es
-    // This lets page authors add bilingual text inline without expanding the central i18n map.
-    document.querySelectorAll('[data-i18n-en], [data-i18n-es]').forEach(el => {
-        try {
-            const en = el.getAttribute('data-i18n-en');
-            const es = el.getAttribute('data-i18n-es');
-
-            // If element has data-i18n-attr, set that attribute instead of textContent
-            const attr = el.getAttribute('data-i18n-attr');
-            if (attr) {
-                if (lang === 'es' && es !== null) el.setAttribute(attr, es);
-                if (lang === 'en' && en !== null) el.setAttribute(attr, en);
-            } else {
-                if (lang === 'es' && es !== null) el.textContent = es;
-                if (lang === 'en' && en !== null) el.textContent = en;
-            }
-        } catch (e) {
-            // ignore malformed attributes
         }
     });
 
