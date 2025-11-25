@@ -1668,7 +1668,10 @@ Object.assign(i18n, {
     t3_wordproblems_btn_text: { en: 'Open Word Problems', es: 'Abrir Problemas' },
     t3_multiplication_title: { en: 'Multiplication & Times Tables', es: 'Multiplicaci├│n y Tablas' },
     t3_multiplication_desc: { en: 'Interactive multiplication grid, games and printable Pythagorean table.', es: 'Cuadr├¡cula interactiva, juegos y tabla pitag├│rica imprimible.' },
-    t3_multiplication_btn_text: { en: 'Open Multiplication', es: 'Abrir Multiplicaci├│n' }
+    t3_multiplication_btn_text: { en: 'Open Multiplication', es: 'Abrir Multiplicaci├│n' },
+    t3_addsub_regroup_title: { en: 'Addition & Subtraction — Regrouping', es: 'Sumas y Restas — Reagrupando' },
+    t3_addsub_regroup_desc: { en: 'Worksheets and games to practice addition and subtraction with regrouping (3 digits).', es: 'Hojas de trabajo y juegos para practicar suma y resta con reagrupamiento (3 dígitos).' },
+    t3_addsub_regroup_btn: { en: 'Open Addition/Subtraction', es: 'Abrir Sumas/Restas' }
 });
 
 function setLanguage(lang) {
