@@ -1268,7 +1268,7 @@ function checkCardinality(index) {
         return;
     }
     if (val === uniqueCount) {
-        result.textContent = 'Correct! Ô£';
+        result.textContent = 'Correct! £';
         result.style.color = '#2e7d32';
     } else {
         result.textContent = `Incorrect  correct is ${uniqueCount}`;
@@ -1316,7 +1316,7 @@ function checkMultiplication(expected) {
     const el = document.getElementById('mult-result');
     if (!el) return;
     if (selected === expected) {
-        el.textContent = `Great! ${selected} selected  correct Ô£`;
+        el.textContent = `Great! ${selected} selected  correct £`;
         el.style.color = '#2e7d32';
     } else {
         el.textContent = `Not yet  selected ${selected}, but correct is ${expected}. Try again.`;
