@@ -1022,7 +1022,8 @@ function createResourceItem(resource, container) {
             };
 
             const id = getYoutubeId(resource.url || '');
-            const watchUrl = id ? `https://www.youtube.com/watch?v=${id}` : (resource.url || '#');
+            // Use the original URL if it's already a valid YouTube watch URL, otherwise construct it
+            const watchUrl = resource.url || '#';
             const thumb = id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
 
             // determine current language for translations of dynamic buttons
@@ -1034,7 +1035,7 @@ function createResourceItem(resource, container) {
             const isLocalVideo = !!(resource.url && resource.url.match(/\.(mp4|webm|ogg)$/i));
             const isVimeo = !!(resource.url && /vimeo\.com/.test(resource.url));
 
-            if (id) {
+            if (id && thumb) {
                 // Show YouTube thumbnail as clickable link (no button overlay since section header already says "Videos")
                 videoContent = `
                     <div style="text-align:center; margin-top:10px;">
