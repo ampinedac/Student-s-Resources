@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Simple stylized Colombia marker: three horizontal stripes inside a map-pin -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">
+  <defs>
+    <clipPath id="pin-clip"><path d="M32 2C20 2 10 12 10 24c0 11 16 30 22 38 6-8 22-27 22-38C54 12 44 2 32 2z"/></clipPath>
+  </defs>
+  <g clip-path="url(#pin-clip)">
+    <rect width="64" height="21" y="0" fill="#ffd700" />
+    <rect width="64" height="21" y="21" fill="#0033a0" />
+    <rect width="64" height="22" y="42" fill="#ce1126" />
+  </g>
+  <path d="M32 2C20 2 10 12 10 24c0 11 16 30 22 38 6-8 22-27 22-38C54 12 44 2 32 2z" fill="none" stroke="#333" stroke-width="1.5"/>
+</svg>
