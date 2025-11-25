@@ -990,6 +990,9 @@ function showResources(topicId) {
             });
         }
     });
+    
+    // Finalize modal display
+    finalizeModalDisplay(modal, overlay, container);
 }
 
 // Helper function to create individual resource items
@@ -1171,8 +1174,10 @@ function createResourceItem(resource, container) {
                 }
             }, 150);
         }
-    });
-    
+}
+
+// Function to show resources modal (continued)
+function finalizeModalDisplay(modal, overlay, container) {
     // Accessibility: save previously focused element and enable focus trap
     try {
         window._lastFocusedElement = document.activeElement;
