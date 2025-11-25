@@ -799,7 +799,7 @@ mathResources['t3_multiplication'] = [
     {
         title: 'Multiplication Grid Practice (Interactive)',
         type: 'Interactive',
-        description: 'An interactive grid where students select cells to represent a├ùb (random a and b between 1 and 10).',
+        description: 'An interactive grid where students select cells to represent a×b (random a and b between 1 and 10).',
         interactiveType: 'multiplication'
     },
     {
@@ -810,17 +810,82 @@ mathResources['t3_multiplication'] = [
         isVideo: false
     },
     {
-        title: 'Multiplication Word Problems  K5',
+        title: 'Multiplication Word Problems — K5',
         type: 'Worksheet',
         description: 'Grade 2 multiplication word problems.',
         url: 'https://www.k5learning.com/worksheets/math/grade-2-multiplication-word-problems-a.pdf',
         isVideo: false
     },
     {
-        title: 'Multiplication Games  Math Playground',
+        title: 'Multiplication Games — Math Playground',
         type: 'Game',
         description: 'Collection of multiplication games.',
         url: 'https://www.mathplayground.com/index_multiplication_division.html',
+        isVideo: false
+    }
+];
+
+mathResources['t3_addsub_regroup'] = [
+    {
+        title: 'Introduction to Regrouping',
+        type: 'Introduction',
+        description: '📖 Learn what regrouping means and why we use it in addition and subtraction.',
+        isVideo: false
+    },
+    {
+        title: 'Addition with Regrouping — Video Tutorial',
+        type: 'Video',
+        description: 'Watch how to add numbers when you need to regroup (carry over).',
+        url: 'https://www.youtube.com/watch?v=GiM8z1OFhCs',
+        isVideo: true
+    },
+    {
+        title: 'Subtraction with Regrouping — Video Tutorial',
+        type: 'Video',
+        description: 'Learn how to subtract with borrowing/regrouping.',
+        url: 'https://www.youtube.com/watch?v=CZ6RvFO_p0M',
+        isVideo: true
+    },
+    {
+        title: 'Addition with Regrouping — Worksheet 1',
+        type: 'Worksheet',
+        description: 'Practice 2-digit addition with regrouping.',
+        url: 'https://www.k5learning.com/sites/all/files/worksheets/numbers/grade-2-addition-2-digit-numbers-in-columns-with-regrouping-a.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Addition with Regrouping — Worksheet 2',
+        type: 'Worksheet',
+        description: 'More practice with 2-digit addition and regrouping.',
+        url: 'https://www.k5learning.com/sites/all/files/worksheets/numbers/grade-2-addition-2-digit-numbers-in-columns-with-regrouping-b.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Subtraction with Regrouping — Worksheet 1',
+        type: 'Worksheet',
+        description: 'Practice 2-digit subtraction with borrowing.',
+        url: 'https://www.k5learning.com/sites/all/files/worksheets/numbers/grade-2-subtraction-2-digit-numbers-in-columns-with-regrouping-a.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Subtraction with Regrouping — Worksheet 2',
+        type: 'Worksheet',
+        description: 'More subtraction practice with regrouping.',
+        url: 'https://www.k5learning.com/sites/all/files/worksheets/numbers/grade-2-subtraction-2-digit-numbers-in-columns-with-regrouping-b.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Addition & Subtraction with Regrouping Game',
+        type: 'Game',
+        description: 'Interactive game to practice regrouping skills.',
+        url: 'https://www.mathplayground.com/thinking_blocks_addition.html',
+        isVideo: false
+    },
+    {
+        title: 'Regrouping Practice — Interactive Quiz',
+        type: 'Game',
+        description: 'Test your regrouping skills with this interactive quiz.',
+        url: 'https://www.mathgames.com/skill/2.40-add-and-subtract-with-regrouping',
         isVideo: false
     }
 ];
@@ -843,10 +908,11 @@ topicTitles['s2_wordproblems'] = '­ Word Problems (UPAC)';
 topicTitles['s2_writing'] = 'Ô£Å´©Å How Do You Write Numbers?';
 
 // Third grade titles
-topicTitles['t3_mathsymbol'] = '­ Math Symbols (Third Grade)';
-topicTitles['t3_sets'] = '­ Sets & Cardinality (Third Grade)';
-topicTitles['t3_wordproblems'] = '­ Word Problems  UPAC (Third Grade)';
-topicTitles['t3_multiplication'] = 'Ô£û´©Å Multiplication & Times Tables (Third Grade)';
+topicTitles['t3_mathsymbol'] = '🔤 Math Symbols (Third Grade)';
+topicTitles['t3_sets'] = '📊 Sets & Cardinality (Third Grade)';
+topicTitles['t3_wordproblems'] = '📝 Word Problems — UPAC (Third Grade)';
+topicTitles['t3_multiplication'] = '✖️ Multiplication & Times Tables (Third Grade)';
+topicTitles['t3_addsub_regroup'] = '➕➖ Addition & Subtraction with Regrouping (Third Grade)';
 
 // Function to show resources modal
 function showResources(topicId) {
@@ -865,8 +931,69 @@ function showResources(topicId) {
     // Get resources for this topic
     const resources = mathResources[topicId] || [];
     
-    // Create resource items
+    // Group resources by type for better organization
+    const groupedResources = {
+        'Introduction': [],
+        'Video': [],
+        'Worksheet': [],
+        'Worksheets': [],
+        'Game': [],
+        'Method': [],
+        'Template': [],
+        'Interactive': [],
+        'Article': [],
+        'Resource': [],
+        'Explanation': [],
+        'Activity': [],
+        'Other': []
+    };
+    
     resources.forEach(resource => {
+        const type = resource.type || 'Other';
+        if (groupedResources[type]) {
+            groupedResources[type].push(resource);
+        } else {
+            groupedResources['Other'].push(resource);
+        }
+    });
+    
+    // Define section order and titles
+    const sectionOrder = [
+        { key: 'Introduction', title: '📖 Introduction', icon: '📖' },
+        { key: 'Method', title: '📋 Methods & Guides', icon: '📋' },
+        { key: 'Explanation', title: '💡 Explanations', icon: '💡' },
+        { key: 'Video', title: '🎥 Videos', icon: '🎥' },
+        { key: 'Worksheet', title: '📄 Worksheets', icon: '📄' },
+        { key: 'Worksheets', title: '📚 Worksheet Collections', icon: '📚' },
+        { key: 'Game', title: '🎮 Games & Interactive', icon: '🎮' },
+        { key: 'Interactive', title: '🎯 Interactive Practice', icon: '🎯' },
+        { key: 'Template', title: '📋 Templates', icon: '📋' },
+        { key: 'Article', title: '📰 Articles & Reading', icon: '📰' },
+        { key: 'Resource', title: '🔗 Resources', icon: '🔗' },
+        { key: 'Activity', title: '✏️ Activities', icon: '✏️' },
+        { key: 'Other', title: '📌 Other Resources', icon: '📌' }
+    ];
+    
+    // Create sections with resources
+    sectionOrder.forEach(section => {
+        const sectionResources = groupedResources[section.key];
+        if (sectionResources && sectionResources.length > 0) {
+            // Create section header
+            const sectionHeader = document.createElement('div');
+            sectionHeader.className = 'resource-section-header';
+            sectionHeader.innerHTML = `<h3 style="color: #667eea; margin: 20px 0 10px 0; padding-bottom: 8px; border-bottom: 2px solid #667eea; font-size: 1.3rem;">${section.title}</h3>`;
+            container.appendChild(sectionHeader);
+            
+            // Create resource items for this section
+            sectionResources.forEach(resource => {
+                createResourceItem(resource, container);
+            });
+        }
+    });
+}
+
+// Helper function to create individual resource items
+function createResourceItem(resource, container) {
         const resourceDiv = document.createElement('div');
         resourceDiv.className = 'resource-item';
         
