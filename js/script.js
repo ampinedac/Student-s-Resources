@@ -833,17 +833,24 @@ mathResources['t3_addsub_regroup'] = [
         isVideo: false
     },
     {
-        title: 'Addition with Regrouping — Video Tutorial',
+        title: 'Addition with Regrouping — Video 1',
         type: 'Video',
         description: 'Watch how to add numbers when you need to regroup (carry over).',
-        url: 'https://www.youtube.com/watch?v=GiM8z1OFhCs',
+        url: 'https://www.youtube.com/watch?v=1Al2Fc3wOIQ',
+        isVideo: true
+    },
+    {
+        title: 'Addition with Regrouping — Video 2',
+        type: 'Video',
+        description: 'More practice with addition and regrouping.',
+        url: 'https://www.youtube.com/watch?v=wBhwDtn5Xeg',
         isVideo: true
     },
     {
         title: 'Subtraction with Regrouping — Video Tutorial',
         type: 'Video',
         description: 'Learn how to subtract with borrowing/regrouping.',
-        url: 'https://www.youtube.com/watch?v=CZ6RvFO_p0M',
+        url: 'https://www.youtube.com/watch?v=8_X680JiWDc',
         isVideo: true
     },
     {
