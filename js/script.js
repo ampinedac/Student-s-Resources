@@ -797,9 +797,89 @@ mathResources['t3_wordproblems'] = [
 
 mathResources['t3_multiplication'] = [
     {
+        title: 'Introduction to Multiplication & Times Tables',
+        type: 'Introduction',
+        description: `
+            <h3>📚 Learning Multiplication Tables</h3>
+            <p>We are now learning the times tables in Math! 🧮</p>
+            <p>To make practice fun and effective, here are some ideas and free resources you can use at home with your children. Learning multiplication through games, songs, and daily routines helps children feel confident and enjoy Math in English.</p>
+            
+            <h4>🎯 1. Start with the easy ones</h4>
+            <p>Begin with 2s, 5s, and 10s, which have simple patterns.</p>
+            
+            <h4>🧱 2. Make it visual</h4>
+            <p>Help students see multiplication by using the interactive grid below. Select cells by clicking and dragging to represent multiplication visually.</p>
+            
+            <h4>🧩 3. Play and learn</h4>
+            <ul>
+                <li><strong>Flashcards:</strong> write one fact on each card (3×4 on one side, 12 on the other).</li>
+                <li><strong>Card Game:</strong> take two cards and multiply the numbers. Whoever answers first wins the pair.</li>
+                <li><strong>Hop and count:</strong> jump while saying the multiplication aloud — it helps movement and memory connect!</li>
+            </ul>
+            
+            <h4>✋ 4. Tricks and patterns</h4>
+            <p>Help your child notice easy patterns:</p>
+            <ul>
+                <li><strong>2s</strong> = counting by twos (2, 4, 6, 8, 10…)</li>
+                <li><strong>5s</strong> = end in 0 or 5</li>
+                <li><strong>10s</strong> = always add a zero</li>
+                <li><strong>9s</strong> = finger trick (bend one finger down → count the tens and ones!)</li>
+            </ul>
+            
+            <h4>🌟 5. Keep it short and fun</h4>
+            <p>Practice for 5–10 minutes every day. It's better to do a little every day than a long session once a week.</p>
+            <p>Encourage your child by celebrating progress: "You know the 2s! Now let's learn the 3s!" 🎉</p>
+            
+            <h4>💬 6. English language tip</h4>
+            <p>When helping your child, repeat the facts in English to get familiar with the structure:</p>
+            <ul>
+                <li>"Three times four equals twelve."</li>
+                <li>"Five times seven is thirty-five."</li>
+            </ul>
+            <p>You can also write a small chart with the words: <strong>times – equals – product – multiply</strong></p>
+            
+            <h4>🧮 The Pythagorean Table</h4>
+            <p>The multiplication table, also called the Pythagorean table, is a special chart that helps us understand how numbers grow when we multiply them.</p>
+            <p>It is arranged in rows and columns, and each cell shows the result of multiplying the number from the top by the number from the side.</p>
+            <p><strong>For example:</strong></p>
+            <ul>
+                <li>In the row for 3 and the column for 4, we find 12, because 3 × 4 = 12.</li>
+                <li>In the row for 5 and the column for 2, we find 10, because 5 × 2 = 10.</li>
+            </ul>
+            <p><strong>This table helps children see patterns in multiplication:</strong></p>
+            <ul>
+                <li>Numbers get bigger as we move to the right or down.</li>
+                <li>The table is symmetrical — the result of 3 × 4 is the same as 4 × 3.</li>
+                <li>Multiplying by 1 keeps the number the same, and multiplying by 10 adds a zero at the end.</li>
+            </ul>
+        `,
+        isVideo: false
+    },
+    {
+        title: 'Times Tables by 2 — Video Song',
+        type: 'Video',
+        description: 'Learn multiplication by 2 with a fun song!',
+        url: 'https://youtu.be/o0v5o6YbYro?si=sTXAnpYniVLL-l02',
+        isVideo: true
+    },
+    {
+        title: 'Times Tables by 5 — Video Song',
+        type: 'Video',
+        description: 'Learn multiplication by 5 with a catchy tune!',
+        url: 'https://www.youtube.com/watch?v=n87_WuXAzC0',
+        isVideo: true
+    },
+    {
+        title: 'Times Tables by 10 — Video Song',
+        type: 'Video',
+        description: 'Learn multiplication by 10 with music!',
+        url: 'https://www.youtube.com/watch?v=fRv2FMZ70Iw',
+        isVideo: true
+    },
+    {
         title: 'Multiplication Grid Practice (Interactive)',
         type: 'Interactive',
-        description: 'An interactive grid where students select cells to represent a×b (random a and b between 1 and 10).',
+        description: 'An interactive grid where students select cells to represent a×b (random a and b between 1 and 10). Click and drag to select squares and see multiplication visually!',
         interactiveType: 'multiplication'
     },
     {
@@ -810,17 +890,122 @@ mathResources['t3_multiplication'] = [
         isVideo: false
     },
     {
-        title: 'Multiplication Word Problems — K5',
+        title: 'Multiplication Word Problems A — K5',
         type: 'Worksheet',
-        description: 'Grade 2 multiplication word problems.',
+        description: 'Grade 2 multiplication word problems - Set A.',
         url: 'https://www.k5learning.com/worksheets/math/grade-2-multiplication-word-problems-a.pdf',
         isVideo: false
     },
     {
-        title: 'Multiplication Games — Math Playground',
+        title: 'Multiplication Word Problems B — K5',
+        type: 'Worksheet',
+        description: 'Grade 2 multiplication word problems - Set B.',
+        url: 'https://www.k5learning.com/worksheets/math/grade-2-multiplication-word-problems-b.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Multiplication Word Problems C — K5',
+        type: 'Worksheet',
+        description: 'Grade 2 multiplication word problems - Set C.',
+        url: 'https://www.k5learning.com/worksheets/math/grade-2-multiplication-word-problems-c.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Multiplication Word Problems D — K5',
+        type: 'Worksheet',
+        description: 'Grade 2 multiplication word problems - Set D.',
+        url: 'https://www.k5learning.com/worksheets/math/grade-2-multiplication-word-problems-d.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Multiplication Word Problems 1-Digit',
+        type: 'Worksheet',
+        description: 'Word problems with 1-digit multiplication.',
+        url: 'https://www.mathworksheets4kids.com/multiplication/word-problems/1-digit1.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Multiplication Word Problems 2×1 Digit',
+        type: 'Worksheet',
+        description: 'Word problems multiplying 2-digit by 1-digit numbers.',
+        url: 'https://www.mathworksheets4kids.com/multiplication/word-problems/2by1-digit1.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Multiplication Word Problems 2-Digit',
+        type: 'Worksheet',
+        description: 'Word problems with 2-digit multiplication.',
+        url: 'https://www.mathworksheets4kids.com/multiplication/word-problems/2-digit1.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Math Drills — Times Tables Worksheets',
+        type: 'Worksheet',
+        description: 'Collection of printable times tables practice sheets.',
+        url: 'https://www.math-drills.com/multiplication.php',
+        isVideo: false
+    },
+    {
+        title: 'K5 Learning — Multiplication for Grade 2',
+        type: 'Worksheet',
+        description: 'Additional multiplication worksheets for Grade 2.',
+        url: 'https://www.k5learning.com/free-math-worksheets/second-grade-2/multiplication',
+        isVideo: false
+    },
+    {
+        title: 'Math Playground — Multiplication Games',
         type: 'Game',
-        description: 'Collection of multiplication games.',
+        description: 'Collection of multiplication and division games.',
         url: 'https://www.mathplayground.com/index_multiplication_division.html',
+        isVideo: false
+    },
+    {
+        title: 'Multiplication Games Collection',
+        type: 'Game',
+        description: 'Fun multiplication games for all levels.',
+        url: 'https://www.multiplicationgames.com/',
+        isVideo: false
+    },
+    {
+        title: 'Times Tables Games',
+        type: 'Game',
+        description: 'Interactive games to practice multiplication tables.',
+        url: 'https://www.timestables.com/multiplication-games/',
+        isVideo: false
+    },
+    {
+        title: 'Multiplication Mine — ABCya',
+        type: 'Game',
+        description: 'Fun mining game to practice multiplication facts.',
+        url: 'https://www.abcya.com/games/multiplication_mine',
+        isVideo: false
+    },
+    {
+        title: 'Multiplication Whack-a-Mole',
+        type: 'Game',
+        description: 'Whack the correct multiplication answers!',
+        url: 'https://wordwall.net/resource/9660004/multiplication-whack-a-mole',
+        isVideo: false
+    },
+    {
+        title: 'Multiplication Quiz Game',
+        type: 'Game',
+        description: 'Test your multiplication skills with this quiz.',
+        url: 'https://wordwall.net/resource/9812520/math/multiplication',
+        isVideo: false
+    },
+    {
+        title: 'Multiplication Match Game',
+        type: 'Game',
+        description: 'Match multiplication problems with their answers.',
+        url: 'https://wordwall.net/resource/2567577/math/multiplication',
+        isVideo: false
+    },
+    {
+        title: 'Multiplication Maze Chase',
+        type: 'Game',
+        description: 'Navigate through a maze by solving multiplication problems.',
+        url: 'https://wordwall.net/resource/6347678/math/multiplication-maze-chase',
         isVideo: false
     }
 ];
