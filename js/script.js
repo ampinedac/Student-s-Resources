@@ -1201,31 +1201,45 @@ mathResources['t3_addsub_regroup'] = [
         isVideo: true
     },
     {
-        title: 'Addition with Regrouping — Worksheet 1',
+        title: 'Addition & Subtraction 3-Digits — Worksheet A',
         type: 'Worksheet',
-        description: 'Practice 2-digit addition with regrouping.',
-        url: 'https://www.k5learning.com/sites/all/files/worksheets/numbers/grade-2-addition-2-digit-numbers-in-columns-with-regrouping-a.pdf',
+        description: 'Practice 3-digit addition and subtraction with regrouping.',
+        url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-3-digits-a.pdf',
         isVideo: false
     },
     {
-        title: 'Addition with Regrouping — Worksheet 2',
+        title: 'Addition & Subtraction 3-Digits — Worksheet B',
         type: 'Worksheet',
-        description: 'More practice with 2-digit addition and regrouping.',
-        url: 'https://www.k5learning.com/sites/all/files/worksheets/numbers/grade-2-addition-2-digit-numbers-in-columns-with-regrouping-b.pdf',
+        description: 'More practice with 3-digit operations and regrouping.',
+        url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-3-digits-b.pdf',
         isVideo: false
     },
     {
-        title: 'Subtraction with Regrouping — Worksheet 1',
+        title: 'Addition & Subtraction 3-Digits — Worksheet C',
         type: 'Worksheet',
-        description: 'Practice 2-digit subtraction with borrowing.',
-        url: 'https://www.k5learning.com/sites/all/files/worksheets/numbers/grade-2-subtraction-2-digit-numbers-in-columns-with-regrouping-a.pdf',
+        description: 'Additional 3-digit addition and subtraction practice.',
+        url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-3-digits-c.pdf',
         isVideo: false
     },
     {
-        title: 'Subtraction with Regrouping — Worksheet 2',
+        title: 'Addition & Subtraction 3-Digits — Worksheet D',
         type: 'Worksheet',
-        description: 'More subtraction practice with regrouping.',
-        url: 'https://www.k5learning.com/sites/all/files/worksheets/numbers/grade-2-subtraction-2-digit-numbers-in-columns-with-regrouping-b.pdf',
+        description: 'Continue practicing 3-digit regrouping skills.',
+        url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-3-digits-d.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Addition & Subtraction 3-Digits — Worksheet E',
+        type: 'Worksheet',
+        description: 'More challenging 3-digit problems with regrouping.',
+        url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-3-digits-e.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Addition & Subtraction 3-Digits — Worksheet F',
+        type: 'Worksheet',
+        description: 'Final set of 3-digit addition and subtraction practice.',
+        url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-3-digits-f.pdf',
         isVideo: false
     },
     {
