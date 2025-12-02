@@ -215,6 +215,34 @@ const mathResources = {
             isVideo: false
         },
         {
+            title: 'Number Patterns A',
+            type: 'Worksheet',
+            description: 'Practice identifying and completing number patterns.',
+            url: 'https://www.k5learning.com/worksheets/math/grade-1-number-patterns-a.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Number Patterns B',
+            type: 'Worksheet',
+            description: 'More number pattern practice for Grade 1.',
+            url: 'https://www.k5learning.com/worksheets/math/grade-1-number-patterns-b.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Number Patterns C',
+            type: 'Worksheet',
+            description: 'Continue practicing number patterns.',
+            url: 'https://www.k5learning.com/worksheets/math/grade-1-number-patterns-c.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Number Patterns E',
+            type: 'Worksheet',
+            description: 'Additional number pattern exercises.',
+            url: 'https://www.k5learning.com/worksheets/math/grade-1-number-patterns-e.pdf',
+            isVideo: false
+        },
+        {
             title: 'ABCya Shape Patterns',
             type: 'Game',
             description: 'Interactive shape pattern game.',
