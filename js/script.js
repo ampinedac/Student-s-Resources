@@ -343,34 +343,107 @@ const mathResources = {
             title: 'Introduction to Base Ten',
             type: 'Introduction',
             description: `
-                <h3>🧮 Understanding Base Ten & Place Value</h3>
-                <p>Base ten is the number system we use every day! It's based on groups of 10.</p>
-                
-                <h4>📊 What are Base Ten Blocks?</h4>
-                <p>Base ten blocks help us visualize numbers:</p>
-                <ul>
-                    <li><strong>Units (Ones):</strong> Small cubes that represent 1</li>
-                    <li><strong>Rods (Tens):</strong> Long bars that represent 10</li>
-                    <li><strong>Flats (Hundreds):</strong> Square plates that represent 100</li>
-                </ul>
-                
-                <h4>🎯 Why is it Important?</h4>
-                <p>Understanding base ten helps us:</p>
-                <ul>
-                    <li>Count larger numbers more easily</li>
-                    <li>Add and subtract with regrouping</li>
-                    <li>Understand place value (ones, tens, hundreds)</li>
-                    <li>Break numbers apart to work with them</li>
-                </ul>
-                
-                <h4>✨ Key Concepts:</h4>
-                <ul>
-                    <li>10 ones = 1 ten</li>
-                    <li>10 tens = 1 hundred</li>
-                    <li>We can regroup (trade) blocks to make larger or smaller units</li>
-                </ul>
-                
-                <p>Let's explore with videos, interactive tools, and practice worksheets!</p>
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <h3 style="text-align: center; color: #4A90E2; margin-bottom: 25px;">🧮 Understanding Base Ten & Place Value</h3>
+                    
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 15px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        <p style="font-size: 1.1em; margin: 0; text-align: center;">
+                            <strong>Base ten</strong> is the number system we use every day! It's based on groups of <strong>10</strong>.
+                        </p>
+                    </div>
+                    
+                    <h4 style="color: #5a67d8; border-bottom: 3px solid #5a67d8; padding-bottom: 10px; margin-top: 30px;">📊 Meet the Base Ten Blocks</h4>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 25px 0;">
+                        
+                        <!-- ONES/UNITS -->
+                        <div style="background: #fff; border: 3px solid #48bb78; border-radius: 12px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                            <div style="text-align: center; margin-bottom: 15px;">
+                                <div style="font-size: 50px; margin: 10px 0;">🟦</div>
+                                <h5 style="color: #48bb78; margin: 10px 0; font-size: 1.3em;">ONES (Units)</h5>
+                            </div>
+                            <p style="text-align: center; font-size: 1.1em; margin: 10px 0;">
+                                <strong>1 small cube = 1</strong>
+                            </p>
+                            <div style="background: #f0fff4; padding: 12px; border-radius: 8px; margin-top: 10px;">
+                                <p style="margin: 5px 0; text-align: center; font-size: 0.95em;">
+                                    Example: 🟦🟦🟦 = <strong>3</strong>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- TENS -->
+                        <div style="background: #fff; border: 3px solid #ed8936; border-radius: 12px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                            <div style="text-align: center; margin-bottom: 15px;">
+                                <div style="font-size: 50px; margin: 10px 0;">📏</div>
+                                <h5 style="color: #ed8936; margin: 10px 0; font-size: 1.3em;">TENS (Rods)</h5>
+                            </div>
+                            <p style="text-align: center; font-size: 1.1em; margin: 10px 0;">
+                                <strong>1 long rod = 10</strong>
+                            </p>
+                            <div style="background: #fffaf0; padding: 12px; border-radius: 8px; margin-top: 10px;">
+                                <p style="margin: 5px 0; text-align: center; font-size: 0.95em;">
+                                    📏📏 + 🟦🟦🟦 = <strong>23</strong>
+                                </p>
+                                <p style="margin: 5px 0; text-align: center; font-size: 0.85em; color: #666;">
+                                    (2 tens + 3 ones)
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- HUNDREDS -->
+                        <div style="background: #fff; border: 3px solid #9f7aea; border-radius: 12px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                            <div style="text-align: center; margin-bottom: 15px;">
+                                <div style="font-size: 50px; margin: 10px 0;">🟪</div>
+                                <h5 style="color: #9f7aea; margin: 10px 0; font-size: 1.3em;">HUNDREDS (Flats)</h5>
+                            </div>
+                            <p style="text-align: center; font-size: 1.1em; margin: 10px 0;">
+                                <strong>1 flat plate = 100</strong>
+                            </p>
+                            <div style="background: #faf5ff; padding: 12px; border-radius: 8px; margin-top: 10px;">
+                                <p style="margin: 5px 0; text-align: center; font-size: 0.95em;">
+                                    🟪 + 📏📏 + 🟦 = <strong>121</strong>
+                                </p>
+                                <p style="margin: 5px 0; text-align: center; font-size: 0.85em; color: #666;">
+                                    (1 hundred + 2 tens + 1 one)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4 style="color: #5a67d8; border-bottom: 3px solid #5a67d8; padding-bottom: 10px; margin-top: 35px;">✨ The Magic of Regrouping</h4>
+                    
+                    <div style="background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%); padding: 20px; border-radius: 12px; margin: 20px 0; border-left: 5px solid #f39c12;">
+                        <p style="margin: 8px 0; font-size: 1.05em;"><strong>🔄 10 ones (🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦)</strong> = <strong>1 ten (📏)</strong></p>
+                        <p style="margin: 8px 0; font-size: 1.05em;"><strong>🔄 10 tens (📏📏📏📏📏📏📏📏📏📏)</strong> = <strong>1 hundred (🟪)</strong></p>
+                        <p style="margin: 12px 0 0 0; font-size: 0.95em; font-style: italic; color: #333;">
+                            💡 We can trade (regroup) blocks to make larger or smaller units!
+                        </p>
+                    </div>
+                    
+                    <h4 style="color: #5a67d8; border-bottom: 3px solid #5a67d8; padding-bottom: 10px; margin-top: 35px;">🎯 Why Base Ten Matters</h4>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0;">
+                        <div style="background: #e6fffa; padding: 15px; border-radius: 10px; border-left: 4px solid #319795;">
+                            <strong>📈 Count bigger numbers</strong> more easily
+                        </div>
+                        <div style="background: #fef5e7; padding: 15px; border-radius: 10px; border-left: 4px solid #d68910;">
+                            <strong>➕➖ Add and subtract</strong> with regrouping
+                        </div>
+                        <div style="background: #fce4ec; padding: 15px; border-radius: 10px; border-left: 4px solid #c2185b;">
+                            <strong>🔢 Understand place value</strong> (ones, tens, hundreds)
+                        </div>
+                        <div style="background: #f3e5f5; padding: 15px; border-radius: 10px; border-left: 4px solid #7b1fa2;">
+                            <strong>🧩 Break numbers apart</strong> to work with them
+                        </div>
+                    </div>
+                    
+                    <div style="background: linear-gradient(135deg, #a8e6cf 0%, #56ab2f 100%); color: white; padding: 20px; border-radius: 15px; margin-top: 30px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        <p style="font-size: 1.2em; margin: 0;">
+                            <strong>🚀 Ready to explore?</strong> Watch the videos, play with the interactive tool, and practice with worksheets below!
+                        </p>
+                    </div>
+                </div>
             `,
             isVideo: false
         },
