@@ -1100,6 +1100,150 @@ mathResources['s2_writing'] = [
     }
 ];
 
+// --- Second Grade (Second Term) resources ---
+mathResources['s2_2dshapes'] = [
+    {
+        title: 'Introduction to 2D Shapes',
+        type: 'Introduction',
+        description: `
+            <div style="max-width: 900px; margin: 0 auto;">
+                <h3 style="text-align: center; color: #4A90E2; margin-bottom: 25px;">📐 Exploring 2D Shapes</h3>
+                
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 15px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <p style="font-size: 1.1em; margin: 0; text-align: center;">
+                        <strong>2D shapes</strong> are flat shapes that have length and width but no depth. They live on a flat surface like paper!
+                    </p>
+                </div>
+                
+                <h4 style="color: #5a67d8; border-bottom: 3px solid #5a67d8; padding-bottom: 10px; margin-top: 30px;">🔷 Common 2D Shapes</h4>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 25px 0;">
+                    
+                    <div style="background: #fff; border: 3px solid #e53e3e; border-radius: 12px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                        <div style="text-align: center;">
+                            <div style="font-size: 50px; margin: 10px 0;">⭕</div>
+                            <h5 style="color: #e53e3e; margin: 10px 0;">Circle</h5>
+                            <p style="font-size: 0.9em; margin: 5px 0;">Round & smooth</p>
+                            <p style="font-size: 0.85em; color: #666;">No corners, no edges</p>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #fff; border: 3px solid #48bb78; border-radius: 12px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                        <div style="text-align: center;">
+                            <div style="font-size: 50px; margin: 10px 0;">🔺</div>
+                            <h5 style="color: #48bb78; margin: 10px 0;">Triangle</h5>
+                            <p style="font-size: 0.9em; margin: 5px 0;">3 sides, 3 corners</p>
+                            <p style="font-size: 0.85em; color: #666;">3 vertices, 3 edges</p>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #fff; border: 3px solid #ed8936; border-radius: 12px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                        <div style="text-align: center;">
+                            <div style="font-size: 50px; margin: 10px 0;">🟦</div>
+                            <h5 style="color: #ed8936; margin: 10px 0;">Square</h5>
+                            <p style="font-size: 0.9em; margin: 5px 0;">4 equal sides</p>
+                            <p style="font-size: 0.85em; color: #666;">4 vertices, 4 edges</p>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #fff; border: 3px solid #9f7aea; border-radius: 12px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                        <div style="text-align: center;">
+                            <div style="font-size: 50px; margin: 10px 0;">▭</div>
+                            <h5 style="color: #9f7aea; margin: 10px 0;">Rectangle</h5>
+                            <p style="font-size: 0.9em; margin: 5px 0;">4 sides (2 long, 2 short)</p>
+                            <p style="font-size: 0.85em; color: #666;">4 vertices, 4 edges</p>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #fff; border: 3px solid #38b2ac; border-radius: 12px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                        <div style="text-align: center;">
+                            <div style="font-size: 50px; margin: 10px 0;">🔶</div>
+                            <h5 style="color: #38b2ac; margin: 10px 0;">Pentagon</h5>
+                            <p style="font-size: 0.9em; margin: 5px 0;">5 sides, 5 corners</p>
+                            <p style="font-size: 0.85em; color: #666;">5 vertices, 5 edges</p>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #fff; border: 3px solid #f56565; border-radius: 12px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                        <div style="text-align: center;">
+                            <div style="font-size: 50px; margin: 10px 0;">⬡</div>
+                            <h5 style="color: #f56565; margin: 10px 0;">Hexagon</h5>
+                            <p style="font-size: 0.9em; margin: 5px 0;">6 sides, 6 corners</p>
+                            <p style="font-size: 0.85em; color: #666;">6 vertices, 6 edges</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <h4 style="color: #5a67d8; border-bottom: 3px solid #5a67d8; padding-bottom: 10px; margin-top: 35px;">📏 Important Shape Words</h4>
+                
+                <div style="background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%); padding: 20px; border-radius: 12px; margin: 20px 0; border-left: 5px solid #f39c12;">
+                    <p style="margin: 8px 0; font-size: 1.05em;"><strong>📍 Vertex (Vertices):</strong> The corner or point where two edges meet</p>
+                    <p style="margin: 8px 0; font-size: 1.05em;"><strong>📏 Edge (Sides):</strong> The line that connects two vertices</p>
+                    <p style="margin: 8px 0; font-size: 1.05em;"><strong>🔄 2D (Two-Dimensional):</strong> Flat shapes with length and width only</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #a8e6cf 0%, #56ab2f 100%); color: white; padding: 20px; border-radius: 15px; margin-top: 30px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <p style="font-size: 1.2em; margin: 0;">
+                        <strong>🎨 Let's explore!</strong> Watch the video, review the slides, and practice identifying shapes with worksheets below!
+                    </p>
+                </div>
+            </div>
+        `,
+        isVideo: false
+    },
+    {
+        title: '2D Shapes — Canva Slides',
+        type: 'Presentation',
+        description: 'Interactive presentation about 2D shapes with examples and activities.',
+        url: 'https://www.canva.com/design/DAG7B6FRAaE/RaYpzZ7SwY4D0HmyT_ukzA/view?utm_content=DAG7B6FRAaE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hbacc6ba4b6',
+        embedUrl: 'https://www.canva.com/design/DAG7B6FRAaE/RaYpzZ7SwY4D0HmyT_ukzA/view?embed',
+        isVideo: false
+    },
+    {
+        title: '2D Shapes Explained — Video',
+        type: 'Video',
+        description: 'Learn about different 2D shapes, their properties, and how to identify them.',
+        url: 'https://www.youtube.com/watch?v=RgWKM-e9fWQ',
+        isVideo: true
+    },
+    {
+        title: 'Identify 2D Shapes — Worksheet A',
+        type: 'Worksheet',
+        description: 'Practice identifying different 2D shapes.',
+        url: 'https://www.k5learning.com/worksheets/math/grade-2-geometry-identify-2d-shapes-a.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Identify 2D Shapes — Worksheet B',
+        type: 'Worksheet',
+        description: 'More practice recognizing 2D shapes.',
+        url: 'https://www.k5learning.com/worksheets/math/grade-2-geometry-identify-2d-shapes-b.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Identify 2D Shapes — Worksheet C',
+        type: 'Worksheet',
+        description: 'Continue practicing shape identification.',
+        url: 'https://www.k5learning.com/worksheets/math/grade-2-geometry-identify-2d-shapes-c.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Edges and Vertices — Worksheet A',
+        type: 'Worksheet',
+        description: 'Count edges and vertices of 2D shapes.',
+        url: 'https://www.k5learning.com/worksheets/math/grade-2-geometry-edges-vertices-a.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Edges and Vertices — Worksheet B',
+        type: 'Worksheet',
+        description: 'More practice counting edges and vertices.',
+        url: 'https://www.k5learning.com/worksheets/math/grade-2-geometry-edges-vertices-b.pdf',
+        isVideo: false
+    }
+];
+
 // --- Third Grade (First Term) resources ---
 mathResources['t3_mathsymbol'] = [
     {
@@ -2296,11 +2440,15 @@ Object.assign(i18n, {
     s2_wordproblems_title: { en: 'Word Problems (UPAC)', es: 'Problemas verbales (UPAC)' },
     s2_wordproblems_desc: { en: 'UPAC template, worksheets and games for addition/subtraction and multiplication.', es: 'Plantilla UPAC, hojas de trabajo y juegos para suma/resta y multiplicaci├│n.' },
     s2_wordproblems_btn_text: { en: 'Open Word Problems', es: 'Abrir Problemas' },
-    s2_writing_title: { en: 'How do you write numbers?', es: '┬┐C├│mo se escriben los n├║meros?' },
-    s2_writing_desc: { en: 'Handwriting and number formation practice sheets.', es: 'Hojas de pr├íctica de escritura y formaci├│n de n├║meros.' },
-    s2_writing_btn_text: { en: 'Open Writing Practice', es: 'Abrir pr├íctica de escritura' },
+    s2_writing_title: { en: 'How do you write numbers?', es: '¿Cómo se escriben los números?' },
+    s2_writing_desc: { en: 'Handwriting and number formation practice sheets.', es: 'Hojas de práctica de escritura y formación de números.' },
+    s2_writing_btn_text: { en: 'Open Writing Practice', es: 'Abrir práctica de escritura' },
+    s2_section2Title: { en: 'Topics for Second Term', es: 'Temas para Segundo Periodo' },
+    s2_2dshapes_title: { en: '2D Shapes', es: 'Figuras 2D' },
+    s2_2dshapes_desc: { en: 'Learn about circles, triangles, squares, rectangles, and more!', es: '¡Aprende sobre círculos, triángulos, cuadrados, rectángulos y más!' },
+    s2_2dshapes_btn_text: { en: 'Explore Shapes', es: 'Explorar Figuras' },
 
-    t3_intro: { en: 'Below are the curated resources for Third Grade  First Term. Click a topic to open activities, worksheets and interactive practice.', es: 'A continuaci├│n est├ín los recursos seleccionados para Tercer Grado  Primer Periodo. Haz clic en un tema para abrir actividades, hojas de trabajo y pr├íctica interactiva.' },
+    t3_intro: { en: 'Below are the curated resources for Third Grade — First Term. Click a topic to open activities, worksheets and interactive practice.', es: 'A continuación están los recursos seleccionados para Tercer Grado — Primer Periodo. Haz clic en un tema para abrir actividades, hojas de trabajo y práctica interactiva.' },
     t3_mathsymbol_title: { en: 'Math Symbols', es: 'S├¡mbolos matem├íticos' },
     t3_mathsymbol_desc: { en: 'Visual aids and printable symbols to support classroom instruction.', es: 'Ayudas visuales y s├¡mbolos imprimibles para apoyar la instrucci├│n.' },
     t3_mathsymbol_btn_text: { en: 'Open Math Symbols', es: 'Abrir S├¡mbolos' },
