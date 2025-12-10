@@ -337,6 +337,198 @@ const mathResources = {
             url: 'https://www.123homeschool4me.com/free-number-works',
             isVideo: false
         }
+    ],
+    baseten: [
+        {
+            title: 'Introduction to Base Ten',
+            type: 'Introduction',
+            description: `
+                <h3>🧮 Understanding Base Ten & Place Value</h3>
+                <p>Base ten is the number system we use every day! It's based on groups of 10.</p>
+                
+                <h4>📊 What are Base Ten Blocks?</h4>
+                <p>Base ten blocks help us visualize numbers:</p>
+                <ul>
+                    <li><strong>Units (Ones):</strong> Small cubes that represent 1</li>
+                    <li><strong>Rods (Tens):</strong> Long bars that represent 10</li>
+                    <li><strong>Flats (Hundreds):</strong> Square plates that represent 100</li>
+                </ul>
+                
+                <h4>🎯 Why is it Important?</h4>
+                <p>Understanding base ten helps us:</p>
+                <ul>
+                    <li>Count larger numbers more easily</li>
+                    <li>Add and subtract with regrouping</li>
+                    <li>Understand place value (ones, tens, hundreds)</li>
+                    <li>Break numbers apart to work with them</li>
+                </ul>
+                
+                <h4>✨ Key Concepts:</h4>
+                <ul>
+                    <li>10 ones = 1 ten</li>
+                    <li>10 tens = 1 hundred</li>
+                    <li>We can regroup (trade) blocks to make larger or smaller units</li>
+                </ul>
+                
+                <p>Let's explore with videos, interactive tools, and practice worksheets!</p>
+            `,
+            isVideo: false
+        },
+        {
+            title: 'Ones and Tens — Video 1',
+            type: 'Video',
+            description: 'Learn about ones and tens with visual examples.',
+            url: 'https://www.youtube.com/watch?v=eC1dPiC9PyM',
+            isVideo: true
+        },
+        {
+            title: 'Ones and Tens — Video 2',
+            type: 'Video',
+            description: 'More practice understanding ones and tens.',
+            url: 'https://www.youtube.com/watch?v=_dHu5TFxPtk',
+            isVideo: true
+        },
+        {
+            title: 'Ones, Tens and Hundreds — Video 1',
+            type: 'Video',
+            description: 'Understand all three place values together.',
+            url: 'https://www.youtube.com/watch?v=0uL5H5yw5tI',
+            isVideo: true
+        },
+        {
+            title: 'Ones, Tens and Hundreds — Video 2',
+            type: 'Video',
+            description: 'Additional practice with ones, tens, and hundreds.',
+            url: 'https://www.youtube.com/watch?v=omkDLmfvetk',
+            isVideo: true
+        },
+        {
+            title: 'Regrouping with Base 10 Blocks — Video',
+            type: 'Video',
+            description: 'Learn how to regroup and trade base ten blocks.',
+            url: 'videos/Untangling_Numbers.mp4',
+            isVideo: true,
+            isLocal: true
+        },
+        {
+            title: 'Base Ten Blocks Interactive Tool',
+            type: 'Interactive',
+            description: 'Play with virtual base ten blocks! Drag and arrange ones, tens, and hundreds.',
+            url: 'https://www.coolmath4kids.com/manipulatives/base-ten-blocks',
+            isVideo: false
+        },
+        {
+            title: 'Creating Sets with Blocks — Worksheet 1',
+            type: 'Worksheet',
+            description: 'Practice grouping blocks into tens and ones.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-creating-sets-1.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Creating Sets with Blocks — Worksheet 2',
+            type: 'Worksheet',
+            description: 'More practice creating sets with base ten blocks.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-creating-sets-2.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Creating Sets with Blocks — Worksheet 3',
+            type: 'Worksheet',
+            description: 'Additional grouping practice.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-creating-sets-3.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Count with Tens and Ones — Worksheet 1',
+            type: 'Worksheet',
+            description: 'Count base ten blocks to find the total.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-count-tens-ones-1.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Count with Tens and Ones — Worksheet 2',
+            type: 'Worksheet',
+            description: 'More counting practice with tens and ones.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-count-tens-ones-2.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Count with Tens and Ones — Worksheet 3',
+            type: 'Worksheet',
+            description: 'Continue practicing counting with base ten blocks.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-count-tens-ones-3.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Count with Tens and Ones — Worksheet 4',
+            type: 'Worksheet',
+            description: 'Additional counting exercises.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-count-tens-ones-4.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Tens and Ones Practice',
+            type: 'Worksheet',
+            description: 'Practice identifying tens and ones.',
+            url: 'https://www.mathworksheets4kids.com/blocks/tens-ones-1.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Draw Blocks — Worksheet 1',
+            type: 'Worksheet',
+            description: 'Break numbers into tens and ones by drawing blocks.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-draw-blocks-1.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Draw Blocks — Worksheet 2',
+            type: 'Worksheet',
+            description: 'More practice drawing base ten blocks.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-draw-blocks-2.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Draw Blocks — Worksheet 3',
+            type: 'Worksheet',
+            description: 'Additional drawing and breaking numbers practice.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-draw-blocks-3.pdf',
+            isVideo: false
+        },
+        {
+            title: '2-Digit Addition with Blocks — Worksheet 1',
+            type: 'Worksheet',
+            description: 'Add 2-digit numbers using base ten blocks.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-addition-tens-ones-1.pdf',
+            isVideo: false
+        },
+        {
+            title: '2-Digit Addition with Blocks — Worksheet 2',
+            type: 'Worksheet',
+            description: 'More 2-digit addition practice.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-addition-tens-ones-2.pdf',
+            isVideo: false
+        },
+        {
+            title: '2-Digit Addition with Blocks — Worksheet 4',
+            type: 'Worksheet',
+            description: 'Continue practicing 2-digit addition.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-addition-tens-ones-4.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Hundreds, Tens and Ones',
+            type: 'Worksheet',
+            description: 'Practice with 3-digit numbers and base ten blocks.',
+            url: 'https://www.mathworksheets4kids.com/blocks/hundreds-tens-ones-1.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Regrouping Numbers — Worksheet',
+            type: 'Worksheet',
+            description: 'Practice representing numbers with regrouping.',
+            url: 'https://math-drills.com/baseten/baseten_represent_numbers_regrouping_no_thousands_all.1485980107.pdf',
+            isVideo: false
+        }
     ]
 };
 
