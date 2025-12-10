@@ -586,10 +586,9 @@ const mathResources = {
         {
             title: 'Regrouping with Base 10 Blocks — Video',
             type: 'Video',
-            description: 'Learn how to regroup and trade base ten blocks.',
-            url: 'videos/Untangling_Numbers.mp4',
-            isVideo: true,
-            isLocal: true
+            description: 'Learn how to regroup and trade base ten blocks (Untangling Numbers).',
+            url: 'https://youtu.be/2nEHGAuJOKA',
+            isVideo: true
         },
         {
             title: 'Base Ten Blocks Interactive Tool',
