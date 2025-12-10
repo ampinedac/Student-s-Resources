@@ -1,4 +1,4 @@
-﻿// ­ Interactive Math Resources Website - First Grade First Term
+// ­ Interactive Math Resources Website - First Grade First Term
 // Functionality for children's educational site with exact curriculum resources
 
 // Resources data based on your document
@@ -38,6 +38,26 @@ const mathResources = {
             description: 'Learn about sets using different shapes.',
             url: 'https://wordwall.net/es/resource/62246840/shape-sets',
             isVideo: false
+        },
+        {
+            title: 'Suggested Activities',
+            type: 'Activity',
+            description: 'Complete these activities to practice sets:',
+            url: '#',
+            isActivity: true,
+            activities: [
+                {
+                    id: 'sets_activity_1',
+                    text: 'Create your own set, why is a set?',
+                    textEs: 'Crea tu propio conjunto, ¿por qué es un conjunto?'
+                },
+                {
+                    id: 'sets_activity_2',
+                    text: 'Identify 6 sets in your house and explain why they are sets.',
+                    textEs: 'Identifica 6 conjuntos en tu casa y explica por qué son conjuntos.'
+                }
+            ],
+            isVideo: false
         }
     ],
     comparison: [
@@ -49,24 +69,87 @@ const mathResources = {
             isVideo: false
         },
         {
-            title: 'Worksheets Collection',
-            type: 'Worksheets',
-            description: 'Selection of comparison worksheets and practice pages.',
+            title: 'More and Fewer Worksheet',
+            type: 'Worksheet',
+            description: 'Practice comparing quantities.',
+            url: 'https://www.superteacherworksheets.com/counting/more-and-fewer_BBAGT.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Greater/Less 2-Digit Numbers',
+            type: 'Worksheet',
+            description: 'Compare 2-digit numbers.',
+            url: 'https://www.superteacherworksheets.com/place-value/greaterless-2digit_TWRBD.pdf',
+            isVideo: false
+        },
+        {
+            title: 'More Than Less Than Worksheets',
+            type: 'Worksheet',
+            description: 'K5 Learning comparison worksheets.',
             url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/comparing-numbers/more-than-less-than',
+            isVideo: false
+        },
+        {
+            title: 'Comparing Numbers Worksheets',
+            type: 'Worksheet',
+            description: 'Collection of number comparison worksheets.',
+            url: 'https://superstarworksheets.com/math-worksheets/comparing-numbers/comparing-numbers-worksheets/',
+            isVideo: false
+        },
+        {
+            title: 'Compare Numbers 0-100',
+            type: 'Worksheet',
+            description: 'Practice comparing numbers from 0 to 100.',
+            url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/comparing-numbers/compare-numbers-0-100',
+            isVideo: false
+        },
+        {
+            title: 'Greater Than / Less Than Game',
+            type: 'Game',
+            description: 'Interactive 3-digit comparison game.',
+            url: 'https://www.superteacherworksheets.com/place-value/gt-lt-game2-3-digits_GFDIW.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Starfall Greater Less Equals',
+            type: 'Game',
+            description: 'Fun comparison game from Starfall.',
+            url: 'https://www.starfall.com/h/numbers/greater-less-equals/?sn=math0',
+            isVideo: false
+        },
+        {
+            title: 'ABCya Comparing Numbers Jr',
+            type: 'Game',
+            description: 'Comparing number values game.',
+            url: 'https://www.abcya.com/games/comparing_number_values_jr',
+            isVideo: false
+        },
+        {
+            title: 'Wordwall Greater/Less Game',
+            type: 'Game',
+            description: 'Interactive greater than or less than game.',
+            url: 'https://wordwall.net/resource/37870946/greater-than-or-less-than',
+            isVideo: false
+        },
+        {
+            title: 'Education.com Comparison Game',
+            type: 'Game',
+            description: 'Less than, greater than practice game.',
+            url: 'https://www.education.com/game/less-than-greater-than/',
             isVideo: false
         },
         {
             title: 'Greater Than / Less Than - Video A',
             type: 'Video',
-            description: 'Video A for greater than / less than (YouTube).',
-            url: 'https://www.youtube.com/embed/M6Efzu2slaI',
+            description: 'Learn comparison symbols with examples.',
+            url: 'https://www.youtube.com/watch?v=M6Efzu2slaI',
             isVideo: true
         },
         {
             title: 'Greater Than / Less Than - Video B',
             type: 'Video',
-            description: 'Video B for greater than / less than (YouTube).',
-            url: 'https://www.youtube-nocookie.com/embed/q93lAp6Rh5g?rel=0&modestbranding=1&fs=1',
+            description: 'More comparison examples and practice.',
+            url: 'https://www.youtube.com/watch?v=q93lAp6Rh5g',
             isVideo: true
         }
     ],
@@ -140,6 +223,31 @@ const mathResources = {
             type: 'Worksheet',
             description: 'Practice subtraction with word problems.',
             url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/subtraction',
+            isVideo: false
+        },
+        {
+            title: 'Subtraction 2-Digits Word Problems',
+            type: 'Worksheet',
+            description: 'Word problems with 2-digit subtraction.',
+            url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/subtraction-2-digits',
+            isVideo: false
+        },
+        {
+            title: 'Suggested Activity',
+            type: 'Activity',
+            description: 'Practice creating your own word problems:',
+            url: '#',
+            isActivity: true,
+            activities: [
+                {
+                    id: 'wordproblems_activity_create',
+                    text: 'Create your own word problem and share with your family',
+                    textEs: 'Crea tu propio problema matemático y compártelo con tu familia',
+                    hasCounter: true,
+                    counterLabel: 'How many did you create?',
+                    counterLabelEs: '¿Cuántos creaste?'
+                }
+            ],
             isVideo: false
         },
         {
@@ -359,15 +467,15 @@ const mathResources = {
                         <!-- ONES/UNITS -->
                         <div style="background: #fff; border: 3px solid #48bb78; border-radius: 12px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
                             <div style="text-align: center; margin-bottom: 15px;">
-                                <div style="font-size: 50px; margin: 10px 0;">🟦</div>
+                                <div style="font-size: 35px; margin: 10px 0; letter-spacing: 3px;">⚫⚫⚫</div>
                                 <h5 style="color: #48bb78; margin: 10px 0; font-size: 1.3em;">ONES (Units)</h5>
                             </div>
                             <p style="text-align: center; font-size: 1.1em; margin: 10px 0;">
-                                <strong>1 small cube = 1</strong>
+                                <strong>1 small circle = 1</strong>
                             </p>
                             <div style="background: #f0fff4; padding: 12px; border-radius: 8px; margin-top: 10px;">
                                 <p style="margin: 5px 0; text-align: center; font-size: 0.95em;">
-                                    Example: 🟦🟦🟦 = <strong>3</strong>
+                                    Example: ⚫⚫⚫ = <strong>3</strong>
                                 </p>
                             </div>
                         </div>
@@ -383,7 +491,7 @@ const mathResources = {
                             </p>
                             <div style="background: #fffaf0; padding: 12px; border-radius: 8px; margin-top: 10px;">
                                 <p style="margin: 5px 0; text-align: center; font-size: 0.95em;">
-                                    📏📏 + 🟦🟦🟦 = <strong>23</strong>
+                                    📏📏 + ⚫⚫⚫ = <strong>23</strong>
                                 </p>
                                 <p style="margin: 5px 0; text-align: center; font-size: 0.85em; color: #666;">
                                     (2 tens + 3 ones)
@@ -394,15 +502,15 @@ const mathResources = {
                         <!-- HUNDREDS -->
                         <div style="background: #fff; border: 3px solid #9f7aea; border-radius: 12px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
                             <div style="text-align: center; margin-bottom: 15px;">
-                                <div style="font-size: 50px; margin: 10px 0;">🟪</div>
+                                <div style="font-size: 70px; margin: 10px 0;">🔲</div>
                                 <h5 style="color: #9f7aea; margin: 10px 0; font-size: 1.3em;">HUNDREDS (Flats)</h5>
                             </div>
                             <p style="text-align: center; font-size: 1.1em; margin: 10px 0;">
-                                <strong>1 flat plate = 100</strong>
+                                <strong>1 big flat = 100</strong>
                             </p>
                             <div style="background: #faf5ff; padding: 12px; border-radius: 8px; margin-top: 10px;">
                                 <p style="margin: 5px 0; text-align: center; font-size: 0.95em;">
-                                    🟪 + 📏📏 + 🟦 = <strong>121</strong>
+                                    🔲 + 📏📏 + ⚫ = <strong>121</strong>
                                 </p>
                                 <p style="margin: 5px 0; text-align: center; font-size: 0.85em; color: #666;">
                                     (1 hundred + 2 tens + 1 one)
@@ -414,8 +522,8 @@ const mathResources = {
                     <h4 style="color: #5a67d8; border-bottom: 3px solid #5a67d8; padding-bottom: 10px; margin-top: 35px;">✨ The Magic of Regrouping</h4>
                     
                     <div style="background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%); padding: 20px; border-radius: 12px; margin: 20px 0; border-left: 5px solid #f39c12;">
-                        <p style="margin: 8px 0; font-size: 1.05em;"><strong>🔄 10 ones (🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦)</strong> = <strong>1 ten (📏)</strong></p>
-                        <p style="margin: 8px 0; font-size: 1.05em;"><strong>🔄 10 tens (📏📏📏📏📏📏📏📏📏📏)</strong> = <strong>1 hundred (🟪)</strong></p>
+                        <p style="margin: 8px 0; font-size: 1.05em;"><strong>🔄 10 ones (⚫⚫⚫⚫⚫⚫⚫⚫⚫⚫)</strong> = <strong>1 ten (📏)</strong></p>
+                        <p style="margin: 8px 0; font-size: 1.05em;"><strong>🔄 10 tens (📏📏📏📏📏📏📏📏📏📏)</strong> = <strong>1 hundred (🔲)</strong></p>
                         <p style="margin: 12px 0 0 0; font-size: 0.95em; font-style: italic; color: #333;">
                             💡 We can trade (regroup) blocks to make larger or smaller units!
                         </p>
@@ -609,9 +717,11 @@ const mathResources = {
 mathResources['s2_mathsymbol'] = [
     {
         title: 'Math Symbol - Canva Design',
-        type: 'Resource',
-        description: 'Download or view the Math Symbol visual from Canva.',
+        type: 'Presentation',
+        description: 'Interactive Math Symbol visual from Canva (embedded).',
         url: 'https://www.canva.com/design/DAG2oUrIL7U/chwfuCOTEIKxTB-mQU_cLQ/view?utm_content=DAG2oUrIL7U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks',
+        embedUrl: 'https://www.canva.com/design/DAG2oUrIL7U/chwfuCOTEIKxTB-mQU_cLQ/view?embed',
+        isEmbed: true,
         isVideo: false
     }
 ];
@@ -995,9 +1105,11 @@ mathResources['s2_writing'] = [
 mathResources['t3_mathsymbol'] = [
     {
         title: 'Math Symbol - Canva Design',
-        type: 'Resource',
-        description: 'Download or view the Math Symbol visual from Canva.',
+        type: 'Presentation',
+        description: 'Interactive Math Symbol visual from Canva (embedded).',
         url: 'https://www.canva.com/design/DAG2oUrIL7U/chwfuCOTEIKxTB-mQU_cLQ/view?utm_content=DAG2oUrIL7U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks',
+        embedUrl: 'https://www.canva.com/design/DAG2oUrIL7U/chwfuCOTEIKxTB-mQU_cLQ/view?embed',
+        isEmbed: true,
         isVideo: false
     }
 ];
@@ -1194,124 +1306,14 @@ mathResources['t3_wordproblems'] = [
         isVideo: false
     },
     {
-        title: 'Addition Sums to 50 — K5',
-        type: 'Worksheet',
-        description: 'Word problems with addition up to 50.',
-        url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/addition-sums-50',
-        isVideo: false
-    },
-    {
-        title: 'Addition with 3 Addends — K5',
-        type: 'Worksheet',
-        description: 'Practice adding three numbers together.',
-        url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/addition-3-addends',
-        isVideo: false
-    },
-    {
-        title: 'Daily Word Problems — Super Teacher',
-        type: 'Worksheet',
-        description: 'Collection of daily word problems for regular practice.',
-        url: 'https://www.superteacherworksheets.com/daily-word-problems-a.html',
-        isVideo: false
-    },
-    {
-        title: 'Subtraction Word Problems — K5',
-        type: 'Worksheet',
-        description: 'Practice subtraction with word problems.',
-        url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/subtraction',
-        isVideo: false
-    },
-    {
-        title: 'Subtraction 2-Digits — K5',
-        type: 'Worksheet',
-        description: 'Word problems with 2-digit subtraction.',
-        url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/subtraction-2-digits',
-        isVideo: false
-    },
-    {
-        title: 'Create Your Own Problem (Activity)',
+        title: 'Create & Share Problems (Activity)',
         type: 'Activity',
-        description: 'Create your own word problem and share it with your family. Practice writing and solving!',
-        isVideo: false
-    },
-    {
-        title: 'Math Word Problems for First Grade',
-        type: 'Game',
-        description: 'Interactive word problems game.',
-        url: 'https://wordwall.net/es/resource/51869249/math/math-word-problems-for-first-grade',
-        isVideo: false
-    },
-    {
-        title: 'Addition & Subtraction Word Problems Within 20',
-        type: 'Game',
-        description: 'Interactive practice with word problems (sums and differences within 20).',
-        url: 'https://www.iknowit.com/lessons/a-addition-subtraction-word-problems-within-20.html',
+        description: 'Create your own problem and share with your family.',
         isVideo: false
     }
-];
-
-mathResources['t3_multiplication'] = [
+    ,
     {
-        title: 'Introduction to Multiplication & Times Tables',
-        type: 'Introduction',
-        description: `
-            <h3>📚 Learning Multiplication Tables</h3>
-            <p>We are now learning the times tables in Math! 🧮</p>
-            <p>To make practice fun and effective, here are some ideas and free resources you can use at home with your children. Learning multiplication through games, songs, and daily routines helps children feel confident and enjoy Math in English.</p>
-            
-            <h4>🎯 1. Start with the easy ones</h4>
-            <p>Begin with 2s, 5s, and 10s, which have simple patterns.</p>
-            
-            <h4>🧱 2. Make it visual</h4>
-            <p>Help students see multiplication by using the interactive grid below. Select cells by clicking and dragging to represent multiplication visually.</p>
-            
-            <h4>🧩 3. Play and learn</h4>
-            <ul>
-                <li><strong>Flashcards:</strong> write one fact on each card (3×4 on one side, 12 on the other).</li>
-                <li><strong>Card Game:</strong> take two cards and multiply the numbers. Whoever answers first wins the pair.</li>
-                <li><strong>Hop and count:</strong> jump while saying the multiplication aloud — it helps movement and memory connect!</li>
-            </ul>
-            
-            <h4>✋ 4. Tricks and patterns</h4>
-            <p>Help your child notice easy patterns:</p>
-            <ul>
-                <li><strong>2s</strong> = counting by twos (2, 4, 6, 8, 10…)</li>
-                <li><strong>5s</strong> = end in 0 or 5</li>
-                <li><strong>10s</strong> = always add a zero</li>
-                <li><strong>9s</strong> = finger trick (bend one finger down → count the tens and ones!)</li>
-            </ul>
-            
-            <h4>🌟 5. Keep it short and fun</h4>
-            <p>Practice for 5–10 minutes every day. It's better to do a little every day than a long session once a week.</p>
-            <p>Encourage your child by celebrating progress: "You know the 2s! Now let's learn the 3s!" 🎉</p>
-            
-            <h4>💬 6. English language tip</h4>
-            <p>When helping your child, repeat the facts in English to get familiar with the structure:</p>
-            <ul>
-                <li>"Three times four equals twelve."</li>
-                <li>"Five times seven is thirty-five."</li>
-            </ul>
-            <p>You can also write a small chart with the words: <strong>times – equals – product – multiply</strong></p>
-            
-            <h4>🧮 The Pythagorean Table</h4>
-            <p>The multiplication table, also called the Pythagorean table, is a special chart that helps us understand how numbers grow when we multiply them.</p>
-            <p>It is arranged in rows and columns, and each cell shows the result of multiplying the number from the top by the number from the side.</p>
-            <p><strong>For example:</strong></p>
-            <ul>
-                <li>In the row for 3 and the column for 4, we find 12, because 3 × 4 = 12.</li>
-                <li>In the row for 5 and the column for 2, we find 10, because 5 × 2 = 10.</li>
-            </ul>
-            <p><strong>This table helps children see patterns in multiplication:</strong></p>
-            <ul>
-                <li>Numbers get bigger as we move to the right or down.</li>
-                <li>The table is symmetrical — the result of 3 × 4 is the same as 4 × 3.</li>
-                <li>Multiplying by 1 keeps the number the same, and multiplying by 10 adds a zero at the end.</li>
-            </ul>
-        `,
-        isVideo: false
-    },
-    {
-        title: 'Times Tables by 2 — Video Song',
+        title: 'Word Problems - Video A',
         type: 'Video',
         description: 'Learn multiplication by 2 with a fun song!',
         url: 'https://youtu.be/o0v5o6YbYro?si=sTXAnpYniVLL-l02',
@@ -1551,6 +1553,27 @@ mathResources['t3_addsub_regroup'] = [
     }
 ];
 
+// --- Third Grade: Addition & Subtraction with Regrouping resources ---
+mathResources['t3_addsub_regroup'] = [
+    { title: 'Add/Subtract 3-digits A (worksheet)', type: 'Worksheet', description: 'Practice adding and subtracting 3-digit numbers with regrouping (set A).', url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-3-digits-a.pdf', isVideo: false },
+    { title: 'Add/Subtract 3-digits B (worksheet)', type: 'Worksheet', description: 'Practice adding and subtracting 3-digit numbers with regrouping (set B).', url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-3-digits-b.pdf', isVideo: false },
+    { title: 'Add/Subtract 3-digits C (worksheet)', type: 'Worksheet', description: 'Practice adding and subtracting 3-digit numbers with regrouping (set C).', url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-3-digits-c.pdf', isVideo: false },
+    { title: 'Add/Subtract 3-digits D (worksheet)', type: 'Worksheet', description: 'Practice adding and subtracting 3-digit numbers with regrouping (set D).', url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-3-digits-d.pdf', isVideo: false },
+    { title: 'Add/Subtract 3-digits E (worksheet)', type: 'Worksheet', description: 'Practice adding and subtracting 3-digit numbers with regrouping (set E).', url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-3-digits-e.pdf', isVideo: false },
+    { title: 'Add/Subtract 3-digits F (worksheet)', type: 'Worksheet', description: 'Practice adding and subtracting 3-digit numbers with regrouping (set F).', url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-3-digits-f.pdf', isVideo: false },
+    { title: 'Wordwall — Three-digit addition & subtraction (game 1)', type: 'Game', description: 'Interactive practice: three-digit subtraction and addition with regrouping.', url: 'https://wordwall.net/resource/12252034/math/three-digit-subtraction-and-addition-with-regrouping', isVideo: false },
+    { title: 'Wordwall — Three-digit regrouping (game 2)', type: 'Game', description: 'Interactive activities for regrouping practice.', url: 'https://wordwall.net/resource/10104496/math/3-digit-subtraction-and-addition-with-regrouping', isVideo: false },
+    { title: 'Wordwall — Three-digit regrouping (game 3)', type: 'Game', description: 'Practice regrouping with fun activities.', url: 'https://wordwall.net/resource/9984200/three-digit-subtraction-and-addition-with-regrouping', isVideo: false },
+    { title: 'Wordwall — Three-digit regrouping (game 4)', type: 'Game', description: 'More interactive regrouping practice.', url: 'https://wordwall.net/resource/8112100/math/three-digit-subtraction-and-addition-with-regrouping', isVideo: false }
+];
+
+// Added teacher-requested YouTube videos (Nov 2025)
+mathResources['t3_addsub_regroup'].push(
+    { title: 'Reagrupamiento - Video explicativo (1)', type: 'Video', description: 'Video sobre suma y resta con reagrupamiento — explicación paso a paso.', url: 'https://www.youtube.com/watch?v=cE-yrJv4TEs', isVideo: true },
+    { title: 'Suma y Resta con Reagrupamiento - Práctica (2)', type: 'Video', description: 'Ejemplos y práctica guiada para reagrupamiento.', url: 'https://www.youtube.com/watch?v=1Al2Fc3wOIQ', isVideo: true },
+    { title: 'Estrategias de Reagrupamiento - Tutorial (3)', type: 'Video', description: 'Técnicas visuales para sumar y restar con reagrupamiento.', url: 'https://www.youtube.com/watch?v=8_X680JiWDc', isVideo: true }
+);
+
 // Topic titles for the modal
 const topicTitles = {
     sets: '­ 1. Sets - What is a set?',
@@ -1573,7 +1596,6 @@ topicTitles['t3_mathsymbol'] = '🔤 Math Symbols (Third Grade)';
 topicTitles['t3_sets'] = '📊 Sets & Cardinality (Third Grade)';
 topicTitles['t3_wordproblems'] = '📝 Word Problems — UPAC (Third Grade)';
 topicTitles['t3_multiplication'] = '✖️ Multiplication & Times Tables (Third Grade)';
-topicTitles['t3_addsub_regroup'] = '➕➖ Addition & Subtraction with Regrouping (Third Grade)';
 
 // Function to show resources modal
 function showResources(topicId) {
@@ -1592,72 +1614,8 @@ function showResources(topicId) {
     // Get resources for this topic
     const resources = mathResources[topicId] || [];
     
-    // Group resources by type for better organization
-    const groupedResources = {
-        'Introduction': [],
-        'Video': [],
-        'Worksheet': [],
-        'Worksheets': [],
-        'Game': [],
-        'Method': [],
-        'Template': [],
-        'Interactive': [],
-        'Article': [],
-        'Resource': [],
-        'Explanation': [],
-        'Activity': [],
-        'Other': []
-    };
-    
+    // Create resource items
     resources.forEach(resource => {
-        const type = resource.type || 'Other';
-        if (groupedResources[type]) {
-            groupedResources[type].push(resource);
-        } else {
-            groupedResources['Other'].push(resource);
-        }
-    });
-    
-    // Define section order and titles
-    const sectionOrder = [
-        { key: 'Introduction', title: '📖 Introduction', icon: '📖' },
-        { key: 'Method', title: '📋 Methods & Guides', icon: '📋' },
-        { key: 'Explanation', title: '💡 Explanations', icon: '💡' },
-        { key: 'Video', title: '🎥 Videos', icon: '🎥' },
-        { key: 'Worksheet', title: '📄 Worksheets', icon: '📄' },
-        { key: 'Worksheets', title: '📚 Worksheet Collections', icon: '📚' },
-        { key: 'Game', title: '🎮 Games & Interactive', icon: '🎮' },
-        { key: 'Interactive', title: '🎯 Interactive Practice', icon: '🎯' },
-        { key: 'Template', title: '📋 Templates', icon: '📋' },
-        { key: 'Article', title: '📰 Articles & Reading', icon: '📰' },
-        { key: 'Resource', title: '🔗 Resources', icon: '🔗' },
-        { key: 'Activity', title: '✏️ Activities', icon: '✏️' },
-        { key: 'Other', title: '📌 Other Resources', icon: '📌' }
-    ];
-    
-    // Create sections with resources
-    sectionOrder.forEach(section => {
-        const sectionResources = groupedResources[section.key];
-        if (sectionResources && sectionResources.length > 0) {
-            // Create section header
-            const sectionHeader = document.createElement('div');
-            sectionHeader.className = 'resource-section-header';
-            sectionHeader.innerHTML = `<h3 style="color: #667eea; margin: 20px 0 10px 0; padding-bottom: 8px; border-bottom: 2px solid #667eea; font-size: 1.3rem;">${section.title}</h3>`;
-            container.appendChild(sectionHeader);
-            
-            // Create resource items for this section
-            sectionResources.forEach(resource => {
-                createResourceItem(resource, container);
-            });
-        }
-    });
-    
-    // Finalize modal display
-    finalizeModalDisplay(modal, overlay, container);
-}
-
-// Helper function to create individual resource items
-function createResourceItem(resource, container) {
         const resourceDiv = document.createElement('div');
         resourceDiv.className = 'resource-item';
         
@@ -1683,8 +1641,7 @@ function createResourceItem(resource, container) {
             };
 
             const id = getYoutubeId(resource.url || '');
-            // Use the original URL if it's already a valid YouTube watch URL, otherwise construct it
-            const watchUrl = resource.url || '#';
+            const watchUrl = id ? `https://www.youtube.com/watch?v=${id}` : (resource.url || '#');
             const thumb = id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
 
             // determine current language for translations of dynamic buttons
@@ -1696,53 +1653,25 @@ function createResourceItem(resource, container) {
             const isLocalVideo = !!(resource.url && resource.url.match(/\.(mp4|webm|ogg)$/i));
             const isVimeo = !!(resource.url && /vimeo\.com/.test(resource.url));
 
-            if (id && thumb) {
-                // Show YouTube thumbnail as clickable link (no button overlay since section header already says "Videos")
-                videoContent = `
-                    <div style="text-align:center; margin-top:10px;">
-                        <a href="${watchUrl}" target="_blank" rel="noopener" style="display:inline-block; max-width:560px; width:100%; position:relative; text-decoration:none;">
-                            <img src="${thumb}" alt="${resource.title}" loading="lazy" style="width:100%; height:315px; object-fit:cover; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.15); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.25)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.15)';">
-                            <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(0,0,0,0.7); border-radius:50%; width:80px; height:80px; display:flex; align-items:center; justify-content:center; pointer-events:none;">
-                                <svg width="40" height="40" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
-                            </div>
-                        </a>
-                    </div>
-                `;
-            } else if (isLocalVideo) {
-                // Render native HTML5 video for local-hosted files
+            if (id) {
+                // Use the YouTube thumbnail and a button linking to the watch page (opens in new tab)
                 videoContent = `
                     <div style="text-align:center; margin-top:10px;">
                         <div style="position:relative; display:inline-block; max-width:560px; width:100%;">
-                            <video class="video-preview" controls playsinline preload="metadata" style="width:100%; height:315px; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.15); background:#000;">
-                                <source src="${resource.url}" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                            <img src="${thumb}" alt="${resource.title}" loading="lazy" style="width:100%; height:315px; object-fit:cover; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+                            <a class="topic-btn" href="${watchUrl}" target="_blank" rel="noopener" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);">${openText}</a>
                         </div>
                     </div>
-                `;
-            } else if (isVimeo) {
-                // Extract Vimeo ID and embed
-                const m = resource.url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
-                const vimeoId = m && m[1] ? m[1] : null;
-                const vimeoEmbed = vimeoId ? `https://player.vimeo.com/video/${vimeoId}` : resource.url;
-                videoContent = `
-                    <div style="text-align:center; margin-top:10px;">
-                        <div style="position:relative; display:inline-block; max-width:560px; width:100%;">
-                            <iframe class="video-preview" src="${vimeoEmbed}" title="${resource.title}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="width:100%; height:315px; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.15);"></iframe>
-                        </div>
-                    </div>
-                `;
+                </li>`;
             } else {
-                // Unknown video URL: show clickable thumbnail
+                // Unknown video URL: show a fallback thumbnail if available or a simple link
                 const genericThumb = 'images/video-poster.png';
                 videoContent = `
                     <div style="text-align:center; margin-top:10px;">
-                        <a href="${watchUrl}" target="_blank" rel="noopener" style="display:inline-block; max-width:560px; width:100%; position:relative; text-decoration:none;">
-                            <img src="${thumb || genericThumb}" alt="${resource.title}" loading="lazy" style="width:100%; height:315px; object-fit:cover; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.15); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.25)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.15)';">
-                            <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(0,0,0,0.7); border-radius:50%; width:80px; height:80px; display:flex; align-items:center; justify-content:center; pointer-events:none;">
-                                <svg width="40" height="40" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
-                            </div>
-                        </a>
+                        <div style="position:relative; display:inline-block; max-width:560px; width:100%;">
+                            <img src="${thumb || genericThumb}" alt="${resource.title}" loading="lazy" style="width:100%; height:315px; object-fit:cover; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+                            <a class="topic-btn" href="${watchUrl}" target="_blank" rel="noopener" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);">${openText}</a>
+                        </div>
                     </div>
                 `;
             }
@@ -1791,7 +1720,7 @@ function createResourceItem(resource, container) {
             const startMultText = (i18n.startMultiplication && i18n.startMultiplication[langPref3]) ? i18n.startMultiplication[langPref3] : 'Start Multiplication Grid';
             interactiveContent = `
                 <div style="text-align:center; margin-top:10px;">
-                    <p style="color:#666;">Try the interactive 10├ù10 grid practice. Select cells to match a multiplication problem.</p>
+                    <p style="color:#666;">Try the interactive 10×10 grid practice. Select cells to match a multiplication problem.</p>
                     <button class="topic-btn" onclick="showMultiplicationPractice()">${startMultText}</button>
                     <p style="margin-top:10px;">Printable Pythagorean table available inside the same section.</p>
                 </div>
@@ -1799,6 +1728,7 @@ function createResourceItem(resource, container) {
         }
         
         resourceDiv.innerHTML = `
+            <div class="resource-type">${resource.type || ''}</div>
             <h4>${resource.title}</h4>
             <p>${resource.description || ''}</p>
             ${videoContent}
@@ -1839,10 +1769,8 @@ function createResourceItem(resource, container) {
                 }
             }, 150);
         }
-}
-
-// Function to show resources modal (continued)
-function finalizeModalDisplay(modal, overlay, container) {
+    });
+    
     // Accessibility: save previously focused element and enable focus trap
     try {
         window._lastFocusedElement = document.activeElement;
@@ -1887,39 +1815,54 @@ function showCardinalityPractice() {
     if (!container) return;
 
     // Example sets (some with duplicates to demonstrate unique counting)
+    // Each item now has [text, emoji] for visual representation
     const sets = [
-        ['red block','blue block','yellow block'],
-        ['apple','banana','apple'],
-        ['cat','dog','bird','fish'],
-        ['star','star','star','moon'],
-        ['1','2','3','4','5'],
-        ['circle','square','triangle','circle','hexagon'],
-        ['ball','bat','glove'],
-        ['cup','plate','spoon','fork']
+        [['red block','🟥'], ['blue block','🟦'], ['yellow block','🟨']],
+        [['apple','🍎'], ['banana','🍌'], ['apple','🍎']],
+        [['cat','🐱'], ['dog','🐶'], ['bird','🐦'], ['fish','🐟']],
+        [['star','⭐'], ['star','⭐'], ['star','⭐'], ['moon','🌙']],
+        [['one','1️⃣'], ['two','2️⃣'], ['three','3️⃣'], ['four','4️⃣'], ['five','5️⃣']],
+        [['circle','🔵'], ['square','🟪'], ['triangle','🔺'], ['circle','🔵'], ['hexagon','⬡']],
+        [['ball','⚽'], ['bat','🏏'], ['glove','🧤']],
+        [['cup','☕'], ['plate','🍽️'], ['spoon','🥄'], ['fork','🍴']]
     ];
 
     let html = `<h3>Cardinality Practice</h3><p>Count the number of UNIQUE items in each set. Type your answer and click Check.</p>`;
-    html += '<div style="display:grid; grid-template-columns: repeat(1, 1fr); gap:12px;">';
+    html += '<div style="display:grid; grid-template-columns: repeat(1, 1fr); gap:16px;">';
 
     sets.forEach((s, idx) => {
-        const display = s.join(', ');
+        // Build visual representation of the set
+        let visualSet = '<div class="visual-set" style="display:flex; flex-wrap:wrap; gap:10px; margin:12px 0; padding:15px; background:#fff; border:3px dashed #2196F3; border-radius:12px; min-height:80px; align-items:center; justify-content:center;">';
+        s.forEach((item, itemIdx) => {
+            const [text, emoji] = item;
+            visualSet += `
+                <div class="set-item" style="display:flex; flex-direction:column; align-items:center; padding:8px; background:#e3f2fd; border-radius:10px; min-width:70px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="font-size:2rem; margin-bottom:4px;">${emoji}</div>
+                    <div style="font-size:0.75rem; color:#1565c0; text-align:center; font-weight:600;">${text}</div>
+                </div>
+            `;
+        });
+        visualSet += '</div>';
+
         html += `
-            <div style="background:#f8f9fa; padding:12px; border-radius:10px;">
-                <div style="font-weight:600; margin-bottom:8px;">Set ${idx+1}: ${display}</div>
-                <div style="display:flex; gap:8px; align-items:center;">
-                    <input id="card-input-${idx}" type="number" min="0" style="padding:8px; width:80px;" placeholder="Answer">
-                    <button class="topic-btn" onclick="checkCardinality(${idx})">Check</button>
-                    <span id="card-result-${idx}" style="margin-left:10px; font-weight:600;"></span>
+            <div style="background:#f8f9fa; padding:16px; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,0.08);">
+                <div style="font-weight:700; margin-bottom:10px; color:#1976d2; font-size:1.05rem;">Set ${idx+1}</div>
+                ${visualSet}
+                <div style="display:flex; gap:8px; align-items:center; margin-top:12px;">
+                    <label style="font-weight:600; color:#555;">Cardinality:</label>
+                    <input id="card-input-${idx}" type="number" min="0" style="padding:10px; width:90px; border:2px solid #2196F3; border-radius:8px; font-size:1rem; font-weight:700;" placeholder="?">
+                    <button class="topic-btn" onclick="checkCardinality(${idx})" style="padding:10px 20px;">Check ✓</button>
+                    <span id="card-result-${idx}" style="margin-left:10px; font-weight:700; font-size:1.05rem;"></span>
                 </div>
             </div>
         `;
     });
 
-    html += `</div><p style="margin-top:12px; color:#666;">Tip: If an item repeats, count it only once (unique items).</p>`;
+    html += `</div><p style="margin-top:16px; padding:12px; background:#fff3cd; border-left:4px solid #ffc107; border-radius:6px; color:#856404;"><strong>💡 Tip:</strong> If an item repeats in the set, count it only once! The cardinality is the number of UNIQUE items.</p>`;
     container.innerHTML = html;
 
-    // store sets for checking
-    window._cardinalitySets = sets;
+    // store sets for checking (extract just the text for comparison)
+    window._cardinalitySets = sets.map(s => s.map(item => item[0]));
 }
 
 // Video embed handling removed: simplified direct iframe rendering is used inside showResources now.
@@ -2032,6 +1975,52 @@ function closeModal() {
         }
         window._modalOpenedBy = null;
     } catch (e) { /* ignore */ }
+}
+
+// Save and restore activity checkbox states
+function saveActivityState(activityId, isChecked) {
+    try {
+        const activities = JSON.parse(localStorage.getItem('completedActivities') || '{}');
+        activities[activityId] = isChecked;
+        localStorage.setItem('completedActivities', JSON.stringify(activities));
+    } catch (e) {
+        console.error('Could not save activity state:', e);
+    }
+}
+
+// Save activity count (how many problems created, etc.)
+function saveActivityCount(activityId, count) {
+    try {
+        const counts = JSON.parse(localStorage.getItem('activityCounts') || '{}');
+        counts[activityId] = parseInt(count) || 0;
+        localStorage.setItem('activityCounts', JSON.stringify(counts));
+    } catch (e) {
+        console.error('Could not save activity count:', e);
+    }
+}
+
+function restoreActivityStates() {
+    try {
+        // Restore checkboxes
+        const activities = JSON.parse(localStorage.getItem('completedActivities') || '{}');
+        Object.keys(activities).forEach(activityId => {
+            const checkbox = document.getElementById(activityId);
+            if (checkbox && activities[activityId]) {
+                checkbox.checked = true;
+            }
+        });
+        
+        // Restore counters
+        const counts = JSON.parse(localStorage.getItem('activityCounts') || '{}');
+        Object.keys(counts).forEach(activityId => {
+            const counter = document.getElementById(activityId + '_count');
+            if (counter && counts[activityId]) {
+                counter.value = counts[activityId];
+            }
+        });
+    } catch (e) {
+        console.error('Could not restore activity states:', e);
+    }
 }
 
 // Function to open external resources
@@ -2170,6 +2159,8 @@ document.addEventListener('DOMContentLoaded', function() {
         t3_sets: '<i class="fas fa-box" aria-hidden="true"></i>',
         t3_wordproblems: '<i class="fas fa-file-lines" aria-hidden="true"></i>',
         t3_multiplication: '<i class="fas fa-times" aria-hidden="true"></i>'
+    ,
+    t3_addsub_regroup: '<i class="fas fa-calculator" aria-hidden="true"></i>'
         };
 
         // Fallback emoji list (keeps previous visual if topic data missing)
@@ -2339,6 +2330,27 @@ function setLanguage(lang) {
         const el = document.getElementById(id);
         if (el && i18n[id][lang]) {
             el.textContent = i18n[id][lang];
+        }
+    });
+
+    // Also support elements annotated with data-i18n-en / data-i18n-es
+    // This lets page authors add bilingual text inline without expanding the central i18n map.
+    document.querySelectorAll('[data-i18n-en], [data-i18n-es]').forEach(el => {
+        try {
+            const en = el.getAttribute('data-i18n-en');
+            const es = el.getAttribute('data-i18n-es');
+
+            // If element has data-i18n-attr, set that attribute instead of textContent
+            const attr = el.getAttribute('data-i18n-attr');
+            if (attr) {
+                if (lang === 'es' && es !== null) el.setAttribute(attr, es);
+                if (lang === 'en' && en !== null) el.setAttribute(attr, en);
+            } else {
+                if (lang === 'es' && es !== null) el.textContent = es;
+                if (lang === 'en' && en !== null) el.textContent = en;
+            }
+        } catch (e) {
+            // ignore malformed attributes
         }
     });
 
