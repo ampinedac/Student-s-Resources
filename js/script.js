@@ -1717,6 +1717,269 @@ mathResources['t3_addsub_regroup'].push(
     { title: 'Estrategias de Reagrupamiento - Tutorial (3)', type: 'Video', description: 'Técnicas visuales para sumar y restar con reagrupamiento.', url: 'https://www.youtube.com/watch?v=8_X680JiWDc', isVideo: true }
 );
 
+// --- Third Grade (Second Term) resources ---
+mathResources['t3_measurement'] = [
+    {
+        title: 'Introduction to Units of Measurement',
+        type: 'Introduction',
+        description: `
+            <div style="max-width: 900px; margin: 0 auto;">
+                <h3 style="text-align: center; color: #4A90E2; margin-bottom: 25px;">📏 Understanding Units of Measurement</h3>
+                
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 15px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <p style="font-size: 1.1em; margin: 0; text-align: center;">
+                        We measure length to find out <strong>how long</strong>, <strong>how tall</strong>, or <strong>how far</strong> something is!
+                    </p>
+                </div>
+                
+                <h4 style="color: #5a67d8; border-bottom: 3px solid #5a67d8; padding-bottom: 10px; margin-top: 30px;">📐 Two Types of Measurement</h4>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 25px 0;">
+                    
+                    <div style="background: #fff; border: 3px solid #48bb78; border-radius: 12px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                        <div style="text-align: center; margin-bottom: 15px;">
+                            <div style="font-size: 50px; margin: 10px 0;">✋</div>
+                            <h5 style="color: #48bb78; margin: 10px 0; font-size: 1.3em;">Non-Standard Units</h5>
+                        </div>
+                        <p style="text-align: center; font-size: 1em; margin: 10px 0;">
+                            Using everyday objects to measure
+                        </p>
+                        <div style="background: #f0fff4; padding: 12px; border-radius: 8px; margin-top: 10px;">
+                            <p style="margin: 5px 0; font-size: 0.9em;">Examples:</p>
+                            <ul style="margin: 5px 0; padding-left: 20px; font-size: 0.85em;">
+                                <li>Paper clips</li>
+                                <li>Pencils</li>
+                                <li>Hands or feet</li>
+                                <li>Blocks</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #fff; border: 3px solid #ed8936; border-radius: 12px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                        <div style="text-align: center; margin-bottom: 15px;">
+                            <div style="font-size: 50px; margin: 10px 0;">📏</div>
+                            <h5 style="color: #ed8936; margin: 10px 0; font-size: 1.3em;">Standard Units (Metric)</h5>
+                        </div>
+                        <p style="text-align: center; font-size: 1em; margin: 10px 0;">
+                            Universal units everyone uses
+                        </p>
+                        <div style="background: #fffaf0; padding: 12px; border-radius: 8px; margin-top: 10px;">
+                            <p style="margin: 5px 0; font-size: 0.9em;">Metric System:</p>
+                            <ul style="margin: 5px 0; padding-left: 20px; font-size: 0.85em;">
+                                <li><strong>Millimeters (mm)</strong> - tiny!</li>
+                                <li><strong>Centimeters (cm)</strong> - small</li>
+                                <li><strong>Meters (m)</strong> - big!</li>
+                                <li><strong>Kilometers (km)</strong> - huge!</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <h4 style="color: #5a67d8; border-bottom: 3px solid #5a67d8; padding-bottom: 10px; margin-top: 35px;">🔢 The Metric System</h4>
+                
+                <div style="background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%); padding: 20px; border-radius: 12px; margin: 20px 0; border-left: 5px solid #f39c12;">
+                    <p style="margin: 8px 0; font-size: 1.05em;"><strong>📍 1 centimeter (cm)</strong> = <strong>10 millimeters (mm)</strong></p>
+                    <p style="margin: 8px 0; font-size: 1.05em;"><strong>📍 1 meter (m)</strong> = <strong>100 centimeters (cm)</strong></p>
+                    <p style="margin: 8px 0; font-size: 1.05em;"><strong>📍 1 kilometer (km)</strong> = <strong>1,000 meters (m)</strong></p>
+                    <p style="margin: 12px 0 0 0; font-size: 0.95em; font-style: italic; color: #333;">
+                        💡 The metric system is based on 10s — easy to convert!
+                    </p>
+                </div>
+                
+                <h4 style="color: #5a67d8; border-bottom: 3px solid #5a67d8; padding-bottom: 10px; margin-top: 35px;">📐 When to Use Each Unit</h4>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin: 20px 0;">
+                    <div style="background: #e6fffa; padding: 15px; border-radius: 10px; border-left: 4px solid #319795;">
+                        <strong>mm (millimeters)</strong><br>
+                        <span style="font-size: 0.9em;">Thickness of a coin, width of a pencil tip</span>
+                    </div>
+                    <div style="background: #fef5e7; padding: 15px; border-radius: 10px; border-left: 4px solid #d68910;">
+                        <strong>cm (centimeters)</strong><br>
+                        <span style="font-size: 0.9em;">Length of a crayon, width of your hand</span>
+                    </div>
+                    <div style="background: #fce4ec; padding: 15px; border-radius: 10px; border-left: 4px solid #c2185b;">
+                        <strong>m (meters)</strong><br>
+                        <span style="font-size: 0.9em;">Height of a door, length of a room</span>
+                    </div>
+                    <div style="background: #f3e5f5; padding: 15px; border-radius: 10px; border-left: 4px solid #7b1fa2;">
+                        <strong>km (kilometers)</strong><br>
+                        <span style="font-size: 0.9em;">Distance between cities, length of a race</span>
+                    </div>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #a8e6cf 0%, #56ab2f 100%); color: white; padding: 20px; border-radius: 15px; margin-top: 30px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <p style="font-size: 1.2em; margin: 0;">
+                        <strong>🎯 Ready to measure?</strong> Watch the videos below and practice with worksheets!
+                    </p>
+                </div>
+            </div>
+        `,
+        isVideo: false
+    },
+    {
+        title: 'Non-Standard Units of Measurement — Video',
+        type: 'Video',
+        description: 'Learn how to measure using everyday objects like paper clips and pencils.',
+        url: 'https://www.youtube.com/watch?v=2wUsdsae0ro',
+        isVideo: true
+    },
+    {
+        title: 'Standard Units of Length — Video 1',
+        type: 'Video',
+        description: 'Introduction to standard units: millimeters, centimeters, meters.',
+        url: 'https://www.youtube.com/watch?v=Sa5xGHRPlPg',
+        isVideo: true
+    },
+    {
+        title: 'Standard Units of Length — Video 2',
+        type: 'Video',
+        description: 'More about measuring with standard metric units.',
+        url: 'https://www.youtube.com/watch?v=i1sUWP80cmA',
+        isVideo: true
+    },
+    {
+        title: 'Standard Units of Length — Video 3',
+        type: 'Video',
+        description: 'Understanding metric measurements in everyday life.',
+        url: 'https://www.youtube.com/watch?v=AVC-426M6V0',
+        isVideo: true
+    },
+    {
+        title: 'Standard Units of Length — Video 4',
+        type: 'Video',
+        description: 'Practice measuring with metric units.',
+        url: 'https://www.youtube.com/watch?v=ZNX-a-5jGeM',
+        isVideo: true
+    },
+    {
+        title: 'Standard Units of Length — Video 5',
+        type: 'Video',
+        description: 'Additional practice with standard units of measurement.',
+        url: 'https://www.youtube.com/watch?v=mGMtyuVJ5to',
+        isVideo: true
+    },
+    {
+        title: 'Convert Metric Units of Length — Video',
+        type: 'Video',
+        description: 'Learn how to convert between millimeters, centimeters, and meters.',
+        url: 'https://www.youtube.com/watch?v=kOJFSH_Bn9U',
+        isVideo: true
+    },
+    {
+        title: 'Units of Length (Metric) — Worksheet A',
+        type: 'Worksheet',
+        description: 'Practice identifying and using metric units of length.',
+        url: 'https://www.k5learning.com/worksheets/math/grade-3-units-of-length-metric-a.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Units of Length (Metric) — Worksheet C',
+        type: 'Worksheet',
+        description: 'More practice with metric length units.',
+        url: 'https://www.k5learning.com/worksheets/math/grade-3-units-of-length-metric-c.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Measuring Lengths to Nearest mm — Worksheet A',
+        type: 'Worksheet',
+        description: 'Practice measuring to the nearest millimeter.',
+        url: 'https://www.k5learning.com/worksheets/math/grade-3-measuring-length-mm-a.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Measuring Lengths to Nearest mm — Worksheet B',
+        type: 'Worksheet',
+        description: 'More measuring practice with millimeters.',
+        url: 'https://www.k5learning.com/worksheets/math/grade-3-measuring-length-mm-b.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Convert cm & mm — Worksheet A',
+        type: 'Worksheet',
+        description: 'Convert between centimeters and millimeters.',
+        url: 'https://www.k5learning.com/worksheets/math/grade-3-metric-units-length-cm-mm-no-decimal-a.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Convert cm & mm — Worksheet B',
+        type: 'Worksheet',
+        description: 'More conversion practice between cm and mm.',
+        url: 'https://www.k5learning.com/worksheets/math/grade-3-metric-units-length-cm-mm-no-decimal-b.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Convert cm & mm — Worksheet C',
+        type: 'Worksheet',
+        description: 'Continue practicing cm to mm conversions.',
+        url: 'https://www.k5learning.com/worksheets/math/grade-3-metric-units-length-cm-mm-no-decimal-c.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Convert cm & mm — Worksheet D',
+        type: 'Worksheet',
+        description: 'Additional cm and mm conversion exercises.',
+        url: 'https://www.k5learning.com/worksheets/math/grade-3-metric-units-length-cm-mm-no-decimal-d.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Convert cm & mm — Worksheet E',
+        type: 'Worksheet',
+        description: 'More practice converting between centimeters and millimeters.',
+        url: 'https://www.k5learning.com/worksheets/math/grade-3-metric-units-length-cm-mm-no-decimal-e.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Convert cm & mm — Worksheet F',
+        type: 'Worksheet',
+        description: 'Final set of cm and mm conversion practice.',
+        url: 'https://www.k5learning.com/worksheets/math/grade-3-metric-units-length-cm-mm-no-decimal-f.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Meters, cm & mm — Worksheet A',
+        type: 'Worksheet',
+        description: 'Work with all three units: meters, centimeters, and millimeters.',
+        url: 'https://www.k5learning.com/worksheets/math/grade-3-metric-units-length-m-cm-mm-a.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Meters, cm & mm — Worksheet B',
+        type: 'Worksheet',
+        description: 'More practice with m, cm, and mm.',
+        url: 'https://www.k5learning.com/worksheets/math/grade-3-metric-units-length-m-cm-mm-b.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Meters, cm & mm — Worksheet C',
+        type: 'Worksheet',
+        description: 'Continue practicing with all three metric units.',
+        url: 'https://www.k5learning.com/worksheets/math/grade-3-metric-units-length-m-cm-mm-c.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Meters, cm & mm — Worksheet D',
+        type: 'Worksheet',
+        description: 'Additional practice with meters, centimeters, and millimeters.',
+        url: 'https://www.k5learning.com/worksheets/math/grade-3-metric-units-length-m-cm-mm-d.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Meters, cm & mm — Worksheet E',
+        type: 'Worksheet',
+        description: 'More exercises combining m, cm, and mm.',
+        url: 'https://www.k5learning.com/worksheets/math/grade-3-metric-units-length-m-cm-mm-e.pdf',
+        isVideo: false
+    },
+    {
+        title: 'Meters, cm & mm — Worksheet F',
+        type: 'Worksheet',
+        description: 'Final practice set with all metric length units.',
+        url: 'https://www.k5learning.com/worksheets/math/grade-3-metric-units-length-m-cm-mm-f.pdf',
+        isVideo: false
+    }
+];
+
 // Topic titles for the modal
 const topicTitles = {
     sets: '­ 1. Sets - What is a set?',
@@ -2463,7 +2726,11 @@ Object.assign(i18n, {
     t3_multiplication_btn_text: { en: 'Open Multiplication', es: 'Abrir Multiplicaci├│n' },
     t3_addsub_regroup_title: { en: 'Addition & Subtraction — Regrouping', es: 'Sumas y Restas — Reagrupando' },
     t3_addsub_regroup_desc: { en: 'Worksheets and games to practice addition and subtraction with regrouping (3 digits).', es: 'Hojas de trabajo y juegos para practicar suma y resta con reagrupamiento (3 dígitos).' },
-    t3_addsub_regroup_btn: { en: 'Open Addition/Subtraction', es: 'Abrir Sumas/Restas' }
+    t3_addsub_regroup_btn: { en: 'Open Addition/Subtraction', es: 'Abrir Sumas/Restas' },
+    t3_section2Title: { en: 'Third Grade - Second Term', es: 'Tercer Grado - Segundo Periodo' },
+    t3_measurement_title: { en: 'Units of Measurement', es: 'Unidades de Medida' },
+    t3_measurement_desc: { en: 'Learn about non-standard and standard (metric) units of length!', es: '¡Aprende sobre unidades no estándar y estándar (métricas) de longitud!' },
+    t3_measurement_btn_text: { en: 'Explore Measurement', es: 'Explorar Medición' }
 });
 
 function setLanguage(lang) {
