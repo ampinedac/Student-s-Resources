@@ -157,7 +157,7 @@ const mathResources = {
         {
             title: 'UPAC Problem Solving Method',
             type: 'Method',
-            description: '­» Start here! Learn the UPAC method to solve word problems step by step:',
+            description: '📌 Start here! Learn the UPAC method to solve word problems step by step:',
             url: '#',
             isVideo: false,
             hasTemplate: true,
@@ -1982,19 +1982,19 @@ mathResources['t3_measurement'] = [
 
 // Topic titles for the modal
 const topicTitles = {
-    sets: '­ 1. Sets - What is a set?',
+    sets: '📦 1. Sets - What is a set?',
     comparison: '⚖️ 2. Greater Than, Less Than, Equal To',
-    wordproblems: '­ 3. Word Problems',
-    patterns: '­ 4. Patterns / Patrones',
-    tessellations: '­ 5. Tessellations',
+    wordproblems: '📝 3. Word Problems',
+    patterns: '🔲 4. Patterns / Patrones',
+    tessellations: '🔳 5. Tessellations',
     writing: '✏️ 6. How Do You Write Numbers?'
 };
 
 // Add titles for second grade keys
-topicTitles['s2_mathsymbol'] = '­ Math Symbol (Canva)';
-topicTitles['s2_sets'] = '­ Sets - What is a set?';
+topicTitles['s2_mathsymbol'] = '🔢 Math Symbol (Canva)';
+topicTitles['s2_sets'] = '📦 Sets - What is a set?';
 topicTitles['s2_multiplication'] = '✖️ Multiplication Tables & Practice';
-topicTitles['s2_wordproblems'] = '­ Word Problems (UPAC)';
+topicTitles['s2_wordproblems'] = '📝 Word Problems (UPAC)';
 topicTitles['s2_writing'] = '✏️ How Do You Write Numbers?';
 
 // Third grade titles
@@ -2434,7 +2434,7 @@ function openResource(url) {
     if (url && url !== '#') {
         window.open(url, '_blank');
     } else {
-        alert('­ This resource is coming soon! Check back later for more exciting content!');
+        alert('🚀 This resource is coming soon! Check back later for more exciting content!');
     }
 }
 
@@ -2449,7 +2449,7 @@ function downloadTemplate(imagePath, fileName) {
     document.body.removeChild(link);
     
     // Show success message
-    showSuccessMessage('Template downloaded successfully! ­ Check your Downloads folder.');
+    showSuccessMessage('Template downloaded successfully! ✅ Check your Downloads folder.');
 }
 
 // Add keyboard support for modal
@@ -2512,7 +2512,7 @@ function disableModalFocusTrap() {
 
 // Add animation classes when page loads
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('­ First Grade Math Resources Website Loaded!');
+    console.log('✨ First Grade Math Resources Website Loaded!');
     
     // Add entrance animations to topic cards
     const cards = document.querySelectorAll('.topic-card');
@@ -2601,11 +2601,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     iconEl.setAttribute('aria-hidden', 'true');
                 } else {
                     // Use fallback emoji if topic missing or not mapped
-                    iconEl.textContent = fallbackEmojis[index] || '­';
+                    iconEl.textContent = fallbackEmojis[index] || '📚';
                 }
             } catch (e) {
                 // Safe fallback
-                iconEl.textContent = fallbackEmojis[index] || '­';
+                iconEl.textContent = fallbackEmojis[index] || '📚';
             }
         });
     }
@@ -2624,15 +2624,15 @@ document.addEventListener('DOMContentLoaded', function() {
 const i18n = {
     seasonalGreeting: {
         en: 'Hello Dear Students!',
-        es: '┬íHola, estudiantes!'
+        es: '¡Hola, estudiantes!'
     },
     seasonalSubtitle: {
-        en: 'Welcome to our amazing math learning adventure! ­',
-        es: '┬íBienvenidos a nuestra incre├¡ble aventura de aprendizaje de matem├íticas! ­'
+        en: 'Welcome to our amazing math learning adventure! 🌟',
+        es: '¡Bienvenidos a nuestra increíble aventura de aprendizaje de matemáticas! 🌟'
     },
     listenBtnText: {
-        en: '­ Listen to Angela!',
-        es: '­ Escucha a Angela'
+        en: '🎧 Listen to Angela!',
+        es: '🎧 Escucha a Angela'
     },
     stopBtnText: {
         en: 'Stop Reading',
@@ -2651,8 +2651,8 @@ const i18n = {
         es: 'Tu profesora de confianza'
     },
     teacherDescription: {
-        en: "Welcome to our mathematical learning space! Choose your grade level to start exploring fun and educational resources. Let's make mathematics an exciting adventure together! ­û­",
-        es: '┬íBienvenidos a nuestro espacio de aprendizaje matem├ítico! Elige el grado para empezar a explorar recursos divertidos y educativos. ┬íHagamos de las matem├íticas una aventura emocionante juntos! ­û­'
+        en: "Welcome to our mathematical learning space! Choose your grade level to start exploring fun and educational resources. Let's make mathematics an exciting adventure together! 💖📚",
+        es: '¡Bienvenidos a nuestro espacio de aprendizaje matemático! Elige el grado para empezar a explorar recursos divertidos y educativos. ¡Hagamos de las matemáticas una aventura emocionante juntos! 💖📚'
     },
     modalTitle: {
         en: 'Resources',
