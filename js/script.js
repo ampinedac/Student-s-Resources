@@ -3227,9 +3227,9 @@ const seasonalThemes = {
     1: { // January
         name: 'New Year',
         greeting: 'Happy New Year, Dear Students!',
-        subtitle: 'Start this year with amazing math adventures! Ô£¿­è',
+        subtitle: 'Start this year with amazing math adventures! ✨🎉',
         background: 'linear-gradient(135deg, #1e3c72, #2a5298, #ffffff)',
-        decorations: ['­è', 'Ô£¿', '­å', '­│', '­'],
+        decorations: ['🎉', '✨', '🎊', '🎈', '🎆'],
         colors: {
             primary: '#1e3c72',
             secondary: '#2a5298',
@@ -3239,9 +3239,9 @@ const seasonalThemes = {
     2: { // February
         name: 'Valentine',
         greeting: 'Love Learning, Dear Students!',
-        subtitle: 'Share the love of math with friends! ­û­',
+        subtitle: 'Share the love of math with friends! 💖💕',
         background: 'linear-gradient(135deg, #ff6b9d, #ff8cc8, #ffc0cb)',
-        decorations: ['­û', '­ò', '­î', '­╣', 'ÔØñ´©Å'],
+        decorations: ['💖', '💕', '💗', '💝', '💘'],
         colors: {
             primary: '#ff6b9d',
             secondary: '#ff8cc8',
@@ -3251,9 +3251,9 @@ const seasonalThemes = {
     3: { // March
         name: 'Spring',
         greeting: 'Spring into Learning, Students!',
-        subtitle: 'Watch your math skills bloom this spring! ­©­▒',
+        subtitle: 'Watch your math skills bloom this spring! 🌸🌼',
         background: 'linear-gradient(135deg, #56ab2f, #a8e6cf, #98fb98)',
-        decorations: ['­©', '­▒', '­║', '­', '­'],
+        decorations: ['🌸', '🌼', '🌺', '🌻', '🌷'],
         colors: {
             primary: '#56ab2f',
             secondary: '#a8e6cf',
@@ -3263,9 +3263,9 @@ const seasonalThemes = {
     4: { // April
         name: 'Easter',
         greeting: 'Hoppy Learning, Dear Students!',
-        subtitle: 'Hunt for math treasures this April! ­░­',
+        subtitle: 'Hunt for math treasures this April! 🐰🥚',
         background: 'linear-gradient(135deg, #ffecd2, #fcb69f, #ffb347)',
-        decorations: ['­░', '­', '­ú', '­╝', '­'],
+        decorations: ['🐰', '🥚', '🐣', '🌷', '🌈'],
         colors: {
             primary: '#fcb69f',
             secondary: '#ffecd2',
@@ -3275,9 +3275,9 @@ const seasonalThemes = {
     5: { // May
         name: 'Flowers',
         greeting: 'Bloom with Learning, Students!',
-        subtitle: 'May your math knowledge grow like flowers! ­╗­║',
+        subtitle: 'May your math knowledge grow like flowers! 🌻🌺',
         background: 'linear-gradient(135deg, #ff9a9e, #fecfef, #fecfef)',
-        decorations: ['­╗', '­║', '­╝', '­╣', '­'],
+        decorations: ['🌻', '🌺', '🌷', '🌼', '🌹'],
         colors: {
             primary: '#ff9a9e',
             secondary: '#fecfef',
@@ -3323,9 +3323,9 @@ const seasonalThemes = {
     9: { // September
         name: 'Autumn',
         greeting: 'Fall into Learning, Students!',
-        subtitle: 'Autumn brings new math discoveries! ­­',
+        subtitle: 'Autumn brings new math discoveries! 🍂🍁',
         background: 'linear-gradient(135deg, #d2691e, #cd853f, #ffa500)',
-        decorations: ['­', '­', '­░', '­', '­'],
+        decorations: ['🍂', '🍁', '🍃', '🌰', '🎃'],
         colors: {
             primary: '#d2691e',
             secondary: '#cd853f',
