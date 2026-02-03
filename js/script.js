@@ -2603,15 +2603,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Run once now (in case script is executed after DOM ready) and also attach to load events
-    try { updateCardIcons(); } catch (e) { /* ignore */ }
-    document.addEventListener('DOMContentLoaded', updateCardIcons);
-    window.addEventListener('load', updateCardIcons);
+    // Call updateCardIcons immediately since we're already in DOMContentLoaded
+    updateCardIcons();
     
     // Add success message
     setTimeout(() => {
-        console.log('Ô£¿ All animations and content loaded successfully!');
-        console.log('­ô Ready to help first grade students learn math!');
+        console.log('✨ All animations and content loaded successfully!');
+        console.log('🚀 Ready to help students learn math!');
     }, 1000);
 });
 
