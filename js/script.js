@@ -2561,7 +2561,7 @@ document.addEventListener('DOMContentLoaded', function() {
         s2_multiplication: '<i class="fas fa-times" aria-hidden="true"></i>',
         s2_wordproblems: '<i class="fas fa-file-lines" aria-hidden="true"></i>',
         s2_writing: '<i class="fas fa-pencil-alt" aria-hidden="true"></i>',
-        s2_shapes: '<i class="fas fa-shapes" aria-hidden="true"></i>',
+        s2_2dshapes: '<i class="fas fa-shapes" aria-hidden="true"></i>',
         // Third grade keys
         t3_mathsymbol: '<i class="fas fa-font" aria-hidden="true"></i>',
         t3_sets: '<i class="fas fa-box" aria-hidden="true"></i>',
