@@ -1983,19 +1983,19 @@ mathResources['t3_measurement'] = [
 // Topic titles for the modal
 const topicTitles = {
     sets: '­ 1. Sets - What is a set?',
-    comparison: 'Ôû´©Å 2. Greater Than, Less Than, Equal To',
+    comparison: '⚖️ 2. Greater Than, Less Than, Equal To',
     wordproblems: '­ 3. Word Problems',
     patterns: '­ 4. Patterns / Patrones',
     tessellations: '­ 5. Tessellations',
-    writing: 'Ô£Å´©Å 6. How Do You Write Numbers?'
+    writing: '✏️ 6. How Do You Write Numbers?'
 };
 
 // Add titles for second grade keys
 topicTitles['s2_mathsymbol'] = '­ Math Symbol (Canva)';
 topicTitles['s2_sets'] = '­ Sets - What is a set?';
-topicTitles['s2_multiplication'] = 'Ô£û´©Å Multiplication Tables & Practice';
+topicTitles['s2_multiplication'] = '✖️ Multiplication Tables & Practice';
 topicTitles['s2_wordproblems'] = '­ Word Problems (UPAC)';
-topicTitles['s2_writing'] = 'Ô£Å´©Å How Do You Write Numbers?';
+topicTitles['s2_writing'] = '✏️ How Do You Write Numbers?';
 
 // Third grade titles
 topicTitles['t3_mathsymbol'] = '🔤 Math Symbols (Third Grade)';
@@ -2522,21 +2522,28 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add floating animation to background shapes
     const shapes = document.querySelectorAll('.shape');
-    const emojis = ['­', 'Ô£Å´©Å', '­', '­»', '­', '­¿'];
+    const emojis = ['📐', '🧮', '📏', '📊', '🎯', '📈'];
     shapes.forEach((shape, index) => {
         shape.textContent = emojis[index];
         shape.style.fontSize = Math.random() * 1 + 1.5 + 'rem';
     });
     
-    // Add emoji content to various elements
-    document.querySelector('.title-emoji').textContent = '­ïÔ£¿';
-    document.querySelector('.deco-star').textContent = '';
-    document.querySelector('.deco-heart').textContent = '­û';
-    document.querySelector('.deco-book').textContent = '­';
+    // Add emoji content to various elements (only if they exist)
+    const titleEmoji = document.querySelector('.title-emoji');
+    if (titleEmoji) titleEmoji.textContent = '🎓';
+    
+    const decoStar = document.querySelector('.deco-star');
+    if (decoStar) decoStar.textContent = '⭐';
+    
+    const decoHeart = document.querySelector('.deco-heart');
+    if (decoHeart) decoHeart.textContent = '❤️';
+    
+    const decoBook = document.querySelector('.deco-book');
+    if (decoBook) decoBook.textContent = '📚';
     
     // Add emojis to footer
     const footerEmojis = document.querySelectorAll('.footer-emojis span');
-    const footerEmojiList = ['­', '­ë', '­', '­', '­ô'];
+    const footerEmojiList = ['🎯', '📚', '🌟', '🎨', '🚀'];
     footerEmojis.forEach((emoji, index) => {
         emoji.textContent = footerEmojiList[index];
     });
@@ -2572,7 +2579,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         // Fallback emoji list (keeps previous visual if topic data missing)
-        const fallbackEmojis = ['­', 'Ôû´©Å', '­', '­', '­', 'Ô£Å´©Å'];
+        const fallbackEmojis = ['📚', '🎯', '📝', '🔢', '➕', '📏'];
 
         cardIcons.forEach((iconEl, index) => {
             try {
@@ -2971,7 +2978,7 @@ function saveToPendingMessages(thanksData, form) {
     
     // Hide loading and show success message
     hideLoadingMessage();
-    showSuccessMessage('Your message has been sent to Angela for review! She\'ll publish it soon. ­Ô£¿');
+    showSuccessMessage('Your message has been sent to Angela for review! She\'ll publish it soon. ✨');
     
     // Update admin panel if it's open
     displayPendingMessages();
@@ -3124,11 +3131,11 @@ document.head.appendChild(successStyle);
 
 // Admin Panel Functions
 function showAdminAccess() {
-    const password = prompt("­®ÔÇì­ƒÅ½ Enter teacher password:");
+    const password = prompt("🔐 Enter teacher password:");
     if (password === "DiosMeAma100pre") {
         document.getElementById('adminPanel').style.display = 'block';
         displayPendingMessages();
-        showSuccessMessage('Welcome Angela! ­®ÔÇì­ƒÅ½ Review your pending messages below.');
+        showSuccessMessage('Welcome Angela! 🔐 Review your pending messages below.');
     } else if (password !== null) {
         alert("Incorrect password! ­");
     }
@@ -3143,7 +3150,7 @@ function displayPendingMessages() {
     if (!pendingList) return;
     
     if (pendingMessages.length === 0) {
-        pendingList.innerHTML = '<p style="text-align: center; color: #999; font-style: italic;">No pending messages! All caught up! Ô£</p>';
+        pendingList.innerHTML = '<p style="text-align: center; color: #999; font-style: italic;">No pending messages! All caught up! ✨</p>';
         return;
     }
     
