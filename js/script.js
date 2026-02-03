@@ -2554,19 +2554,21 @@ document.addEventListener('DOMContentLoaded', function() {
         patterns: '<i class="fas fa-layer-group" aria-hidden="true"></i>',
         tessellations: '<i class="fas fa-th-large" aria-hidden="true"></i>',
         writing: '<i class="fas fa-pencil-alt" aria-hidden="true"></i>',
+        baseten: '<i class="fas fa-cubes" aria-hidden="true"></i>',
         // Second grade keys (mirror of first-grade meanings)
         s2_mathsymbol: '<i class="fas fa-font" aria-hidden="true"></i>',
         s2_sets: '<i class="fas fa-box" aria-hidden="true"></i>',
         s2_multiplication: '<i class="fas fa-times" aria-hidden="true"></i>',
         s2_wordproblems: '<i class="fas fa-file-lines" aria-hidden="true"></i>',
         s2_writing: '<i class="fas fa-pencil-alt" aria-hidden="true"></i>',
+        s2_shapes: '<i class="fas fa-shapes" aria-hidden="true"></i>',
         // Third grade keys
         t3_mathsymbol: '<i class="fas fa-font" aria-hidden="true"></i>',
         t3_sets: '<i class="fas fa-box" aria-hidden="true"></i>',
         t3_wordproblems: '<i class="fas fa-file-lines" aria-hidden="true"></i>',
-        t3_multiplication: '<i class="fas fa-times" aria-hidden="true"></i>'
-    ,
-    t3_addsub_regroup: '<i class="fas fa-calculator" aria-hidden="true"></i>'
+        t3_multiplication: '<i class="fas fa-times" aria-hidden="true"></i>',
+        t3_addsub_regroup: '<i class="fas fa-calculator" aria-hidden="true"></i>',
+        t3_measurement: '<i class="fas fa-ruler-combined" aria-hidden="true"></i>'
         };
 
         // Fallback emoji list (keeps previous visual if topic data missing)
