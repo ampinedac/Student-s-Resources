@@ -1980,6 +1980,17 @@ mathResources['t3_measurement'] = [
     }
 ];
 
+// --- Third Grade: Times Tables Practice ---
+mathResources['t3_timestables'] = [
+    {
+        title: 'Times Tables Practice — Interactive',
+        type: 'Interactive Practice',
+        description: '¡Practica las tablas de multiplicar de forma interactiva y divertida! Elige qué tabla practicar y mejora tu velocidad.',
+        url: 'https://www.timestables.com/',
+        isVideo: false
+    }
+];
+
 // Topic titles for the modal
 const topicTitles = {
     sets: '📦 1. Sets - What is a set?',
@@ -2002,6 +2013,9 @@ topicTitles['t3_mathsymbol'] = '🔤 Math Symbols (Third Grade)';
 topicTitles['t3_sets'] = '📊 Sets & Cardinality (Third Grade)';
 topicTitles['t3_wordproblems'] = '📝 Word Problems — UPAC (Third Grade)';
 topicTitles['t3_multiplication'] = '✖️ Multiplication & Times Tables (Third Grade)';
+topicTitles['t3_addsub_regroup'] = '🔢 Addition & Subtraction with Regrouping (Third Grade)';
+topicTitles['t3_measurement'] = '📏 Units of Measurement (Third Grade)';
+topicTitles['t3_timestables'] = '✖️ Práctica de Tablas de Multiplicar';
 
 // Function to show resources modal
 function showResources(topicId) {
@@ -2575,7 +2589,8 @@ document.addEventListener('DOMContentLoaded', function() {
         t3_wordproblems: '<i class="fas fa-file-lines" aria-hidden="true"></i>',
         t3_multiplication: '<i class="fas fa-times" aria-hidden="true"></i>',
         t3_addsub_regroup: '<i class="fas fa-calculator" aria-hidden="true"></i>',
-        t3_measurement: '<i class="fas fa-ruler-combined" aria-hidden="true"></i>'
+        t3_measurement: '<i class="fas fa-ruler-combined" aria-hidden="true"></i>',
+        t3_timestables: '<i class="fas fa-table" aria-hidden="true"></i>'
         };
 
         // Fallback emoji list (keeps previous visual if topic data missing)
@@ -2737,7 +2752,10 @@ Object.assign(i18n, {
     t3_section2Title: { en: 'Third Grade - Second Term', es: 'Tercer Grado - Segundo Periodo' },
     t3_measurement_title: { en: 'Units of Measurement', es: 'Unidades de Medida' },
     t3_measurement_desc: { en: 'Learn about non-standard and standard (metric) units of length!', es: '¡Aprende sobre unidades no estándar y estándar (métricas) de longitud!' },
-    t3_measurement_btn_text: { en: 'Explore Measurement', es: 'Explorar Medición' }
+    t3_measurement_btn_text: { en: 'Explore Measurement', es: 'Explorar Medición' },
+    t3_timestables_title: { en: 'Times Tables Practice', es: 'Práctica de Tablas de Multiplicar' },
+    t3_timestables_desc: { en: 'Practice times tables in an interactive and fun way!', es: '¡Practica las tablas de multiplicar de forma interactiva y divertida!' },
+    t3_timestables_btn_text: { en: 'Open Tables', es: 'Abrir Tablas' }
 });
 
 function setLanguage(lang) {
