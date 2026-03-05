@@ -709,6 +709,53 @@ const mathResources = {
             url: 'https://math-drills.com/baseten/baseten_represent_numbers_regrouping_no_thousands_all.1485980107.pdf',
             isVideo: false
         }
+    ],
+    subtraction: [
+        {
+            title: '1. Subtraction for first graders',
+            titleEs: '1. Resta para primero',
+            type: 'PDF',
+            description: 'Intro guide for subtraction concepts.',
+            descriptionEs: 'Guia introductoria de conceptos de resta.',
+            url: '../subtraction/1 Subtraction for first graders.pdf',
+            isVideo: false
+        },
+        {
+            title: '2. Subtraction – Practice exercises 1°',
+            titleEs: '2. Resta – Ejercicios de practica 1°',
+            type: 'PDF',
+            description: 'Practice exercises for first grade.',
+            descriptionEs: 'Ejercicios de practica para primero.',
+            url: '../subtraction/2 Subtraction – Practice exercises 1°.pdf',
+            isVideo: false
+        },
+        {
+            title: '3. Subtraction – With regrouping - FlashCard',
+            titleEs: '3. Resta – Con reagrupacion - FlashCard',
+            type: 'PDF',
+            description: 'Flashcards with regrouping.',
+            descriptionEs: 'Tarjetas con reagrupacion.',
+            url: '../subtraction/3 Subtraction – With regrouping - FlashCard.pdf',
+            isVideo: false
+        },
+        {
+            title: '4. Subtraction – Without regrouping - FlashCard',
+            titleEs: '4. Resta – Sin reagrupacion - FlashCard',
+            type: 'PDF',
+            description: 'Flashcards without regrouping.',
+            descriptionEs: 'Tarjetas sin reagrupacion.',
+            url: '../subtraction/4 Subtraction – Without regrouping - FlashCard.pdf',
+            isVideo: false
+        },
+        {
+            title: '5. Subtraction template',
+            titleEs: '5. Plantilla de resta',
+            type: 'PDF',
+            description: 'Template for subtraction practice.',
+            descriptionEs: 'Plantilla para practicar resta.',
+            url: '../subtraction/5 Subtraction template.pdf',
+            isVideo: false
+        }
     ]
 };
 
@@ -1998,7 +2045,8 @@ const topicTitles = {
     wordproblems: '📝 3. Word Problems',
     patterns: '🔲 4. Patterns / Patrones',
     tessellations: '🔳 5. Tessellations',
-    writing: '✏️ 6. How Do You Write Numbers?'
+    writing: '✏️ 6. How Do You Write Numbers?',
+    subtraction: { en: '➖ 2. Subtraction', es: '➖ 2. Resta' }
 };
 
 // Add titles for second grade keys
@@ -2023,9 +2071,11 @@ function showResources(topicId) {
     const overlay = document.getElementById('modalOverlay');
     const title = document.getElementById('modalTitle');
     const container = document.getElementById('resourcesContainer');
+    const langPref = localStorage.getItem('preferredLang') || 'en';
+    const topicTitle = topicTitles[topicId];
     
     // Set modal title (mark as custom so generic i18n doesn't overwrite it)
-    title.textContent = topicTitles[topicId] || i18n.modalTitle[localStorage.getItem('preferredLang')] || 'Resources';
+    title.textContent = (topicTitle && typeof topicTitle === 'object') ? (topicTitle[langPref] || topicTitle.en || 'Resources') : (topicTitle || i18n.modalTitle[langPref] || 'Resources');
     title.dataset.custom = 'true';
     
     // Clear previous content
@@ -2147,14 +2197,18 @@ function showResources(topicId) {
             `;
         }
         
+        const displayTitle = (langPref === 'es' && resource.titleEs) ? resource.titleEs : resource.title;
+        const displayDesc = (langPref === 'es' && resource.descriptionEs) ? resource.descriptionEs : resource.description;
+        const displayType = (langPref === 'es' && resource.typeEs) ? resource.typeEs : resource.type;
+
         resourceDiv.innerHTML = `
-            <div class="resource-type">${resource.type || ''}</div>
-            <h4>${resource.title}</h4>
-            <p>${resource.description || ''}</p>
+            <div class="resource-type">${displayType || ''}</div>
+            <h4>${displayTitle || ''}</h4>
+            <p>${displayDesc || ''}</p>
             ${videoContent}
             ${imageContent}
             ${interactiveContent}
-            ${resource.url && !resource.isVideo && !resource.hasImage && !resource.hasTemplate && !resource.interactiveType ? `<button class="topic-btn" onclick="openResource('${resource.url}')">${(i18n.openResource && i18n.openResource[localStorage.getItem('preferredLang')||'en'])? i18n.openResource[localStorage.getItem('preferredLang')||'en'] : 'Open Resource'} <i class="fas fa-external-link-alt"></i></button>` : ''}
+            ${resource.url && !resource.isVideo && !resource.hasImage && !resource.hasTemplate && !resource.interactiveType ? `<button class="topic-btn" onclick="openResource('${resource.url}')">${(i18n.openResource && i18n.openResource[langPref])? i18n.openResource[langPref] : 'Open Resource'} <i class="fas fa-external-link-alt"></i></button>` : ''}
         `;
         
         container.appendChild(resourceDiv);
