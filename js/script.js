@@ -717,7 +717,7 @@ const mathResources = {
             type: 'PDF',
             description: 'Intro guide for subtraction concepts.',
             descriptionEs: 'Guia introductoria de conceptos de resta.',
-            url: '../subtraction/1 Subtraction for first graders.pdf',
+                url: '../Subtraction/1 Subtraction for first graders.pdf',
             isVideo: false
         },
         {
@@ -726,7 +726,7 @@ const mathResources = {
             type: 'PDF',
             description: 'Practice exercises for first grade.',
             descriptionEs: 'Ejercicios de practica para primero.',
-            url: '../subtraction/2 Subtraction – Practice exercises 1°.pdf',
+                url: '../Subtraction/2 Subtraction – Practice exercises 1°.pdf',
             isVideo: false
         },
         {
@@ -735,7 +735,7 @@ const mathResources = {
             type: 'PDF',
             description: 'Flashcards with regrouping.',
             descriptionEs: 'Tarjetas con reagrupacion.',
-            url: '../subtraction/3 Subtraction – With regrouping - FlashCard.pdf',
+                url: '../Subtraction/3 Subtraction – With regrouping - FlashCard.pdf',
             isVideo: false
         },
         {
@@ -744,7 +744,7 @@ const mathResources = {
             type: 'PDF',
             description: 'Flashcards without regrouping.',
             descriptionEs: 'Tarjetas sin reagrupacion.',
-            url: '../subtraction/4 Subtraction – Without regrouping - FlashCard.pdf',
+                url: '../Subtraction/4 Subtraction – Without regrouping - FlashCard.pdf',
             isVideo: false
         },
         {
@@ -753,7 +753,7 @@ const mathResources = {
             type: 'PDF',
             description: 'Template for subtraction practice.',
             descriptionEs: 'Plantilla para practicar resta.',
-            url: '../subtraction/5 Subtraction template.pdf',
+                url: '../Subtraction/5 Subtraction template.pdf',
             isVideo: false
         }
     ]
