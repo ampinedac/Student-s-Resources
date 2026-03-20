@@ -30,127 +30,138 @@ const basicsOfSubtraction = [
         url: resolveProjectAssetUrl('Subtraction/3 Subtraction – With regrouping - FlashCard.pdf'),
     },
     {
-        title: 'Subtraction – Without Regrouping - FlashCard',
-        type: 'PDF',
-        url: resolveProjectAssetUrl('Subtraction/4 Subtraction – Without regrouping - FlashCard.pdf'),
-    },
-    {
-        title: 'Subtraction Template',
-        type: 'PDF',
-        url: resolveProjectAssetUrl('Subtraction/5 Subtraction template.pdf'),
-    }
-];
-
-const basicsOfAddition = [
-    {
-        title: 'Addition for First Graders',
-        type: 'PDF',
-        url: 'https://www.superteacherworksheets.com/addition/adding-2digit-noregroup_TTWTN.pdf',
-    },
-    {
-        title: 'Bilingual Addition Guide',
-        type: 'PDF',
-        url: 'https://www.superteacherworksheets.com/addition/adding-columns3_TTZDN.pdf',
-    },
-    {
-        title: 'Addition – Practice Exercises 1°',
-        type: 'PDF',
-        url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/adding-single-digit-numbers',
-    },
-    {
-        title: 'Addition – Without Regrouping - FlashCard',
-        type: 'PDF',
-        url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/addition-sums-50',
-    },
-    {
-        title: 'Addition – With Regrouping - FlashCard',
-        type: 'PDF',
-        url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/addition-3-addends',
-    },
-    {
-        title: 'Addition Template',
-        type: 'PDF',
-        url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/addition-3-addends',
-    }
-];
-
-// Agrupar el resto de PDFs en categorías para la galería de práctica
-const practiceWorksheets = [
-    // No Regrouping
-    {
-        group: 'No Regrouping',
-        items: [
-            {
-                title: 'No Regrouping 1',
-                type: 'PDF',
-                url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-no-regrouping-1.pdf',
-            },
-            {
-                title: 'No Regrouping 2',
-                type: 'PDF',
-                url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-no-regrouping-2.pdf',
+        function showResources(topicId) {
+            const modal = document.getElementById('resourcesModal');
+            let overlay = document.getElementById('modalOverlay');
+            if (!overlay) {
+                overlay = document.createElement('div');
+                overlay.id = 'modalOverlay';
+                overlay.className = 'modal-overlay';
+                document.body.appendChild(overlay);
             }
-        ]
-    },
-    // With Regrouping
-    {
-        group: 'With Regrouping',
-        items: [
-            {
-                title: 'Flashcards (Regrouping)',
-                type: 'PDF',
-                url: resolveProjectAssetUrl('Subtraction/3 Subtraction – With regrouping - FlashCard.pdf'),
+            const title = document.getElementById('modalTitle');
+            const container = document.getElementById('resourcesContainer');
+
+            // Solo mostrar las pestañas para los tópicos de suma/resta
+            if (['subtraction', 'addition', 'practiceworksheets'].includes(topicId)) {
+                title.textContent = 'Math Resources';
+                title.dataset.custom = 'true';
+                container.innerHTML = '';
+
+                // Tabs
+                const tabs = [
+                    { id: 'tab-subtraction', label: 'Basics of Subtraction' },
+                    { id: 'tab-addition', label: 'Basics of Addition' },
+                    { id: 'tab-practice', label: 'Practice Addition and Subtraction Worksheets' }
+                ];
+                const tabsBar = document.createElement('div');
+                tabsBar.className = 'resources-tabs-bar';
+                tabs.forEach((tab, idx) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'resources-tab-btn' + (idx === 0 ? ' active' : '');
+                    btn.id = tab.id;
+                    btn.textContent = tab.label;
+                    btn.onclick = () => switchTab(tab.id);
+                    tabsBar.appendChild(btn);
+                });
+                container.appendChild(tabsBar);
+
+                // Content containers
+                const tabContents = {};
+                tabs.forEach((tab, idx) => {
+                    const div = document.createElement('div');
+                    div.className = 'resources-tab-content' + (idx === 0 ? ' active' : '');
+                    div.id = tab.id + '-content';
+                    tabContents[tab.id] = div;
+                    container.appendChild(div);
+                });
+
+                // Render content for each tab
+                basicsOfSubtraction.forEach(res => {
+                    const item = document.createElement('div');
+                    item.className = 'resource-item';
+                    item.innerHTML = `
+                        <div class="resource-title">${res.title}</div>
+                        <div class='pdf-preview-wrap'><iframe class='pdf-preview tiny' src='${res.url}'></iframe></div>
+                        <button class='open-resource-btn' data-url='${res.url}'>Open PDF</button>
+                    `;
+                    tabContents['tab-subtraction'].appendChild(item);
+                });
+                basicsOfAddition.forEach(res => {
+                    const item = document.createElement('div');
+                    item.className = 'resource-item';
+                    item.innerHTML = `
+                        <div class="resource-title">${res.title}</div>
+                        <div class='pdf-preview-wrap'><iframe class='pdf-preview tiny' src='${res.url}'></iframe></div>
+                        <button class='open-resource-btn' data-url='${res.url}'>Open PDF</button>
+                    `;
+                    tabContents['tab-addition'].appendChild(item);
+                });
+                practiceWorksheets.forEach(group => {
+                    const groupDiv = document.createElement('div');
+                    groupDiv.className = 'practice-group';
+                    const groupTitle = document.createElement('div');
+                    groupTitle.className = 'practice-group-title';
+                    groupTitle.textContent = group.group;
+                    groupDiv.appendChild(groupTitle);
+                    const gallery = document.createElement('div');
+                    gallery.className = 'pdf-gallery';
+                    group.items.forEach(res => {
+                        const item = document.createElement('div');
+                        item.className = 'gallery-item';
+                        item.innerHTML = `
+                            <div class="resource-title">${res.title}</div>
+                            <div class='pdf-preview-wrap'><iframe class='pdf-preview tiny' src='${res.url}'></iframe></div>
+                            <button class='open-resource-btn' data-url='${res.url}'>Open PDF</button>
+                        `;
+                        gallery.appendChild(item);
+                    });
+                    groupDiv.appendChild(gallery);
+                    tabContents['tab-practice'].appendChild(groupDiv);
+                });
+
+                // Tab switching logic
+                function switchTab(tabId) {
+                    tabs.forEach(tab => {
+                        document.getElementById(tab.id).classList.remove('active');
+                        document.getElementById(tab.id + '-content').classList.remove('active');
+                    });
+                    document.getElementById(tabId).classList.add('active');
+                    document.getElementById(tabId + '-content').classList.add('active');
+                }
+
+                // Open PDF button logic
+                setTimeout(() => {
+                    document.querySelectorAll('.open-resource-btn').forEach(btn => {
+                        btn.onclick = e => {
+                            const url = btn.getAttribute('data-url');
+                            window.open(url, '_blank');
+                        };
+                    });
+                }, 100);
+
+                // Show modal visually
+                modal.setAttribute('aria-hidden', 'false');
+                overlay.setAttribute('aria-hidden', 'false');
+                modal.classList.add('show');
+                overlay.classList.add('show');
+                enableModalFocusTrap(modal);
+                try {
+                    const opener = document.activeElement;
+                    if (opener && opener.classList && opener.classList.contains('topic-btn')) {
+                        opener.setAttribute('aria-expanded', 'true');
+                        window._modalOpenedBy = opener;
+                    } else {
+                        window._modalOpenedBy = null;
+                    }
+                } catch (e) { window._modalOpenedBy = null; }
+                return;
             }
-        ]
-    },
-    // Mixed Practice
-    {
-        group: 'Mixed Practice',
-        items: [
-            {
-                title: 'Mixed A',
-                type: 'PDF',
-                url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-a.pdf',
-            },
-            {
-                title: 'Mixed B',
-                type: 'PDF',
-                url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-b.pdf',
-            },
-            {
-                title: 'Mixed C',
-                type: 'PDF',
-                url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-c.pdf',
-            },
-            {
-                title: 'Mixed D',
-                type: 'PDF',
-                url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-d.pdf',
-            },
-            {
-                title: 'Mixed E',
-                type: 'PDF',
-                url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-e.pdf',
-            },
-            {
-                title: 'Mixed F',
-                type: 'PDF',
-                url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-f.pdf',
-            },
-            {
-                title: 'Mixed 2',
-                type: 'PDF',
-                url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-2.pdf',
-            },
-            {
-                title: 'Mixed 3',
-                type: 'PDF',
-                url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-3.pdf',
-            },
-            {
-                title: 'Mixed 4',
-                type: 'PDF',
-                url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-4.pdf',
+
+            // ...existing code para otros tópicos...
+            // (No se modifica el renderizado de los demás tópicos)
+            // ...existing code...
+        }
             },
             {
                 title: 'Mixed 5',
