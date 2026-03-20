@@ -722,48 +722,203 @@ const mathResources = {
     ],
     subtraction: [
         {
-            title: '1. Subtraction for first graders',
-            titleEs: '1. Resta para primero',
+            title: '1. Basics',
+            titleEs: '1. Conceptos basicos',
             type: 'PDF',
-            description: 'Intro guide for subtraction concepts.',
-            descriptionEs: 'Guia introductoria de conceptos de resta.',
+            description: 'Quick intro to subtraction.',
+            descriptionEs: 'Introduccion rapida a la resta.',
             url: resolveProjectAssetUrl('Subtraction/1 Subtraction for first graders.pdf'),
+            category: 'apoyo',
             isVideo: false
         },
         {
-            title: '2. Subtraction – Practice exercises 1°',
-            titleEs: '2. Resta – Ejercicios de practica 1°',
+            title: '2. Starter Practice',
+            titleEs: '2. Practica inicial',
             type: 'PDF',
-            description: 'Practice exercises for first grade.',
-            descriptionEs: 'Ejercicios de practica para primero.',
+            description: 'Initial subtraction practice.',
+            descriptionEs: 'Practica inicial de resta.',
             url: resolveProjectAssetUrl('Subtraction/2 Subtraction – Practice exercises 1°.pdf'),
+            category: 'apoyo',
             isVideo: false
         },
         {
-            title: '3. Subtraction – With regrouping - FlashCard',
-            titleEs: '3. Resta – Con reagrupacion - FlashCard',
+            title: '3. Flashcards (Regrouping)',
+            titleEs: '3. Tarjetas (Reagrupando)',
             type: 'PDF',
-            description: 'Flashcards with regrouping.',
-            descriptionEs: 'Tarjetas con reagrupacion.',
+            description: 'Flashcards for regrouping subtraction.',
+            descriptionEs: 'Tarjetas para resta con reagrupacion.',
             url: resolveProjectAssetUrl('Subtraction/3 Subtraction – With regrouping - FlashCard.pdf'),
+            category: 'con_reagrupacion',
             isVideo: false
         },
         {
-            title: '4. Subtraction – Without regrouping - FlashCard',
-            titleEs: '4. Resta – Sin reagrupacion - FlashCard',
+            title: '4. Flashcards (No Regrouping)',
+            titleEs: '4. Tarjetas (Sin reagrupar)',
             type: 'PDF',
             description: 'Flashcards without regrouping.',
-            descriptionEs: 'Tarjetas sin reagrupacion.',
+            descriptionEs: 'Tarjetas de resta sin reagrupar.',
             url: resolveProjectAssetUrl('Subtraction/4 Subtraction – Without regrouping - FlashCard.pdf'),
+            category: 'sin_reagrupacion',
             isVideo: false
         },
         {
-            title: '5. Subtraction template',
-            titleEs: '5. Plantilla de resta',
+            title: '5. Template',
+            titleEs: '5. Plantilla',
             type: 'PDF',
             description: 'Template for subtraction practice.',
             descriptionEs: 'Plantilla para practicar resta.',
             url: resolveProjectAssetUrl('Subtraction/5 Subtraction template.pdf'),
+            category: 'apoyo',
+            isVideo: false
+        },
+        {
+            title: '6. Mixed A',
+            titleEs: '6. Mixtos A',
+            type: 'PDF',
+            description: '2-digit mixed practice (A).',
+            descriptionEs: 'Practica mixta de 2 digitos (A).',
+            url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-a.pdf',
+            category: 'mixtos',
+            isVideo: false
+        },
+        {
+            title: '7. Mixed B',
+            titleEs: '7. Mixtos B',
+            type: 'PDF',
+            description: '2-digit mixed practice (B).',
+            descriptionEs: 'Practica mixta de 2 digitos (B).',
+            url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-b.pdf',
+            category: 'mixtos',
+            isVideo: false
+        },
+        {
+            title: '8. No Regrouping 1',
+            titleEs: '8. Sin reagrupar 1',
+            type: 'PDF',
+            description: 'No regrouping worksheet (1).',
+            descriptionEs: 'Hoja sin reagrupar (1).',
+            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-no-regrouping-1.pdf',
+            category: 'sin_reagrupacion',
+            isVideo: false
+        },
+        {
+            title: '9. No Regrouping 2',
+            titleEs: '9. Sin reagrupar 2',
+            type: 'PDF',
+            description: 'No regrouping worksheet (2).',
+            descriptionEs: 'Hoja sin reagrupar (2).',
+            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-no-regrouping-2.pdf',
+            category: 'sin_reagrupacion',
+            isVideo: false
+        },
+        {
+            title: '10. Mixed C',
+            titleEs: '10. Mixtos C',
+            type: 'PDF',
+            description: '2-digit mixed practice (C).',
+            descriptionEs: 'Practica mixta de 2 digitos (C).',
+            url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-c.pdf',
+            category: 'mixtos',
+            isVideo: false
+        },
+        {
+            title: '11. Mixed D',
+            titleEs: '11. Mixtos D',
+            type: 'PDF',
+            description: '2-digit mixed practice (D).',
+            descriptionEs: 'Practica mixta de 2 digitos (D).',
+            url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-d.pdf',
+            category: 'mixtos',
+            isVideo: false
+        },
+        {
+            title: '12. Mixed E',
+            titleEs: '12. Mixtos E',
+            type: 'PDF',
+            description: '2-digit mixed practice (E).',
+            descriptionEs: 'Practica mixta de 2 digitos (E).',
+            url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-e.pdf',
+            category: 'mixtos',
+            isVideo: false
+        },
+        {
+            title: '13. Mixed F',
+            titleEs: '13. Mixtos F',
+            type: 'PDF',
+            description: '2-digit mixed practice (F).',
+            descriptionEs: 'Practica mixta de 2 digitos (F).',
+            url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-f.pdf',
+            category: 'mixtos',
+            isVideo: false
+        },
+        {
+            title: '14. Mixed 2',
+            titleEs: '14. Mixtos 2',
+            type: 'PDF',
+            description: 'Mixed worksheet (2).',
+            descriptionEs: 'Hoja mixta (2).',
+            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-2.pdf',
+            category: 'mixtos',
+            isVideo: false
+        },
+        {
+            title: '15. Mixed 3',
+            titleEs: '15. Mixtos 3',
+            type: 'PDF',
+            description: 'Mixed worksheet (3).',
+            descriptionEs: 'Hoja mixta (3).',
+            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-3.pdf',
+            category: 'mixtos',
+            isVideo: false
+        },
+        {
+            title: '16. Mixed 4',
+            titleEs: '16. Mixtos 4',
+            type: 'PDF',
+            description: 'Mixed worksheet (4).',
+            descriptionEs: 'Hoja mixta (4).',
+            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-4.pdf',
+            category: 'mixtos',
+            isVideo: false
+        },
+        {
+            title: '17. Mixed 5',
+            titleEs: '17. Mixtos 5',
+            type: 'PDF',
+            description: 'Mixed worksheet (5).',
+            descriptionEs: 'Hoja mixta (5).',
+            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-5.pdf',
+            category: 'mixtos',
+            isVideo: false
+        },
+        {
+            title: '18. Mixed 6',
+            titleEs: '18. Mixtos 6',
+            type: 'PDF',
+            description: 'Mixed worksheet (6).',
+            descriptionEs: 'Hoja mixta (6).',
+            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-6.pdf',
+            category: 'mixtos',
+            isVideo: false
+        },
+        {
+            title: '19. Challenge 1',
+            titleEs: '19. Reto 1',
+            type: 'PDF',
+            description: 'Mixed challenge worksheet (1).',
+            descriptionEs: 'Hoja de reto mixta (1).',
+            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-challenge-1.pdf',
+            category: 'mixtos',
+            isVideo: false
+        },
+        {
+            title: '20. Challenge 2',
+            titleEs: '20. Reto 2',
+            type: 'PDF',
+            description: 'Mixed challenge worksheet (2).',
+            descriptionEs: 'Hoja de reto mixta (2).',
+            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-challenge-2.pdf',
+            category: 'mixtos',
             isVideo: false
         }
     ]
@@ -2094,14 +2249,61 @@ function showResources(topicId) {
     // Get resources for this topic
     const resources = mathResources[topicId] || [];
     
+    const groupedCategoryOrder = ['sin_reagrupacion', 'con_reagrupacion', 'mixtos', 'apoyo'];
+    const groupedCategoryLabels = {
+        sin_reagrupacion: { en: 'Without Regrouping', es: 'Sin reagrupar' },
+        con_reagrupacion: { en: 'With Regrouping', es: 'Con reagrupar' },
+        mixtos: { en: 'Mixed Practice', es: 'Mixtos' },
+        apoyo: { en: 'Support Material', es: 'Material de apoyo' }
+    };
+
+    let resourcesToRender = resources;
+    if (topicId === 'subtraction') {
+        resourcesToRender = [];
+
+        groupedCategoryOrder.forEach(categoryKey => {
+            const inCategory = resources.filter(resource => (resource.category || 'apoyo') === categoryKey);
+            if (!inCategory.length) return;
+
+            const labelSet = groupedCategoryLabels[categoryKey] || groupedCategoryLabels.apoyo;
+            const categoryLabel = (labelSet && (labelSet[langPref] || labelSet.en)) || categoryKey;
+
+            resourcesToRender.push({
+                isCategoryHeader: true,
+                categoryLabel
+            });
+
+            resourcesToRender.push(...inCategory);
+        });
+
+        const uncategorized = resources.filter(resource => !groupedCategoryOrder.includes(resource.category || 'apoyo'));
+        if (uncategorized.length) {
+            const otherLabel = langPref === 'es' ? 'Otros' : 'Other';
+            resourcesToRender.push({
+                isCategoryHeader: true,
+                categoryLabel: otherLabel
+            });
+            resourcesToRender.push(...uncategorized);
+        }
+    }
+
     // Create resource items
-    resources.forEach(resource => {
+    resourcesToRender.forEach(resource => {
+        if (resource.isCategoryHeader) {
+            const categoryHeader = document.createElement('div');
+            categoryHeader.className = 'resource-group-title';
+            categoryHeader.textContent = resource.categoryLabel;
+            container.appendChild(categoryHeader);
+            return;
+        }
+
         const resourceDiv = document.createElement('div');
         resourceDiv.className = 'resource-item';
         
         let videoContent = '';
         let imageContent = '';
         let interactiveContent = '';
+        let pdfPreviewContent = '';
         
         // Video handling
         if (resource.isVideo) {
@@ -2206,10 +2408,22 @@ function showResources(topicId) {
                 </div>
             `;
         }
-        
+
         const displayTitle = (langPref === 'es' && resource.titleEs) ? resource.titleEs : resource.title;
         const displayDesc = (langPref === 'es' && resource.descriptionEs) ? resource.descriptionEs : resource.description;
         const displayType = (langPref === 'es' && resource.typeEs) ? resource.typeEs : resource.type;
+
+        const isPdfResource = !!(resource.url && /\.pdf(?:[#?].*)?$/i.test(resource.url));
+        if (topicId === 'subtraction' && isPdfResource) {
+            const pdfPreviewLabel = langPref === 'es' ? 'Vista previa del PDF' : 'PDF Preview';
+            const pdfPreviewSrc = `${resource.url}#view=FitH`;
+            pdfPreviewContent = `
+                <div class="pdf-preview-wrapper">
+                    <p class="pdf-preview-label">${pdfPreviewLabel}</p>
+                    <iframe class="pdf-preview" src="${pdfPreviewSrc}" title="${displayTitle || resource.title || 'PDF Preview'}" loading="lazy"></iframe>
+                </div>
+            `;
+        }
 
         resourceDiv.innerHTML = `
             <div class="resource-type">${displayType || ''}</div>
@@ -2218,6 +2432,7 @@ function showResources(topicId) {
             ${videoContent}
             ${imageContent}
             ${interactiveContent}
+            ${pdfPreviewContent}
             ${resource.url && !resource.isVideo && !resource.hasImage && !resource.hasTemplate && !resource.interactiveType ? `<button class="topic-btn" onclick="openResource('${resource.url}')">${(i18n.openResource && i18n.openResource[langPref])? i18n.openResource[langPref] : 'Open Resource'} <i class="fas fa-external-link-alt"></i></button>` : ''}
         `;
         
