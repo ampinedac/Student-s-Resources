@@ -12,8 +12,193 @@ function resolveProjectAssetUrl(relativePath) {
 }
 
 // Resources data based on your document
-const mathResources = {
-    sets: [
+// --- NEW STRUCTURE FOR BASICS AND PRACTICE ---
+const basicsOfSubtraction = [
+    {
+        title: 'Subtraction for First Graders',
+        type: 'PDF',
+        url: resolveProjectAssetUrl('Subtraction/1 Subtraction for first graders.pdf'),
+    },
+    {
+        title: 'Subtraction – Practice Exercises 1°',
+        type: 'PDF',
+        url: resolveProjectAssetUrl('Subtraction/2 Subtraction – Practice exercises 1°.pdf'),
+    },
+    {
+        title: 'Subtraction – With Regrouping - FlashCard',
+        type: 'PDF',
+        url: resolveProjectAssetUrl('Subtraction/3 Subtraction – With regrouping - FlashCard.pdf'),
+    },
+    {
+        title: 'Subtraction – Without Regrouping - FlashCard',
+        type: 'PDF',
+        url: resolveProjectAssetUrl('Subtraction/4 Subtraction – Without regrouping - FlashCard.pdf'),
+    },
+    {
+        title: 'Subtraction Template',
+        type: 'PDF',
+        url: resolveProjectAssetUrl('Subtraction/5 Subtraction template.pdf'),
+    }
+];
+
+const basicsOfAddition = [
+    {
+        title: 'Addition for First Graders',
+        type: 'PDF',
+        url: 'https://www.superteacherworksheets.com/addition/adding-2digit-noregroup_TTWTN.pdf',
+    },
+    {
+        title: 'Bilingual Addition Guide',
+        type: 'PDF',
+        url: 'https://www.superteacherworksheets.com/addition/adding-columns3_TTZDN.pdf',
+    },
+    {
+        title: 'Addition – Practice Exercises 1°',
+        type: 'PDF',
+        url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/adding-single-digit-numbers',
+    },
+    {
+        title: 'Addition – Without Regrouping - FlashCard',
+        type: 'PDF',
+        url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/addition-sums-50',
+    },
+    {
+        title: 'Addition – With Regrouping - FlashCard',
+        type: 'PDF',
+        url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/addition-3-addends',
+    },
+    {
+        title: 'Addition Template',
+        type: 'PDF',
+        url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/addition-3-addends',
+    }
+];
+
+// Agrupar el resto de PDFs en categorías para la galería de práctica
+const practiceWorksheets = [
+    // No Regrouping
+    {
+        group: 'No Regrouping',
+        items: [
+            {
+                title: 'No Regrouping 1',
+                type: 'PDF',
+                url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-no-regrouping-1.pdf',
+            },
+            {
+                title: 'No Regrouping 2',
+                type: 'PDF',
+                url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-no-regrouping-2.pdf',
+            }
+        ]
+    },
+    // With Regrouping
+    {
+        group: 'With Regrouping',
+        items: [
+            {
+                title: 'Flashcards (Regrouping)',
+                type: 'PDF',
+                url: resolveProjectAssetUrl('Subtraction/3 Subtraction – With regrouping - FlashCard.pdf'),
+            }
+        ]
+    },
+    // Mixed Practice
+    {
+        group: 'Mixed Practice',
+        items: [
+            {
+                title: 'Mixed A',
+                type: 'PDF',
+                url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-a.pdf',
+            },
+            {
+                title: 'Mixed B',
+                type: 'PDF',
+                url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-b.pdf',
+            },
+            {
+                title: 'Mixed C',
+                type: 'PDF',
+                url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-c.pdf',
+            },
+            {
+                title: 'Mixed D',
+                type: 'PDF',
+                url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-d.pdf',
+            },
+            {
+                title: 'Mixed E',
+                type: 'PDF',
+                url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-e.pdf',
+            },
+            {
+                title: 'Mixed F',
+                type: 'PDF',
+                url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-f.pdf',
+            },
+            {
+                title: 'Mixed 2',
+                type: 'PDF',
+                url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-2.pdf',
+            },
+            {
+                title: 'Mixed 3',
+                type: 'PDF',
+                url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-3.pdf',
+            },
+            {
+                title: 'Mixed 4',
+                type: 'PDF',
+                url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-4.pdf',
+            },
+            {
+                title: 'Mixed 5',
+                type: 'PDF',
+                url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-5.pdf',
+            },
+            {
+                title: 'Mixed 6',
+                type: 'PDF',
+                url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-6.pdf',
+            },
+            {
+                title: 'Mixed Addition & Subtraction (Some Regrouping)',
+                type: 'PDF',
+                url: 'https://math-drills.com/multiop/mixed_addition_subtraction_2digit_2digit_some_regrouping_all.1489671824.pdf',
+            }
+        ]
+    },
+    // Challenge Worksheets
+    {
+        group: 'Challenge Worksheets',
+        items: [
+            {
+                title: 'Challenge 1',
+                type: 'PDF',
+                url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-challenge-1.pdf',
+            },
+            {
+                title: 'Challenge 2',
+                type: 'PDF',
+                url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-challenge-2.pdf',
+            }
+        ]
+    },
+    // Templates
+    {
+        group: 'Templates',
+        items: [
+            {
+                title: 'Subtraction Template',
+                type: 'PDF',
+                url: resolveProjectAssetUrl('Subtraction/5 Subtraction template.pdf'),
+            }
+        ]
+    }
+];
+
+// ...existing code...
         {
             title: 'What is a set?',
             type: 'Article',
@@ -64,208 +249,212 @@ const mathResources = {
                 {
                     id: 'sets_activity_2',
                     text: 'Identify 6 sets in your house and explain why they are sets.',
-                    textEs: 'Identifica 6 conjuntos en tu casa y explica por qué son conjuntos.'
-                }
-            ],
-            isVideo: false
-        }
-    ],
-    comparison: [
-        {
-            title: 'Greater Than Less Than Chart',
-            type: 'Worksheet',
-            description: 'Visual chart showing comparison symbols.',
-            url: 'https://superstarworksheets.com/wp-content/uploads/2023/10/GreaterThanLessThanChart.pdf',
-            isVideo: false
-        },
-        {
-            title: 'More and Fewer Worksheet',
-            type: 'Worksheet',
-            description: 'Practice comparing quantities.',
-            url: 'https://www.superteacherworksheets.com/counting/more-and-fewer_BBAGT.pdf',
-            isVideo: false
-        },
-        {
-            title: 'Greater/Less 2-Digit Numbers',
-            type: 'Worksheet',
-            description: 'Compare 2-digit numbers.',
-            url: 'https://www.superteacherworksheets.com/place-value/greaterless-2digit_TWRBD.pdf',
-            isVideo: false
-        },
-        {
-            title: 'More Than Less Than Worksheets',
-            type: 'Worksheet',
-            description: 'K5 Learning comparison worksheets.',
-            url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/comparing-numbers/more-than-less-than',
-            isVideo: false
-        },
-        {
-            title: 'Comparing Numbers Worksheets',
-            type: 'Worksheet',
-            description: 'Collection of number comparison worksheets.',
-            url: 'https://superstarworksheets.com/math-worksheets/comparing-numbers/comparing-numbers-worksheets/',
-            isVideo: false
-        },
-        {
-            title: 'Compare Numbers 0-100',
-            type: 'Worksheet',
-            description: 'Practice comparing numbers from 0 to 100.',
-            url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/comparing-numbers/compare-numbers-0-100',
-            isVideo: false
-        },
-        {
-            title: 'Greater Than / Less Than Game',
-            type: 'Game',
-            description: 'Interactive 3-digit comparison game.',
-            url: 'https://www.superteacherworksheets.com/place-value/gt-lt-game2-3-digits_GFDIW.pdf',
-            isVideo: false
-        },
-        {
-            title: 'Starfall Greater Less Equals',
-            type: 'Game',
-            description: 'Fun comparison game from Starfall.',
-            url: 'https://www.starfall.com/h/numbers/greater-less-equals/?sn=math0',
-            isVideo: false
-        },
-        {
-            title: 'ABCya Comparing Numbers Jr',
-            type: 'Game',
-            description: 'Comparing number values game.',
-            url: 'https://www.abcya.com/games/comparing_number_values_jr',
-            isVideo: false
-        },
-        {
-            title: 'Wordwall Greater/Less Game',
-            type: 'Game',
-            description: 'Interactive greater than or less than game.',
-            url: 'https://wordwall.net/resource/37870946/greater-than-or-less-than',
-            isVideo: false
-        },
-        {
-            title: 'Education.com Comparison Game',
-            type: 'Game',
-            description: 'Less than, greater than practice game.',
-            url: 'https://www.education.com/game/less-than-greater-than/',
-            isVideo: false
-        },
-        {
-            title: 'Greater Than / Less Than - Video A',
-            type: 'Video',
-            description: 'Learn comparison symbols with examples.',
-            url: 'https://www.youtube.com/watch?v=M6Efzu2slaI',
-            isVideo: true
-        },
-        {
-            title: 'Greater Than / Less Than - Video B',
-            type: 'Video',
-            description: 'More comparison examples and practice.',
-            url: 'https://www.youtube.com/watch?v=q93lAp6Rh5g',
-            isVideo: true
-        }
-    ],
-    wordproblems: [
-        {
-            title: 'UPAC Problem Solving Method',
-            type: 'Method',
-            description: '📌 Start here! Learn the UPAC method to solve word problems step by step:',
-            url: '#',
-            isVideo: false,
-            hasTemplate: true,
-            templates: [
-                {
-                    title: 'UPAC Method Guide',
-                    description: 'Learn how to use the UPAC process (Understand, Plan, Answer, Check)',
-                    imagePath: 'images/2.png',
-                    downloadName: 'UPAC-Problem-Solving-Guide.png'
-                },
-                {
-                    title: 'Blank UPAC Template',
-                    description: 'Print this blank template to practice solving word problems',
-                    imagePath: 'images/3.png',
-                    downloadName: 'UPAC-Blank-Template.png'
-                }
-            ]
-        },
-        {
-            title: 'Adding 2-Digit Numbers',
-            type: 'Worksheet',
-            description: 'Word problems with 2-digit addition.',
-            url: 'https://www.superteacherworksheets.com/addition/adding-2digit-noregroup_TTWTN.pdf',
-            isVideo: false
-        },
-        {
-            title: 'Adding Columns Worksheet',
-            type: 'Worksheet',
-            description: 'Multi-column addition practice.',
-            url: 'https://www.superteacherworksheets.com/addition/adding-columns3_TTZDN.pdf',
-            isVideo: false
-        },
-        {
-            title: 'K5 Single Digit Addition',
-            type: 'Worksheet',
-            description: 'Word problems with single digit numbers.',
-            url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/adding-single-digit-numbers',
-            isVideo: false
-        },
-        {
-            title: 'Addition Sums to 50',
-            type: 'Worksheet',
-            description: 'Word problems with sums up to 50.',
-            url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/addition-sums-50',
-            isVideo: false
-        },
-        {
-            title: 'Addition 3 Addends',
-            type: 'Worksheet',
-            description: 'Word problems with three numbers to add.',
-            url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/addition-3-addends',
-            isVideo: false
-        },
-        {
-            title: 'Daily Word Problems',
-            type: 'Worksheet',
-            description: 'Collection of daily math word problems.',
-            url: 'https://www.superteacherworksheets.com/daily-word-problems-a.html',
-            isVideo: false
-        },
-        {
-            title: 'Subtraction Word Problems',
-            type: 'Worksheet',
-            description: 'Practice subtraction with word problems.',
-            url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/subtraction',
-            isVideo: false
-        },
-        {
-            title: 'Subtraction 2-Digits Word Problems',
-            type: 'Worksheet',
-            description: 'Word problems with 2-digit subtraction.',
-            url: 'https://www.k5learning.com/free-math-worksheets/first-grade-1/word-problems/subtraction-2-digits',
-            isVideo: false
-        },
-        {
-            title: 'Suggested Activity',
-            type: 'Activity',
-            description: 'Practice creating your own word problems:',
-            url: '#',
-            isActivity: true,
-            activities: [
-                {
-                    id: 'wordproblems_activity_create',
-                    text: 'Create your own word problem and share with your family',
-                    textEs: 'Crea tu propio problema matemático y compártelo con tu familia',
-                    hasCounter: true,
-                    counterLabel: 'How many did you create?',
-                    counterLabelEs: '¿Cuántos creaste?'
-                }
-            ],
-            isVideo: false
-        },
-        {
-            title: 'First Grade Word Problems Game',
-            type: 'Game',
-            description: 'Interactive word problems for first graders.',
-            url: 'https://wordwall.net/es/resource/51869249/math/math-word-problems-for-first-grade',
-            isVideo: false
+                    subtraction: [
+                        // Orden personalizado: Basics, Starter Practice, Template, luego el resto agrupado
+                        {
+                            title: 'Basics',
+                            titleEs: 'Conceptos básicos',
+                            type: 'PDF',
+                            description: 'Quick intro to subtraction.',
+                            descriptionEs: 'Introducción rápida a la resta.',
+                            url: resolveProjectAssetUrl('Subtraction/1 Subtraction for first graders.pdf'),
+                            category: 'apoyo',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Starter Practice',
+                            titleEs: 'Práctica inicial',
+                            type: 'PDF',
+                            description: 'Initial subtraction practice.',
+                            descriptionEs: 'Práctica inicial de resta.',
+                            url: resolveProjectAssetUrl('Subtraction/2 Subtraction – Practice exercises 1°.pdf'),
+                            category: 'apoyo',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Template',
+                            titleEs: 'Plantilla',
+                            type: 'PDF',
+                            description: 'Template for subtraction practice.',
+                            descriptionEs: 'Plantilla para practicar resta.',
+                            url: resolveProjectAssetUrl('Subtraction/5 Subtraction template.pdf'),
+                            category: 'apoyo',
+                            isVideo: false
+                        },
+                        // Sin reagrupar
+                        {
+                            title: 'Flashcards (No Regrouping)',
+                            titleEs: 'Tarjetas (Sin reagrupar)',
+                            type: 'PDF',
+                            description: 'Flashcards without regrouping.',
+                            descriptionEs: 'Tarjetas de resta sin reagrupar.',
+                            url: resolveProjectAssetUrl('Subtraction/4 Subtraction – Without regrouping - FlashCard.pdf'),
+                            category: 'sin_reagrupacion',
+                            isVideo: false
+                        },
+                        {
+                            title: 'No Regrouping 1',
+                            titleEs: 'Sin reagrupar 1',
+                            type: 'PDF',
+                            description: 'No regrouping worksheet (1).',
+                            descriptionEs: 'Hoja sin reagrupar (1).',
+                            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-no-regrouping-1.pdf',
+                            category: 'sin_reagrupacion',
+                            isVideo: false
+                        },
+                        {
+                            title: 'No Regrouping 2',
+                            titleEs: 'Sin reagrupar 2',
+                            type: 'PDF',
+                            description: 'No regrouping worksheet (2).',
+                            descriptionEs: 'Hoja sin reagrupar (2).',
+                            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-no-regrouping-2.pdf',
+                            category: 'sin_reagrupacion',
+                            isVideo: false
+                        },
+                        // Con reagrupar
+                        {
+                            title: 'Flashcards (Regrouping)',
+                            titleEs: 'Tarjetas (Reagrupando)',
+                            type: 'PDF',
+                            description: 'Flashcards for regrouping subtraction.',
+                            descriptionEs: 'Tarjetas para resta con reagrupación.',
+                            url: resolveProjectAssetUrl('Subtraction/3 Subtraction – With regrouping - FlashCard.pdf'),
+                            category: 'con_reagrupacion',
+                            isVideo: false
+                        },
+                        // Mixtos y retos
+                        {
+                            title: 'Mixed A',
+                            titleEs: 'Mixtos A',
+                            type: 'PDF',
+                            description: '2-digit mixed practice (A).',
+                            descriptionEs: 'Práctica mixta de 2 dígitos (A).',
+                            url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-a.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Mixed B',
+                            titleEs: 'Mixtos B',
+                            type: 'PDF',
+                            description: '2-digit mixed practice (B).',
+                            descriptionEs: 'Práctica mixta de 2 dígitos (B).',
+                            url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-b.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Mixed C',
+                            titleEs: 'Mixtos C',
+                            type: 'PDF',
+                            description: '2-digit mixed practice (C).',
+                            descriptionEs: 'Práctica mixta de 2 dígitos (C).',
+                            url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-c.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Mixed D',
+                            titleEs: 'Mixtos D',
+                            type: 'PDF',
+                            description: '2-digit mixed practice (D).',
+                            descriptionEs: 'Práctica mixta de 2 dígitos (D).',
+                            url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-d.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Mixed E',
+                            titleEs: 'Mixtos E',
+                            type: 'PDF',
+                            description: '2-digit mixed practice (E).',
+                            descriptionEs: 'Práctica mixta de 2 dígitos (E).',
+                            url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-e.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Mixed F',
+                            titleEs: 'Mixtos F',
+                            type: 'PDF',
+                            description: '2-digit mixed practice (F).',
+                            descriptionEs: 'Práctica mixta de 2 dígitos (F).',
+                            url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-f.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Mixed 2',
+                            titleEs: 'Mixtos 2',
+                            type: 'PDF',
+                            description: 'Mixed worksheet (2).',
+                            descriptionEs: 'Hoja mixta (2).',
+                            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-2.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Mixed 3',
+                            titleEs: 'Mixtos 3',
+                            type: 'PDF',
+                            description: 'Mixed worksheet (3).',
+                            descriptionEs: 'Hoja mixta (3).',
+                            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-3.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Mixed 4',
+                            titleEs: 'Mixtos 4',
+                            type: 'PDF',
+                            description: 'Mixed worksheet (4).',
+                            descriptionEs: 'Hoja mixta (4).',
+                            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-4.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Mixed 5',
+                            titleEs: 'Mixtos 5',
+                            type: 'PDF',
+                            description: 'Mixed worksheet (5).',
+                            descriptionEs: 'Hoja mixta (5).',
+                            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-5.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Mixed 6',
+                            titleEs: 'Mixtos 6',
+                            type: 'PDF',
+                            description: 'Mixed worksheet (6).',
+                            descriptionEs: 'Hoja mixta (6).',
+                            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-6.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Challenge 1',
+                            titleEs: 'Reto 1',
+                            type: 'PDF',
+                            description: 'Mixed challenge worksheet (1).',
+                            descriptionEs: 'Hoja de reto mixta (1).',
+                            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-challenge-1.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Challenge 2',
+                            titleEs: 'Reto 2',
+                            type: 'PDF',
+                            description: 'Mixed challenge worksheet (2).',
+                            descriptionEs: 'Hoja de reto mixta (2).',
+                            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-challenge-2.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        }
+                    ]
         },
         {
             title: 'IKnowIt Word Problems',
@@ -2230,263 +2419,118 @@ topicTitles['t3_addsub_regroup'] = '🔢 Addition & Subtraction with Regrouping 
 topicTitles['t3_measurement'] = '📏 Units of Measurement (Third Grade)';
 topicTitles['t3_timestables'] = '✖️ Práctica de Tablas de Multiplicar';
 
-// Function to show resources modal
+// Function to show resources modal with tabs
 function showResources(topicId) {
     const modal = document.getElementById('resourcesModal');
     const overlay = document.getElementById('modalOverlay');
     const title = document.getElementById('modalTitle');
     const container = document.getElementById('resourcesContainer');
-    const langPref = localStorage.getItem('preferredLang') || 'en';
-    const topicTitle = topicTitles[topicId];
-    
-    // Set modal title (mark as custom so generic i18n doesn't overwrite it)
-    title.textContent = (topicTitle && typeof topicTitle === 'object') ? (topicTitle[langPref] || topicTitle.en || 'Resources') : (topicTitle || i18n.modalTitle[langPref] || 'Resources');
+    // Only English for this section
+    title.textContent = 'Math Resources';
     title.dataset.custom = 'true';
-    
-    // Clear previous content
     container.innerHTML = '';
-    
-    // Get resources for this topic
-    const resources = mathResources[topicId] || [];
-    
-    const groupedCategoryOrder = ['sin_reagrupacion', 'con_reagrupacion', 'mixtos', 'apoyo'];
-    const groupedCategoryLabels = {
-        sin_reagrupacion: { en: 'Without Regrouping', es: 'Sin reagrupar' },
-        con_reagrupacion: { en: 'With Regrouping', es: 'Con reagrupar' },
-        mixtos: { en: 'Mixed Practice', es: 'Mixtos' },
-        apoyo: { en: 'Support Material', es: 'Material de apoyo' }
-    };
 
-    let resourcesToRender = resources;
-    if (topicId === 'subtraction') {
-        resourcesToRender = [];
+    // Tabs
+    const tabs = [
+        { id: 'tab-subtraction', label: 'Basics of Subtraction' },
+        { id: 'tab-addition', label: 'Basics of Addition' },
+        { id: 'tab-practice', label: 'Practice Addition and Subtraction Worksheets' }
+    ];
+    const tabsBar = document.createElement('div');
+    tabsBar.className = 'resources-tabs-bar';
+    tabs.forEach((tab, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'resources-tab-btn' + (idx === 0 ? ' active' : '');
+        btn.id = tab.id;
+        btn.textContent = tab.label;
+        btn.onclick = () => switchTab(tab.id);
+        tabsBar.appendChild(btn);
+    });
+    container.appendChild(tabsBar);
 
-        groupedCategoryOrder.forEach(categoryKey => {
-            const inCategory = resources.filter(resource => (resource.category || 'apoyo') === categoryKey);
-            if (!inCategory.length) return;
+    // Content containers
+    const tabContents = {};
+    tabs.forEach((tab, idx) => {
+        const div = document.createElement('div');
+        div.className = 'resources-tab-content' + (idx === 0 ? ' active' : '');
+        div.id = tab.id + '-content';
+        tabContents[tab.id] = div;
+        container.appendChild(div);
+    });
 
-            const labelSet = groupedCategoryLabels[categoryKey] || groupedCategoryLabels.apoyo;
-            const categoryLabel = (labelSet && (labelSet[langPref] || labelSet.en)) || categoryKey;
-
-            resourcesToRender.push({
-                isCategoryHeader: true,
-                categoryLabel
-            });
-
-            resourcesToRender.push(...inCategory);
+    // Render content for each tab
+    // 1. Basics of Subtraction
+    basicsOfSubtraction.forEach(res => {
+        const item = document.createElement('div');
+        item.className = 'resource-item';
+        item.innerHTML = `
+            <div class="resource-title">${res.title}</div>
+            <div class='pdf-preview-wrap'><iframe class='pdf-preview tiny' src='${res.url}'></iframe></div>
+            <button class='open-resource-btn' data-url='${res.url}'>Open PDF</button>
+        `;
+        tabContents['tab-subtraction'].appendChild(item);
+    });
+    // 2. Basics of Addition
+    basicsOfAddition.forEach(res => {
+        const item = document.createElement('div');
+        item.className = 'resource-item';
+        item.innerHTML = `
+            <div class="resource-title">${res.title}</div>
+            <div class='pdf-preview-wrap'><iframe class='pdf-preview tiny' src='${res.url}'></iframe></div>
+            <button class='open-resource-btn' data-url='${res.url}'>Open PDF</button>
+        `;
+        tabContents['tab-addition'].appendChild(item);
+    });
+    // 3. Practice Worksheets (grouped)
+    practiceWorksheets.forEach(group => {
+        const groupDiv = document.createElement('div');
+        groupDiv.className = 'practice-group';
+        const groupTitle = document.createElement('div');
+        groupTitle.className = 'practice-group-title';
+        groupTitle.textContent = group.group;
+        groupDiv.appendChild(groupTitle);
+        const gallery = document.createElement('div');
+        gallery.className = 'pdf-gallery';
+        group.items.forEach(res => {
+            const item = document.createElement('div');
+            item.className = 'gallery-item';
+            item.innerHTML = `
+                <div class="resource-title">${res.title}</div>
+                <div class='pdf-preview-wrap'><iframe class='pdf-preview tiny' src='${res.url}'></iframe></div>
+                <button class='open-resource-btn' data-url='${res.url}'>Open PDF</button>
+            `;
+            gallery.appendChild(item);
         });
+        groupDiv.appendChild(gallery);
+        tabContents['tab-practice'].appendChild(groupDiv);
+    });
 
-        const uncategorized = resources.filter(resource => !groupedCategoryOrder.includes(resource.category || 'apoyo'));
-        if (uncategorized.length) {
-            const otherLabel = langPref === 'es' ? 'Otros' : 'Other';
-            resourcesToRender.push({
-                isCategoryHeader: true,
-                categoryLabel: otherLabel
-            });
-            resourcesToRender.push(...uncategorized);
-        }
+    // Tab switching logic
+    function switchTab(tabId) {
+        tabs.forEach(tab => {
+            document.getElementById(tab.id).classList.remove('active');
+            document.getElementById(tab.id + '-content').classList.remove('active');
+        });
+        document.getElementById(tabId).classList.add('active');
+        document.getElementById(tabId + '-content').classList.add('active');
     }
 
-    // Create resource items
-    resourcesToRender.forEach(resource => {
-        if (resource.isCategoryHeader) {
-            const categoryHeader = document.createElement('div');
-            categoryHeader.className = 'resource-group-title';
-            categoryHeader.textContent = resource.categoryLabel;
-            container.appendChild(categoryHeader);
-            return;
-        }
-
-        const resourceDiv = document.createElement('div');
-        resourceDiv.className = 'resource-item';
-        
-        let videoContent = '';
-        let imageContent = '';
-        let interactiveContent = '';
-        let pdfPreviewContent = '';
-        
-        // Video handling
-        if (resource.isVideo) {
-            const getYoutubeId = (url) => {
-                if (!url) return null;
-                try {
-                    let m = url.match(/embed\/([A-Za-z0-9_-]{6,})/);
-                    if (m && m[1]) return m[1];
-                    m = url.match(/[?&]v=([A-Za-z0-9_-]{6,})/);
-                    if (m && m[1]) return m[1];
-                    m = url.match(/youtu\.be\/([A-Za-z0-9_-]{6,})/);
-                    if (m && m[1]) return m[1];
-                    return null;
-                } catch (e) {
-                    return null;
-                }
+    // Open PDF button logic
+    setTimeout(() => {
+        document.querySelectorAll('.open-resource-btn').forEach(btn => {
+            btn.onclick = e => {
+                const url = btn.getAttribute('data-url');
+                window.open(url, '_blank');
             };
-
-            const id = getYoutubeId(resource.url || '');
-            const watchUrl = id ? `https://www.youtube.com/watch?v=${id}` : (resource.url || '#');
-            const thumb = id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
-
-            // determine current language for translations of dynamic buttons
-            const langPref = localStorage.getItem('preferredLang') || 'en';
-            const openText = (i18n.openOnYouTube && i18n.openOnYouTube[langPref]) ? i18n.openOnYouTube[langPref] : 'Open on YouTube';
-
-            // Preferred behavior: for YouTube videos show thumbnail + a button that opens YouTube (user requested no embedded player).
-            // For local videos or Vimeo, keep native behavior (HTML5 video or Vimeo iframe).
-            const isLocalVideo = !!(resource.url && resource.url.match(/\.(mp4|webm|ogg)$/i));
-            const isVimeo = !!(resource.url && /vimeo\.com/.test(resource.url));
-
-            if (id) {
-                // Use the YouTube thumbnail and a button linking to the watch page (opens in new tab)
-                videoContent = `
-                    <div style="text-align:center; margin-top:10px;">
-                        <div style="position:relative; display:inline-block; max-width:560px; width:100%;">
-                            <img src="${thumb}" alt="${resource.title}" loading="lazy" style="width:100%; height:315px; object-fit:cover; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
-                            <a class="topic-btn" href="${watchUrl}" target="_blank" rel="noopener" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);">${openText}</a>
-                        </div>
-                    </div>
-                </li>`;
-            } else {
-                // Unknown video URL: show a fallback thumbnail if available or a simple link
-                const genericThumb = 'images/video-poster.png';
-                videoContent = `
-                    <div style="text-align:center; margin-top:10px;">
-                        <div style="position:relative; display:inline-block; max-width:560px; width:100%;">
-                            <img src="${thumb || genericThumb}" alt="${resource.title}" loading="lazy" style="width:100%; height:315px; object-fit:cover; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
-                            <a class="topic-btn" href="${watchUrl}" target="_blank" rel="noopener" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);">${openText}</a>
-                        </div>
-                    </div>
-                `;
-            }
-        }
-
-        
-        
-        if (resource.hasTemplate && resource.templates) {
-            imageContent = `
-                <div class="templates-section">
-                    ${resource.templates.map(template => `
-                        <div class="template-item">
-                            <h5 style="color: #2196F3; margin-bottom: 8px;">${template.title}</h5>
-                            <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">${template.description}</p>
-                            <img src="${template.imagePath}" alt="${template.title}" loading="lazy" class="template-image" style="width: 100%; max-width: 450px; height: auto; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 6px 20px rgba(0,0,0,0.15); border: 2px solid #e3f2fd;">
-                            <button class="download-btn" onclick="downloadTemplate('${template.imagePath}', '${template.downloadName}')">
-                                <i class="fas fa-download"></i> Download High Quality Image
-                            </button>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
-        } else if (resource.hasImage && resource.imagePath) {
-            imageContent = `
-                <div class="template-section">
-                    <p style="font-weight: 600; color: #2196F3; margin-top: 15px;">You can use this template to solve problems:</p>
-                            <img src="${resource.imagePath}" alt="Template" loading="lazy" class="template-image" style="width: 100%; max-width: 400px; height: auto; border-radius: 10px; margin-top: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                </div>
-            `;
-        }
-
-        // Interactive handlers (cardinality, multiplication)
-        if (resource.interactiveType === 'cardinality') {
-            const langPref2 = localStorage.getItem('preferredLang') || 'en';
-            const startCardText = (i18n.startCardinality && i18n.startCardinality[langPref2]) ? i18n.startCardinality[langPref2] : 'Start Cardinality Practice';
-            interactiveContent = `
-                <div style="text-align:center; margin-top:10px;">
-                    <p style="color:#666;">Open the interactive cardinality practice inside this modal.</p>
-                    <button class="topic-btn" onclick="showCardinalityPractice()">${startCardText}</button>
-                </div>
-            `;
-        }
-
-        if (resource.interactiveType === 'multiplication') {
-            const langPref3 = localStorage.getItem('preferredLang') || 'en';
-            const startMultText = (i18n.startMultiplication && i18n.startMultiplication[langPref3]) ? i18n.startMultiplication[langPref3] : 'Start Multiplication Grid';
-            interactiveContent = `
-                <div style="text-align:center; margin-top:10px;">
-                    <p style="color:#666;">Try the interactive 10×10 grid practice. Select cells to match a multiplication problem.</p>
-                    <button class="topic-btn" onclick="showMultiplicationPractice()">${startMultText}</button>
-                    <p style="margin-top:10px;">Printable Pythagorean table available inside the same section.</p>
-                </div>
-            `;
-        }
-
-        const displayTitle = (langPref === 'es' && resource.titleEs) ? resource.titleEs : resource.title;
-        const displayDesc = (langPref === 'es' && resource.descriptionEs) ? resource.descriptionEs : resource.description;
-        const displayType = (langPref === 'es' && resource.typeEs) ? resource.typeEs : resource.type;
-
-        const isPdfResource = !!(resource.url && /\.pdf(?:[#?].*)?$/i.test(resource.url));
-        if (topicId === 'subtraction' && isPdfResource) {
-            const pdfPreviewLabel = langPref === 'es' ? 'Vista previa del PDF' : 'PDF Preview';
-            const pdfPreviewSrc = `${resource.url}#view=FitH`;
-            pdfPreviewContent = `
-                <div class="pdf-preview-wrapper">
-                    <p class="pdf-preview-label">${pdfPreviewLabel}</p>
-                    <iframe class="pdf-preview" src="${pdfPreviewSrc}" title="${displayTitle || resource.title || 'PDF Preview'}" loading="lazy"></iframe>
-                </div>
-            `;
-        }
-
-        resourceDiv.innerHTML = `
-            <div class="resource-type">${displayType || ''}</div>
-            <h4>${displayTitle || ''}</h4>
-            <p>${displayDesc || ''}</p>
-            ${videoContent}
-            ${imageContent}
-            ${interactiveContent}
-            ${pdfPreviewContent}
-            ${resource.url && !resource.isVideo && !resource.hasImage && !resource.hasTemplate && !resource.interactiveType ? `<button class="topic-btn" onclick="openResource('${resource.url}')">${(i18n.openResource && i18n.openResource[langPref])? i18n.openResource[langPref] : 'Open Resource'} <i class="fas fa-external-link-alt"></i></button>` : ''}
-        `;
-        
-        container.appendChild(resourceDiv);
-
-        // If this resource is a video embed, attach diagnostic listeners to the iframe
-        if (resource.isVideo) {
-            // small defer so DOM settles
-            setTimeout(() => {
-                try {
-                    const iframe = resourceDiv.querySelector('iframe.video-preview');
-                    if (!iframe) return;
-                    // Log iframe src for debugging
-                    console.log('[video-debug] iframe src', iframe.src, 'resource title:', resource.title);
-
-                    iframe.addEventListener('load', () => {
-                        console.log('[video-debug] iframe loaded OK for', iframe.src);
-                    });
-
-                    iframe.addEventListener('error', () => {
-                        console.warn('[video-debug] iframe load error for', iframe.src);
-                        const lang = localStorage.getItem('preferredLang') || 'en';
-                        const msg = (i18n.embedBlocked && i18n.embedBlocked[lang]) ? i18n.embedBlocked[lang] : 'Embedding blocked for this video.';
-                        // show a small inline warning (no button) so user knows it's a policy/block issue
-                        const warn = document.createElement('div');
-                        warn.className = 'embed-warning';
-                        warn.style.cssText = 'margin-top:10px; color:#b71c1c; font-weight:700; text-align:center;';
-                        warn.textContent = msg;
-                        resourceDiv.appendChild(warn);
-                    });
-                } catch (e) {
-                    console.warn('[video-debug] attach listeners failed', e);
-                }
-            }, 150);
-        }
-    });
-    
-    // Accessibility: save previously focused element and enable focus trap
-    try {
-        window._lastFocusedElement = document.activeElement;
-    } catch (e) { window._lastFocusedElement = null; }
-
-    // Make modal and overlay visible to assistive tech
-    modal.setAttribute('aria-hidden', 'false');
-    overlay.setAttribute('aria-hidden', 'false');
+        });
+    }, 100);
 
     // Show modal visually
+    modal.setAttribute('aria-hidden', 'false');
+    overlay.setAttribute('aria-hidden', 'false');
     modal.classList.add('show');
     overlay.classList.add('show');
-
-    // Enable focus trap inside the modal
     enableModalFocusTrap(modal);
-
-    // Mark the opener button as expanded (for assistive tech) if applicable
     try {
         const opener = document.activeElement;
         if (opener && opener.classList && opener.classList.contains('topic-btn')) {
@@ -2496,16 +2540,6 @@ function showResources(topicId) {
             window._modalOpenedBy = null;
         }
     } catch (e) { window._modalOpenedBy = null; }
-    
-    // Add fade-in animation to resources
-    setTimeout(() => {
-        const items = container.querySelectorAll('.resource-item');
-        items.forEach((item, index) => {
-            setTimeout(() => {
-                item.style.animation = 'fadeIn 0.5s ease-out forwards';
-            }, index * 100);
-        });
-    }, 100);
 }
 
 // --- Interactive helpers for second grade ---
