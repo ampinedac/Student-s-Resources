@@ -2431,7 +2431,7 @@ topicTitles['t3_measurement'] = '📏 Units of Measurement (Third Grade)';
 topicTitles['t3_timestables'] = '✖️ Práctica de Tablas de Multiplicar';
 
 // Function to show resources modal with tabs
-function showResources(topicId) {
+function showResources(topicId, forceTab) {
     const modal = document.getElementById('resourcesModal');
     const overlay = document.getElementById('modalOverlay');
     const title = document.getElementById('modalTitle');
@@ -2447,11 +2447,19 @@ function showResources(topicId) {
         { id: 'tab-addition', label: 'Basics of Addition' },
         { id: 'tab-practice', label: 'Practice Addition and Subtraction Worksheets' }
     ];
+    let activeTab = 'tab-subtraction';
+    if (forceTab && ['tab-subtraction','tab-addition','tab-practice'].includes(forceTab)) {
+        activeTab = forceTab;
+    } else if (topicId === 'addition') {
+        activeTab = 'tab-addition';
+    } else if (topicId === 'practiceworksheets') {
+        activeTab = 'tab-practice';
+    }
     const tabsBar = document.createElement('div');
     tabsBar.className = 'resources-tabs-bar';
-    tabs.forEach((tab, idx) => {
+    tabs.forEach((tab) => {
         const btn = document.createElement('button');
-        btn.className = 'resources-tab-btn' + (idx === 0 ? ' active' : '');
+        btn.className = 'resources-tab-btn' + (tab.id === activeTab ? ' active' : '');
         btn.id = tab.id;
         btn.textContent = tab.label;
         btn.onclick = () => switchTab(tab.id);
@@ -2461,9 +2469,9 @@ function showResources(topicId) {
 
     // Content containers
     const tabContents = {};
-    tabs.forEach((tab, idx) => {
+    tabs.forEach((tab) => {
         const div = document.createElement('div');
-        div.className = 'resources-tab-content' + (idx === 0 ? ' active' : '');
+        div.className = 'resources-tab-content' + (tab.id === activeTab ? ' active' : '');
         div.id = tab.id + '-content';
         tabContents[tab.id] = div;
         container.appendChild(div);
