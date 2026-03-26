@@ -136,6 +136,39 @@ window.closeModal = function() {
 function enableModalFocusTrap(modal) {
     // Implementa si lo necesitas
 }
+
+// --- FUNCIONES FALTANTES PARA FLUJO COMPLETO ---
+// Text-to-Speech: Lee el contenido principal de la página
+window.readPageContent = function() {
+    const text = document.body.innerText || '';
+    if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utter = new SpeechSynthesisUtterance(text);
+        utter.lang = 'en-US';
+        window.speechSynthesis.speak(utter);
+        document.getElementById('stopReadingBtn').style.display = '';
+    }
+};
+
+// Detener lectura en voz alta
+window.stopReading = function() {
+    if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        document.getElementById('stopReadingBtn').style.display = 'none';
+    }
+};
+
+// Mostrar panel de administración oculto
+window.showAdminAccess = function() {
+    const panel = document.getElementById('adminPanel');
+    if (panel) panel.style.display = '';
+};
+
+// Ocultar panel de administración
+window.hideAdminPanel = function() {
+    const panel = document.getElementById('adminPanel');
+    if (panel) panel.style.display = 'none';
+};
         {
             title: 'What is a set?',
             type: 'Article',
