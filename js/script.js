@@ -164,67 +164,7 @@ function showResources(topicId) {
             window._modalOpenedBy = null;
         }
     } catch (e) { window._modalOpenedBy = null; }
-}
 
-    // Para los demás temas, buscar recursos en mathResources
-    let resources = (typeof mathResources !== 'undefined' && mathResources[topicId]) ? mathResources[topicId] : null;
-    if (!resources) {
-        // Si no hay recursos, mostrar mensaje
-        container.innerHTML = '<div style="padding: 24px; text-align: center; color: #b71c1c; font-weight: bold;">No resources available for this topic yet.</div>';
-    } else {
-        // Mostrar recursos
-        resources.forEach(res => {
-            const item = document.createElement('div');
-            item.className = 'resource-item';
-            let content = `<div class=\"resource-title\">${res.title || ''}</div>`;
-            if (res.description) content += `<div class=\"resource-desc\">${res.description}</div>`;
-            if (res.url) {
-                if (res.type === 'PDF' || (res.url.endsWith('.pdf'))) {
-                    content += `<div class='pdf-preview-wrap'><iframe class='pdf-preview tiny' src='${res.url}'></iframe></div>`;
-                    content += `<button class='open-resource-btn' data-url='${res.url}'>Open PDF</button>`;
-                } else if (res.isVideo || (res.url && res.url.includes('youtube'))) {
-                    content += `<div class='video-wrap'><iframe class='video-preview' src='${res.url.replace('watch?v=', 'embed/')}' allowfullscreen></iframe></div>`;
-                } else if (res.isEmbed && res.embedUrl) {
-                    content += `<div class='embed-wrap'><iframe class='embed-preview' src='${res.embedUrl}'></iframe></div>`;
-                } else {
-                    content += `<a class='open-resource-btn' href='${res.url}' target='_blank'>Open Resource</a>`;
-                }
-            } else if (res.isActivity && res.activities) {
-                content += '<ul class=\"activity-list\">';
-                res.activities.forEach(act => {
-                    content += `<li>${act.text || ''}</li>`;
-                });
-                content += '</ul>';
-            }
-            item.innerHTML = content;
-            container.appendChild(item);
-        });
-        setTimeout(() => {
-            document.querySelectorAll('.open-resource-btn').forEach(btn => {
-                btn.onclick = e => {
-                    const url = btn.getAttribute('data-url');
-                    window.open(url, '_blank');
-                };
-            });
-        }, 100);
-    }
-
-    // Mostrar modal
-    modal.setAttribute('aria-hidden', 'false');
-    overlay.setAttribute('aria-hidden', 'false');
-    modal.classList.add('show');
-    overlay.classList.add('show');
-    enableModalFocusTrap(modal);
-    try {
-        const opener = document.activeElement;
-        if (opener && opener.classList && opener.classList.contains('topic-btn')) {
-            opener.setAttribute('aria-expanded', 'true');
-            window._modalOpenedBy = opener;
-        } else {
-            window._modalOpenedBy = null;
-        }
-    } catch (e) { window._modalOpenedBy = null; }
-}
                     item.innerHTML = content;
                     container.appendChild(item);
                 });
