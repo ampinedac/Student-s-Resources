@@ -1,136 +1,180 @@
 // ­ Interactive Math Resources Website - First Grade First Term
 // Functionality for children's educational site with exact curriculum resources
 
-function resolveProjectAssetUrl(relativePath) {
-    const normalizedPath = String(relativePath || '').replace(/^\/+/, '');
+function showResources(topicId) {
+    const modal = document.getElementById('resourcesModal');
+    let overlay = document.getElementById('modalOverlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.id = 'modalOverlay';
+        overlay.className = 'modal-overlay';
+        document.body.appendChild(overlay);
+    }
+    const title = document.getElementById('modalTitle');
+    const container = document.getElementById('resourcesContainer');
+    container.innerHTML = '';
 
-    if (window.location.hostname.indexOf('github.io') !== -1) {
-        return `/Student-s-Resources/${normalizedPath}`;
+    // Mostrar tres tarjetas grandes para suma, resta y ejercicios mixtos
+    if (["subtraction", "addition", "practiceworksheets"].includes(topicId)) {
+        title.textContent = 'Addition & Subtraction Resources';
+        title.dataset.custom = 'true';
+        container.innerHTML = '';
+
+        // Definir los datos de cada tarjeta
+        const cards = [
+            {
+                key: 'addition',
+                icon: '➕',
+                title: 'Addition',
+                concept: (mathResources.addition && mathResources.addition[0] && mathResources.addition[0].description) || 'Learn the concept of addition and how to add numbers.',
+                resources: mathResources.addition || []
+            },
+            {
+                key: 'subtraction',
+                icon: '➖',
+                title: 'Subtraction',
+                concept: (mathResources.subtraction && mathResources.subtraction[0] && mathResources.subtraction[0].description) || 'Understand subtraction and how to subtract numbers.',
+                resources: mathResources.subtraction || []
+            },
+            {
+                key: 'practiceworksheets',
+                icon: '📝',
+                title: 'Mixed Addition & Subtraction',
+                concept: 'Practice your skills with mixed addition and subtraction exercises!',
+                resources: mathResources.practiceworksheets || []
+            }
+        ];
+
+        cards.forEach(card => {
+            // Tarjeta grande
+            const cardDiv = document.createElement('div');
+            cardDiv.className = 'big-resource-card';
+            cardDiv.style = 'background: #f8ffff; border-radius: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin: 32px 0; padding: 36px 24px; max-width: 900px; margin-left:auto; margin-right:auto; text-align:center;';
+            cardDiv.innerHTML = `
+                <div style="font-size: 60px; margin-bottom: 18px;">${card.icon}</div>
+                <h2 style="font-size:2.1em; margin-bottom: 10px; color:#1976d2;">${card.title}</h2>
+                <div style="font-size:1.15em; margin-bottom: 24px; color:#333;">${card.concept}</div>
+            `;
+            // Recursos
+            card.resources.forEach(res => {
+                const resDiv = document.createElement('div');
+                resDiv.className = 'resource-item';
+                resDiv.style = 'margin: 18px 0;';
+                let content = `<div class=\"resource-title\" style=\"font-weight:bold;\">${res.title || ''}</div>`;
+                if (res.description) content += `<div class=\"resource-desc\" style=\"font-size:0.98em; color:#444;\">${res.description}</div>`;
+                if (res.url) {
+                    if (res.type === 'PDF' || (res.url.endsWith('.pdf'))) {
+                        content += `<div class='pdf-preview-wrap'><iframe class='pdf-preview tiny' src='${res.url}'></iframe></div>`;
+                        content += `<button class='open-resource-btn' data-url='${res.url}'>Open PDF</button>`;
+                    } else if (res.isVideo || (res.url && res.url.includes('youtube'))) {
+                        content += `<div class='video-wrap'><iframe class='video-preview' src='${res.url.replace('watch?v=', 'embed/')}' allowfullscreen></iframe></div>`;
+                    } else if (res.isEmbed && res.embedUrl) {
+                        content += `<div class='embed-wrap'><iframe class='embed-preview' src='${res.embedUrl}'></iframe></div>`;
+                    } else {
+                        content += `<a class='open-resource-btn' href='${res.url}' target='_blank'>Open Resource</a>`;
+                    }
+                } else if (res.isActivity && res.activities) {
+                    content += '<ul class=\"activity-list\">';
+                    res.activities.forEach(act => {
+                        content += `<li>${act.text || ''}</li>`;
+                    });
+                    content += '</ul>';
+                }
+                resDiv.innerHTML = content;
+                cardDiv.appendChild(resDiv);
+            });
+            container.appendChild(cardDiv);
+        });
+
+        setTimeout(() => {
+            document.querySelectorAll('.open-resource-btn').forEach(btn => {
+                btn.onclick = e => {
+                    const url = btn.getAttribute('data-url');
+                    window.open(url, '_blank');
+                };
+            });
+        }, 100);
+
+        // Mostrar modal
+        modal.setAttribute('aria-hidden', 'false');
+        overlay.setAttribute('aria-hidden', 'false');
+        modal.classList.add('show');
+        overlay.classList.add('show');
+        enableModalFocusTrap(modal);
+        try {
+            const opener = document.activeElement;
+            if (opener && opener.classList && opener.classList.contains('topic-btn')) {
+                opener.setAttribute('aria-expanded', 'true');
+                window._modalOpenedBy = opener;
+            } else {
+                window._modalOpenedBy = null;
+            }
+        } catch (e) { window._modalOpenedBy = null; }
+        return;
     }
 
-    return normalizedPath;
-}
-
-// Resources data based on your document
-// --- NEW STRUCTURE FOR BASICS AND PRACTICE ---
-const basicsOfSubtraction = [
-    {
-        title: 'Subtraction for First Graders',
-        type: 'PDF',
-        url: resolveProjectAssetUrl('Subtraction/1 Subtraction for first graders.pdf'),
-    },
-    {
-        title: 'Subtraction – Practice Exercises 1°',
-        type: 'PDF',
-        url: resolveProjectAssetUrl('Subtraction/2 Subtraction – Practice exercises 1°.pdf'),
-    },
-    {
-        title: 'Subtraction – With Regrouping - FlashCard',
-        type: 'PDF',
-        url: resolveProjectAssetUrl('Subtraction/3 Subtraction – With regrouping - FlashCard.pdf'),
-    },
-    {
-        function showResources(topicId) {
-            const modal = document.getElementById('resourcesModal');
-            let overlay = document.getElementById('modalOverlay');
-            if (!overlay) {
-                overlay = document.createElement('div');
-                overlay.id = 'modalOverlay';
-                overlay.className = 'modal-overlay';
-                document.body.appendChild(overlay);
-            }
-            const title = document.getElementById('modalTitle');
-            const container = document.getElementById('resourcesContainer');
-
-            // Solo mostrar las pestañas para los tópicos de suma/resta
-            if (['subtraction', 'addition', 'practiceworksheets'].includes(topicId)) {
-                title.textContent = 'Math Resources';
-                title.dataset.custom = 'true';
-                container.innerHTML = '';
-
-                // Tabs
-                const tabs = [
-                    { id: 'tab-subtraction', label: 'Basics of Subtraction' },
-                    { id: 'tab-addition', label: 'Basics of Addition' },
-                    { id: 'tab-practice', label: 'Practice Addition and Subtraction Worksheets' }
-                ];
-                const tabsBar = document.createElement('div');
-                tabsBar.className = 'resources-tabs-bar';
-                tabs.forEach((tab, idx) => {
-                    const btn = document.createElement('button');
-                    btn.className = 'resources-tab-btn' + (idx === 0 ? ' active' : '');
-                    btn.id = tab.id;
-                    btn.textContent = tab.label;
-                    btn.onclick = () => switchTab(tab.id);
-                    tabsBar.appendChild(btn);
-                });
-                container.appendChild(tabsBar);
-
-                // Content containers
-                const tabContents = {};
-                tabs.forEach((tab, idx) => {
-                    const div = document.createElement('div');
-                    div.className = 'resources-tab-content' + (idx === 0 ? ' active' : '');
-                    div.id = tab.id + '-content';
-                    tabContents[tab.id] = div;
-                    container.appendChild(div);
-                });
-
-                // Render content for each tab
-                basicsOfSubtraction.forEach(res => {
-                    const item = document.createElement('div');
-                    item.className = 'resource-item';
-                    item.innerHTML = `
-                        <div class="resource-title">${res.title}</div>
-                        <div class='pdf-preview-wrap'><iframe class='pdf-preview tiny' src='${res.url}'></iframe></div>
-                        <button class='open-resource-btn' data-url='${res.url}'>Open PDF</button>
-                    `;
-                    tabContents['tab-subtraction'].appendChild(item);
-                });
-                basicsOfAddition.forEach(res => {
-                    const item = document.createElement('div');
-                    item.className = 'resource-item';
-                    item.innerHTML = `
-                        <div class="resource-title">${res.title}</div>
-                        <div class='pdf-preview-wrap'><iframe class='pdf-preview tiny' src='${res.url}'></iframe></div>
-                        <button class='open-resource-btn' data-url='${res.url}'>Open PDF</button>
-                    `;
-                    tabContents['tab-addition'].appendChild(item);
-                });
-                practiceWorksheets.forEach(group => {
-                    const groupDiv = document.createElement('div');
-                    groupDiv.className = 'practice-group';
-                    const groupTitle = document.createElement('div');
-                    groupTitle.className = 'practice-group-title';
-                    groupTitle.textContent = group.group;
-                    groupDiv.appendChild(groupTitle);
-                    const gallery = document.createElement('div');
-                    gallery.className = 'pdf-gallery';
-                    group.items.forEach(res => {
-                        const item = document.createElement('div');
-                        item.className = 'gallery-item';
-                        item.innerHTML = `
-                            <div class="resource-title">${res.title}</div>
-                            <div class='pdf-preview-wrap'><iframe class='pdf-preview tiny' src='${res.url}'></iframe></div>
-                            <button class='open-resource-btn' data-url='${res.url}'>Open PDF</button>
-                        `;
-                        gallery.appendChild(item);
-                    });
-                    groupDiv.appendChild(gallery);
-                    tabContents['tab-practice'].appendChild(groupDiv);
-                });
-
-                // Tab switching logic
-                function switchTab(tabId) {
-                    tabs.forEach(tab => {
-                        document.getElementById(tab.id).classList.remove('active');
-                        document.getElementById(tab.id + '-content').classList.remove('active');
-                    });
-                    document.getElementById(tabId).classList.add('active');
-                    document.getElementById(tabId + '-content').classList.add('active');
+    // Para los demás temas, buscar recursos en mathResources
+    let resources = (typeof mathResources !== 'undefined' && mathResources[topicId]) ? mathResources[topicId] : null;
+    if (!resources) {
+        // Si no hay recursos, mostrar mensaje
+        container.innerHTML = '<div style="padding: 24px; text-align: center; color: #b71c1c; font-weight: bold;">No resources available for this topic yet.</div>';
+    } else {
+        // Mostrar recursos
+        resources.forEach(res => {
+            const item = document.createElement('div');
+            item.className = 'resource-item';
+            let content = `<div class=\"resource-title\">${res.title || ''}</div>`;
+            if (res.description) content += `<div class=\"resource-desc\">${res.description}</div>`;
+            if (res.url) {
+                if (res.type === 'PDF' || (res.url.endsWith('.pdf'))) {
+                    content += `<div class='pdf-preview-wrap'><iframe class='pdf-preview tiny' src='${res.url}'></iframe></div>`;
+                    content += `<button class='open-resource-btn' data-url='${res.url}'>Open PDF</button>`;
+                } else if (res.isVideo || (res.url && res.url.includes('youtube'))) {
+                    content += `<div class='video-wrap'><iframe class='video-preview' src='${res.url.replace('watch?v=', 'embed/')}' allowfullscreen></iframe></div>`;
+                } else if (res.isEmbed && res.embedUrl) {
+                    content += `<div class='embed-wrap'><iframe class='embed-preview' src='${res.embedUrl}'></iframe></div>`;
+                } else {
+                    content += `<a class='open-resource-btn' href='${res.url}' target='_blank'>Open Resource</a>`;
                 }
+            } else if (res.isActivity && res.activities) {
+                content += '<ul class=\"activity-list\">';
+                res.activities.forEach(act => {
+                    content += `<li>${act.text || ''}</li>`;
+                });
+                content += '</ul>';
+            }
+            item.innerHTML = content;
+            container.appendChild(item);
+        });
+        setTimeout(() => {
+            document.querySelectorAll('.open-resource-btn').forEach(btn => {
+                btn.onclick = e => {
+                    const url = btn.getAttribute('data-url');
+                    window.open(url, '_blank');
+                };
+            });
+        }, 100);
+    }
 
-                // Open PDF button logic
+    // Mostrar modal
+    modal.setAttribute('aria-hidden', 'false');
+    overlay.setAttribute('aria-hidden', 'false');
+    modal.classList.add('show');
+    overlay.classList.add('show');
+    enableModalFocusTrap(modal);
+    try {
+        const opener = document.activeElement;
+        if (opener && opener.classList && opener.classList.contains('topic-btn')) {
+            opener.setAttribute('aria-expanded', 'true');
+            window._modalOpenedBy = opener;
+        } else {
+            window._modalOpenedBy = null;
+        }
+    } catch (e) { window._modalOpenedBy = null; }
+}
+                    item.innerHTML = content;
+                    container.appendChild(item);
+                });
                 setTimeout(() => {
                     document.querySelectorAll('.open-resource-btn').forEach(btn => {
                         btn.onclick = e => {
@@ -139,28 +183,23 @@ const basicsOfSubtraction = [
                         };
                     });
                 }, 100);
-
-                // Show modal visually
-                modal.setAttribute('aria-hidden', 'false');
-                overlay.setAttribute('aria-hidden', 'false');
-                modal.classList.add('show');
-                overlay.classList.add('show');
-                enableModalFocusTrap(modal);
-                try {
-                    const opener = document.activeElement;
-                    if (opener && opener.classList && opener.classList.contains('topic-btn')) {
-                        opener.setAttribute('aria-expanded', 'true');
-                        window._modalOpenedBy = opener;
-                    } else {
-                        window._modalOpenedBy = null;
-                    }
-                } catch (e) { window._modalOpenedBy = null; }
-                return;
             }
 
-            // ...existing code para otros tópicos...
-            // (No se modifica el renderizado de los demás tópicos)
-            // ...existing code...
+            // Mostrar modal
+            modal.setAttribute('aria-hidden', 'false');
+            overlay.setAttribute('aria-hidden', 'false');
+            modal.classList.add('show');
+            overlay.classList.add('show');
+            enableModalFocusTrap(modal);
+            try {
+                const opener = document.activeElement;
+                if (opener && opener.classList && opener.classList.contains('topic-btn')) {
+                    opener.setAttribute('aria-expanded', 'true');
+                    window._modalOpenedBy = opener;
+                } else {
+                    window._modalOpenedBy = null;
+                }
+            } catch (e) { window._modalOpenedBy = null; }
         }
             },
             {
