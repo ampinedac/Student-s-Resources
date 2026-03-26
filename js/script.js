@@ -2,7 +2,7 @@
 // Functionality for children's educational site with exact curriculum resources
 
 
-function showResources(topicId) {
+window.showResources = function(topicId) {
     const modal = document.getElementById('resourcesModal');
     let overlay = document.getElementById('modalOverlay');
     if (!overlay) {
