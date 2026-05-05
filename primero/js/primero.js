@@ -32,7 +32,7 @@ window.showResources = function(topicId) {
     let card;
     if (["subtraction", "addition", "practiceworksheets"].includes(topicId)) {
         card = {
-            icon: topicId === 'addition' ? 'âž•' : topicId === 'subtraction' ? 'âž–' : 'ðŸ“',
+            icon: topicId === 'addition' ? '➕' : topicId === 'subtraction' ? '➖' : '📄',
             title: topicId.charAt(0).toUpperCase() + topicId.slice(1),
             concept: 'Recursos de ' + topicId,
             resources: mathResources[topicId] || []
