@@ -898,60 +898,6 @@ body {
     100% { transform: scale(1); }
 }
 
-/* Kid-friendly colored badges per topic (bright and playful) */
-.topic-card[data-topic="sets"] .card-icon {
-    background: linear-gradient(135deg,#FFD54F,#FFB74D);
-}
-.topic-card[data-topic="sets"] .card-icon i { color: #3e2723; font-size:2.1rem; }
-
-.topic-card[data-topic="comparison"] .card-icon {
-    background: linear-gradient(135deg,#FFE082,#FFD54F);
-}
-.topic-card[data-topic="comparison"] .card-icon i { color: #3e2723; font-size:2.1rem; }
-
-.topic-card[data-topic="wordproblems"] .card-icon {
-    background: linear-gradient(135deg,#4FC3F7,#0288D1);
-}
-.topic-card[data-topic="wordproblems"] .card-icon i { color: #ffffff; font-size:2.1rem; }
-
-.topic-card[data-topic="patterns"] .card-icon {
-    background: linear-gradient(135deg,#CE93D8,#BA68C8);
-}
-.topic-card[data-topic="patterns"] .card-icon i { color: #ffffff; font-size:2.1rem; }
-
-.topic-card[data-topic="tessellations"] .card-icon {
-    background: linear-gradient(135deg,#80DEEA,#26C6DA);
-}
-.topic-card[data-topic="tessellations"] .card-icon i { color: #ffffff; font-size:2.1rem; }
-
-.topic-card[data-topic="writing"] .card-icon {
-    /* Pencil-like colors: yellow body with subtle eraser hint */
-    background: linear-gradient(135deg,#FFF176,#FFD54F);
-}
-.topic-card[data-topic="writing"] .card-icon i { color: #3e2723; font-size:2.1rem; }
-
-/* Second grade specifics */
-.topic-card[data-topic="s2_mathsymbol"] .card-icon { background: linear-gradient(135deg,#81D4FA,#4FC3F7); }
-.topic-card[data-topic="s2_mathsymbol"] .card-icon i { color:#fff; font-size:2.1rem; }
-.topic-card[data-topic="s2_sets"] .card-icon { background: linear-gradient(135deg,#FFD54F,#FFB74D); }
-.topic-card[data-topic="s2_sets"] .card-icon i { color:#3e2723; font-size:2.1rem; }
-.topic-card[data-topic="s2_multiplication"] .card-icon { background: linear-gradient(135deg,#FF80AB,#FF4081); }
-.topic-card[data-topic="s2_multiplication"] .card-icon i { color:#fff; font-size:2.1rem; }
-.topic-card[data-topic="s2_wordproblems"] .card-icon { background: linear-gradient(135deg,#4FC3F7,#0288D1); }
-.topic-card[data-topic="s2_wordproblems"] .card-icon i { color:#fff; font-size:2.1rem; }
-.topic-card[data-topic="s2_writing"] .card-icon { background: linear-gradient(135deg,#FFF176,#FFD54F); }
-.topic-card[data-topic="s2_writing"] .card-icon i { color:#3e2723; font-size:2.1rem; }
-
-/* Third grade specifics (mirrors second-grade palette) */
-.topic-card[data-topic="t3_mathsymbol"] .card-icon { background: linear-gradient(135deg,#81D4FA,#4FC3F7); }
-.topic-card[data-topic="t3_mathsymbol"] .card-icon i { color:#fff; font-size:2.1rem; }
-.topic-card[data-topic="t3_sets"] .card-icon { background: linear-gradient(135deg,#FFD54F,#FFB74D); }
-.topic-card[data-topic="t3_sets"] .card-icon i { color:#3e2723; font-size:2.1rem; }
-.topic-card[data-topic="t3_wordproblems"] .card-icon { background: linear-gradient(135deg,#4FC3F7,#0288D1); }
-.topic-card[data-topic="t3_wordproblems"] .card-icon i { color:#fff; font-size:2.1rem; }
-.topic-card[data-topic="t3_multiplication"] .card-icon { background: linear-gradient(135deg,#FF80AB,#FF4081); }
-.topic-card[data-topic="t3_multiplication"] .card-icon i { color:#fff; font-size:2.1rem; }
-
 .card-icon:hover { transform: translateY(-4px) scale(1.08); box-shadow: 0 12px 30px rgba(0,0,0,0.2); }
 
 .topic-card h3 {
@@ -2634,3 +2580,4 @@ body {
     .footer-emojis span {
         font-size: 1.5rem;
     }
+

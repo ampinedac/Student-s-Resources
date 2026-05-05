@@ -1,0 +1,13 @@
+﻿/* CSS específico de tercero */
+@import url('../../css/style.css');
+
+/* Third grade specifics (mirrors second-grade palette) */
+.topic-card[data-topic="t3_mathsymbol"] .card-icon { background: linear-gradient(135deg,#81D4FA,#4FC3F7); }
+.topic-card[data-topic="t3_mathsymbol"] .card-icon i { color:#fff; font-size:2.1rem; }
+.topic-card[data-topic="t3_sets"] .card-icon { background: linear-gradient(135deg,#FFD54F,#FFB74D); }
+.topic-card[data-topic="t3_sets"] .card-icon i { color:#3e2723; font-size:2.1rem; }
+.topic-card[data-topic="t3_wordproblems"] .card-icon { background: linear-gradient(135deg,#4FC3F7,#0288D1); }
+.topic-card[data-topic="t3_wordproblems"] .card-icon i { color:#fff; font-size:2.1rem; }
+.topic-card[data-topic="t3_multiplication"] .card-icon { background: linear-gradient(135deg,#FF80AB,#FF4081); }
+.topic-card[data-topic="t3_multiplication"] .card-icon i { color:#fff; font-size:2.1rem; }
+

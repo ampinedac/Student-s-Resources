@@ -1,0 +1,35 @@
+﻿/* CSS específico de primero */
+@import url('../../css/style.css');
+
+/* Kid-friendly colored badges per topic (bright and playful) */
+.topic-card[data-topic="sets"] .card-icon {
+    background: linear-gradient(135deg,#FFD54F,#FFB74D);
+}
+.topic-card[data-topic="sets"] .card-icon i { color: #3e2723; font-size:2.1rem; }
+
+.topic-card[data-topic="comparison"] .card-icon {
+    background: linear-gradient(135deg,#FFE082,#FFD54F);
+}
+.topic-card[data-topic="comparison"] .card-icon i { color: #3e2723; font-size:2.1rem; }
+
+.topic-card[data-topic="wordproblems"] .card-icon {
+    background: linear-gradient(135deg,#4FC3F7,#0288D1);
+}
+.topic-card[data-topic="wordproblems"] .card-icon i { color: #ffffff; font-size:2.1rem; }
+
+.topic-card[data-topic="patterns"] .card-icon {
+    background: linear-gradient(135deg,#CE93D8,#BA68C8);
+}
+.topic-card[data-topic="patterns"] .card-icon i { color: #ffffff; font-size:2.1rem; }
+
+.topic-card[data-topic="tessellations"] .card-icon {
+    background: linear-gradient(135deg,#80DEEA,#26C6DA);
+}
+.topic-card[data-topic="tessellations"] .card-icon i { color: #ffffff; font-size:2.1rem; }
+
+.topic-card[data-topic="writing"] .card-icon {
+    /* Pencil-like colors: yellow body with subtle eraser hint */
+    background: linear-gradient(135deg,#FFF176,#FFD54F);
+}
+.topic-card[data-topic="writing"] .card-icon i { color: #3e2723; font-size:2.1rem; }
+

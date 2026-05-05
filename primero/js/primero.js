@@ -1,4 +1,1056 @@
-﻿// JS global para index y utilidades compartidas
+﻿// JS específico para primero
+
+// --- LIMPIEZA Y REPARACIÃ“N DEL JS PRINCIPAL ---
+// Estructura mÃ­nima para recursos (rellena con tus datos reales)
+const mathResources = {
+    sets: [],
+    comparison: [],
+    wordproblems: [],
+    patterns: [],
+    tessellations: [],
+    writing: [],
+    baseten: [],
+    addition: [],
+    subtraction: [],
+    practiceworksheets: []
+};
+
+// Mostrar recursos en modal
+window.showResources = function(topicId) {
+    const modal = document.getElementById('resourcesModal');
+    let overlay = document.getElementById('modalOverlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.id = 'modalOverlay';
+        overlay.className = 'modal-overlay';
+        document.body.appendChild(overlay);
+    }
+    const title = document.getElementById('modalTitle');
+    const container = document.getElementById('resourcesContainer');
+    container.innerHTML = '';
+
+    let card;
+    if (["subtraction", "addition", "practiceworksheets"].includes(topicId)) {
+        card = {
+            icon: topicId === 'addition' ? 'âž•' : topicId === 'subtraction' ? 'âž–' : 'ðŸ“',
+            title: topicId.charAt(0).toUpperCase() + topicId.slice(1),
+            concept: 'Recursos de ' + topicId,
+            resources: mathResources[topicId] || []
+        };
+        title.textContent = card.title + ' Resources';
+        title.dataset.custom = 'true';
+        const cardDiv = document.createElement('div');
+        cardDiv.className = 'big-resource-card';
+        cardDiv.innerHTML = `
+            <div style="font-size: 60px; margin-bottom: 18px;">${card.icon}</div>
+            <h2 style="font-size:2.1em; margin-bottom: 10px; color:#1976d2;">${card.title}</h2>
+            <div style="font-size:1.15em; margin-bottom: 24px; color:#333;">${card.concept}</div>
+        `;
+        card.resources.forEach(res => {
+            const resDiv = document.createElement('div');
+            resDiv.className = 'resource-item';
+            let content = `<div class="resource-title" style="font-weight:bold;">${res.title || ''}</div>`;
+            if (res.description) content += `<div class="resource-desc" style="font-size:0.98em; color:#444;">${res.description}</div>`;
+            if (res.url) {
+                if (res.type === 'PDF' || (res.url.endsWith('.pdf'))) {
+                    content += `<div class='pdf-preview-wrap'><iframe class='pdf-preview tiny' src='${res.url}'></iframe></div>`;
+                    content += `<button class='open-resource-btn' data-url='${res.url}'>Open PDF</button>`;
+                } else if (res.isVideo || (res.url && res.url.includes('youtube'))) {
+                    content += `<div class='video-wrap'><iframe class='video-preview' src='${res.url.replace('watch?v=', 'embed/')}' allowfullscreen></iframe></div>`;
+                } else {
+                    content += `<a class='open-resource-btn' href='${res.url}' target='_blank'>Open Resource</a>`;
+                }
+            }
+            resDiv.innerHTML = content;
+            cardDiv.appendChild(resDiv);
+        });
+        container.appendChild(cardDiv);
+        setTimeout(() => {
+            document.querySelectorAll('.open-resource-btn').forEach(btn => {
+                btn.onclick = e => {
+                    const url = btn.getAttribute('data-url');
+                    window.open(url, '_blank');
+                };
+            });
+        }, 100);
+        modal.setAttribute('aria-hidden', 'false');
+        overlay.setAttribute('aria-hidden', 'false');
+        modal.classList.add('show');
+        overlay.classList.add('show');
+        enableModalFocusTrap(modal);
+        return;
+    }
+
+    // Otros temas
+    let resources = (typeof mathResources !== 'undefined' && mathResources[topicId]) ? mathResources[topicId] : null;
+    if (!resources) {
+        container.innerHTML = '<div style="padding: 24px; text-align: center; color: #b71c1c; font-weight: bold;">No resources available for this topic yet.</div>';
+    } else {
+        resources.forEach(res => {
+            const item = document.createElement('div');
+            item.className = 'resource-item';
+            let content = `<div class="resource-title">${res.title || ''}</div>`;
+            if (res.description) content += `<div class="resource-desc">${res.description}</div>`;
+            if (res.url) {
+                if (res.type === 'PDF' || (res.url.endsWith('.pdf'))) {
+                    content += `<div class='pdf-preview-wrap'><iframe class='pdf-preview tiny' src='${res.url}'></iframe></div>`;
+                    content += `<button class='open-resource-btn' data-url='${res.url}'>Open PDF</button>`;
+                } else if (res.isVideo || (res.url && res.url.includes('youtube'))) {
+                    content += `<div class='video-wrap'><iframe class='video-preview' src='${res.url.replace('watch?v=', 'embed/')}' allowfullscreen></iframe></div>`;
+                } else {
+                    content += `<a class='open-resource-btn' href='${res.url}' target='_blank'>Open Resource</a>`;
+                }
+            }
+            item.innerHTML = content;
+            container.appendChild(item);
+        });
+        setTimeout(() => {
+            document.querySelectorAll('.open-resource-btn').forEach(btn => {
+                btn.onclick = e => {
+                    const url = btn.getAttribute('data-url');
+                    window.open(url, '_blank');
+                };
+            });
+        }, 100);
+    }
+    modal.setAttribute('aria-hidden', 'false');
+    overlay.setAttribute('aria-hidden', 'false');
+    modal.classList.add('show');
+    overlay.classList.add('show');
+    enableModalFocusTrap(modal);
+};
+
+// Cerrar modal
+window.closeModal = function() {
+    const modal = document.getElementById('resourcesModal');
+    const overlay = document.getElementById('modalOverlay');
+    if (modal) {
+        modal.setAttribute('aria-hidden', 'true');
+        modal.classList.remove('show');
+    }
+    if (overlay) {
+        overlay.setAttribute('aria-hidden', 'true');
+        overlay.classList.remove('show');
+    }
+};
+
+// Accesibilidad modal (puedes mejorar esto segÃºn tus necesidades)
+function enableModalFocusTrap(modal) {
+    // Implementa si lo necesitas
+}
+        {
+            title: 'What is a set?',
+            type: 'Article',
+            description: 'Learn the basic concept of sets in mathematics.',
+            url: 'https://www.twinkl.com.co/teaching-wiki/set-mathematics',
+            isVideo: false
+        },
+        {
+            title: 'Sets Introduction - Math is Fun',
+            type: 'Article',
+            description: 'Complete guide to understanding sets.',
+            url: 'https://www.mathsisfun.com/sets/sets-introduction.html',
+            isVideo: false
+        },
+        {
+            title: 'Sets of Objects Game',
+            type: 'Game',
+            description: 'Interactive game to identify sets of objects.',
+            url: 'https://wordwall.net/es/resource/78528970/math/sets-of-objects',
+            isVideo: false
+        },
+        {
+            title: 'Number Sets Game',
+            type: 'Game', 
+            description: 'Practice with number sets in this fun game.',
+            url: 'https://wordwall.net/es/resource/7178922/math/number-sets',
+            isVideo: false
+        },
+        {
+            title: 'Shape Sets Game',
+            type: 'Game',
+            description: 'Learn about sets using different shapes.',
+            url: 'https://wordwall.net/es/resource/62246840/shape-sets',
+            isVideo: false
+        },
+        {
+            title: 'Suggested Activities',
+            type: 'Activity',
+            description: 'Complete these activities to practice sets:',
+            url: '#',
+            isActivity: true,
+            activities: [
+                {
+                    id: 'sets_activity_1',
+                    text: 'Create your own set, why is a set?',
+                    textEs: 'Crea tu propio conjunto, Â¿por quÃ© es un conjunto?'
+                },
+                {
+                    id: 'sets_activity_2',
+                    text: 'Identify 6 sets in your house and explain why they are sets.',
+                    subtraction: [
+                        // Orden personalizado: Basics, Starter Practice, Template, luego el resto agrupado
+                        {
+                            title: 'Basics',
+                            titleEs: 'Conceptos bÃ¡sicos',
+                            type: 'PDF',
+                            description: 'Quick intro to subtraction.',
+                            descriptionEs: 'IntroducciÃ³n rÃ¡pida a la resta.',
+                            url: resolveProjectAssetUrl('Subtraction/1 Subtraction for first graders.pdf'),
+                            category: 'apoyo',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Starter Practice',
+                            titleEs: 'PrÃ¡ctica inicial',
+                            type: 'PDF',
+                            description: 'Initial subtraction practice.',
+                            descriptionEs: 'PrÃ¡ctica inicial de resta.',
+                            url: resolveProjectAssetUrl('Subtraction/2 Subtraction â€“ Practice exercises 1Â°.pdf'),
+                            category: 'apoyo',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Template',
+                            titleEs: 'Plantilla',
+                            type: 'PDF',
+                            description: 'Template for subtraction practice.',
+                            descriptionEs: 'Plantilla para practicar resta.',
+                            url: resolveProjectAssetUrl('Subtraction/5 Subtraction template.pdf'),
+                            category: 'apoyo',
+                            isVideo: false
+                        },
+                        // Sin reagrupar
+                        {
+                            title: 'Flashcards (No Regrouping)',
+                            titleEs: 'Tarjetas (Sin reagrupar)',
+                            type: 'PDF',
+                            description: 'Flashcards without regrouping.',
+                            descriptionEs: 'Tarjetas de resta sin reagrupar.',
+                            url: resolveProjectAssetUrl('Subtraction/4 Subtraction â€“ Without regrouping - FlashCard.pdf'),
+                            category: 'sin_reagrupacion',
+                            isVideo: false
+                        },
+                        {
+                            title: 'No Regrouping 1',
+                            titleEs: 'Sin reagrupar 1',
+                            type: 'PDF',
+                            description: 'No regrouping worksheet (1).',
+                            descriptionEs: 'Hoja sin reagrupar (1).',
+                            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-no-regrouping-1.pdf',
+                            category: 'sin_reagrupacion',
+                            isVideo: false
+                        },
+                        {
+                            title: 'No Regrouping 2',
+                            titleEs: 'Sin reagrupar 2',
+                            type: 'PDF',
+                            description: 'No regrouping worksheet (2).',
+                            descriptionEs: 'Hoja sin reagrupar (2).',
+                            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-no-regrouping-2.pdf',
+                            category: 'sin_reagrupacion',
+                            isVideo: false
+                        },
+                        // Con reagrupar
+                        {
+                            title: 'Flashcards (Regrouping)',
+                            titleEs: 'Tarjetas (Reagrupando)',
+                            type: 'PDF',
+                            description: 'Flashcards for regrouping subtraction.',
+                            descriptionEs: 'Tarjetas para resta con reagrupaciÃ³n.',
+                            url: resolveProjectAssetUrl('Subtraction/3 Subtraction â€“ With regrouping - FlashCard.pdf'),
+                            category: 'con_reagrupacion',
+                            isVideo: false
+                        },
+                        // Mixtos y retos
+                        {
+                            title: 'Mixed A',
+                            titleEs: 'Mixtos A',
+                            type: 'PDF',
+                            description: '2-digit mixed practice (A).',
+                            descriptionEs: 'PrÃ¡ctica mixta de 2 dÃ­gitos (A).',
+                            url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-a.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Mixed B',
+                            titleEs: 'Mixtos B',
+                            type: 'PDF',
+                            description: '2-digit mixed practice (B).',
+                            descriptionEs: 'PrÃ¡ctica mixta de 2 dÃ­gitos (B).',
+                            url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-b.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Mixed C',
+                            titleEs: 'Mixtos C',
+                            type: 'PDF',
+                            description: '2-digit mixed practice (C).',
+                            descriptionEs: 'PrÃ¡ctica mixta de 2 dÃ­gitos (C).',
+                            url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-c.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Mixed D',
+                            titleEs: 'Mixtos D',
+                            type: 'PDF',
+                            description: '2-digit mixed practice (D).',
+                            descriptionEs: 'PrÃ¡ctica mixta de 2 dÃ­gitos (D).',
+                            url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-d.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Mixed E',
+                            titleEs: 'Mixtos E',
+                            type: 'PDF',
+                            description: '2-digit mixed practice (E).',
+                            descriptionEs: 'PrÃ¡ctica mixta de 2 dÃ­gitos (E).',
+                            url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-e.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Mixed F',
+                            titleEs: 'Mixtos F',
+                            type: 'PDF',
+                            description: '2-digit mixed practice (F).',
+                            descriptionEs: 'PrÃ¡ctica mixta de 2 dÃ­gitos (F).',
+                            url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-f.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Mixed 2',
+                            titleEs: 'Mixtos 2',
+                            type: 'PDF',
+                            description: 'Mixed worksheet (2).',
+                            descriptionEs: 'Hoja mixta (2).',
+                            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-2.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Mixed 3',
+                            titleEs: 'Mixtos 3',
+                            type: 'PDF',
+                            description: 'Mixed worksheet (3).',
+                            descriptionEs: 'Hoja mixta (3).',
+                            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-3.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Mixed 4',
+                            titleEs: 'Mixtos 4',
+                            type: 'PDF',
+                            description: 'Mixed worksheet (4).',
+                            descriptionEs: 'Hoja mixta (4).',
+                            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-4.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Mixed 5',
+                            titleEs: 'Mixtos 5',
+                            type: 'PDF',
+                            description: 'Mixed worksheet (5).',
+                            descriptionEs: 'Hoja mixta (5).',
+                            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-5.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Mixed 6',
+                            titleEs: 'Mixtos 6',
+                            type: 'PDF',
+                            description: 'Mixed worksheet (6).',
+                            descriptionEs: 'Hoja mixta (6).',
+                            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-6.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Challenge 1',
+                            titleEs: 'Reto 1',
+                            type: 'PDF',
+                            description: 'Mixed challenge worksheet (1).',
+                            descriptionEs: 'Hoja de reto mixta (1).',
+                            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-challenge-1.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        },
+                        {
+                            title: 'Challenge 2',
+                            titleEs: 'Reto 2',
+                            type: 'PDF',
+                            description: 'Mixed challenge worksheet (2).',
+                            descriptionEs: 'Hoja de reto mixta (2).',
+                            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-challenge-2.pdf',
+                            category: 'mixtos',
+                            isVideo: false
+                        }
+                    ]
+        },
+        {
+            title: 'IKnowIt Word Problems',
+            type: 'Game',
+            description: 'Addition and subtraction word problems within 20.',
+            url: 'https://www.iknowit.com/lessons/a-addition-subtraction-word-problems-within-20.html',
+            isVideo: false
+        },
+        {
+            title: 'Word Problems - Video A',
+            type: 'Video',
+            description: 'Walkthrough: solving word problems (Video A).',
+            url: 'https://www.youtube.com/watch?v=C229LUk380Q',
+            isVideo: true
+        },
+        {
+            title: 'Word Problems - Video B',
+            type: 'Video',
+            description: 'Walkthrough: solving word problems (Video B).',
+            url: 'https://www.youtube.com/watch?v=s3jP0vnFSxE',
+            isVideo: true
+        },
+    ],
+    patterns: [
+        {
+            title: 'Repeating Patterns Worksheet',
+            type: 'Worksheet',
+            description: 'Practice with repeating circle patterns.',
+            url: 'https://www.mathworksheets4kids.com/worksheets/1st-grade/patterns/repeating-circle-1.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Cut and Paste Patterns',
+            type: 'Worksheet',
+            description: 'Interactive cut and paste pattern activities.',
+            url: 'https://www.mathworksheets4kids.com/patterns/repeating-cut-paste1.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Growing Patterns Type 1',
+            type: 'Worksheet',
+            description: 'Learn about patterns that grow and change.',
+            url: 'https://www.mathworksheets4kids.com/patterns/growing-type1-1.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Mixed Patterns Worksheet',
+            type: 'Worksheet',
+            description: 'Practice with repeating and growing patterns.',
+            url: 'https://www.mathworksheets4kids.com/patterns/repeating-growing-mixed1.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Size Patterns',
+            type: 'Worksheet',
+            description: 'Patterns based on size differences.',
+            url: 'https://www.mathworksheets4kids.com/patterns/size-circle1.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Color Patterns',
+            type: 'Worksheet',
+            description: 'Easy color pattern activities.',
+            url: 'https://www.mathworksheets4kids.com/patterns/color-easy1.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Number Patterns A',
+            type: 'Worksheet',
+            description: 'Practice identifying and completing number patterns.',
+            url: 'https://www.k5learning.com/worksheets/math/grade-1-number-patterns-a.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Number Patterns B',
+            type: 'Worksheet',
+            description: 'More number pattern practice for Grade 1.',
+            url: 'https://www.k5learning.com/worksheets/math/grade-1-number-patterns-b.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Number Patterns C',
+            type: 'Worksheet',
+            description: 'Continue practicing number patterns.',
+            url: 'https://www.k5learning.com/worksheets/math/grade-1-number-patterns-c.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Number Patterns E',
+            type: 'Worksheet',
+            description: 'Additional number pattern exercises.',
+            url: 'https://www.k5learning.com/worksheets/math/grade-1-number-patterns-e.pdf',
+            isVideo: false
+        },
+        {
+            title: 'ABCya Shape Patterns',
+            type: 'Game',
+            description: 'Interactive shape pattern game.',
+            url: 'https://www.abcya.com/games/shape_patterns',
+            isVideo: false
+        },
+        {
+            title: 'Wordwall Patterns Game 1',
+            type: 'Game',
+            description: 'Practice patterns with this interactive game.',
+            url: 'https://wordwall.net/resource/34012902/patterns',
+            isVideo: false
+        },
+        {
+            title: 'Wordwall Patterns Game 2',
+            type: 'Game',
+            description: 'More pattern practice activities.',
+            url: 'https://wordwall.net/resource/35314613/patterns',
+            isVideo: false
+        },
+        {
+            title: 'Patterns Game',
+            type: 'Game',
+            description: 'Fun patterns game for kids.',
+            url: 'https://wordwall.net/resource/27288737/patterns-game',
+            isVideo: false
+        },
+        {
+            title: 'Color Patterns Game',
+            type: 'Game',
+            description: 'Practice with colorful patterns.',
+            url: 'https://wordwall.net/resource/29534647/colour-patterns',
+            isVideo: false
+        },
+        {
+            title: 'Numberblocks Patterns',
+            type: 'Game',
+            description: 'Patterns with Numberblocks characters.',
+            url: 'https://wordwall.net/resource/39037001/numberblocks-patterns',
+            isVideo: false
+        },
+        {
+            title: 'Patterns Video 1',
+            type: 'Video',
+            description: 'Learn about patterns with fun examples.',
+            url: 'https://www.youtube.com/embed/CzFLDtvN_Xk',
+            isVideo: true
+        },
+        {
+            title: 'Patterns Video 2',
+            type: 'Video',
+            description: 'More pattern examples and activities.',
+            url: 'https://www.youtube.com/embed/Js45cR_7wFE',
+            isVideo: true
+        }
+    ],
+    tessellations: [
+        {
+            title: 'What is a Tessellation?',
+            type: 'Article',
+            description: 'Learn about tessellations in geometry.',
+            url: 'https://www.mathsisfun.com/geometry/tessellation.html',
+            isVideo: false
+        },
+        {
+            title: 'Tessellations Worksheet A',
+            type: 'Worksheet',
+            description: 'Practice with tessellation patterns.',
+            url: 'https://www.k5learning.com/worksheets/math/grade-4-geometry-tessellations-a.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Tessellations Worksheet B',
+            type: 'Worksheet',
+            description: 'More tessellation practice activities.',
+            url: 'https://www.k5learning.com/worksheets/math/grade-4-geometry-tessellations-b.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Tessellations Video',
+            type: 'Video',
+            description: 'Learn about tessellations with visual examples.',
+            url: 'https://www.youtube.com/embed/7GiKeeWSf4s',
+            isVideo: true
+        }
+    ],
+    writing: [
+        {
+            title: 'Number Writing Practice',
+            type: 'Worksheet',
+            description: 'Free resources for practicing number writing.',
+            url: 'https://www.123homeschool4me.com/free-number-works',
+            isVideo: false
+        }
+    ],
+    baseten: [
+        {
+            title: 'Introduction to Base Ten',
+            type: 'Introduction',
+            description: `
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <h3 style="text-align: center; color: #4A90E2; margin-bottom: 25px;">ðŸ§® Understanding Base Ten & Place Value</h3>
+                    
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 15px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        <p style="font-size: 1.1em; margin: 0; text-align: center;">
+                            <strong>Base ten</strong> is the number system we use every day! It's based on groups of <strong>10</strong>.
+                        </p>
+                    </div>
+                    
+                    <h4 style="color: #5a67d8; border-bottom: 3px solid #5a67d8; padding-bottom: 10px; margin-top: 30px;">ðŸ“Š Meet the Base Ten Blocks</h4>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 25px 0;">
+                        
+                        <!-- ONES/UNITS -->
+                        <div style="background: #fff; border: 3px solid #48bb78; border-radius: 12px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                            <div style="text-align: center; margin-bottom: 15px;">
+                                <div style="font-size: 35px; margin: 10px 0; letter-spacing: 3px;">âš«âš«âš«</div>
+                                <h5 style="color: #48bb78; margin: 10px 0; font-size: 1.3em;">ONES (Units)</h5>
+                            </div>
+                            <p style="text-align: center; font-size: 1.1em; margin: 10px 0;">
+                                <strong>1 small circle = 1</strong>
+                            </p>
+                            <div style="background: #f0fff4; padding: 12px; border-radius: 8px; margin-top: 10px;">
+                                <p style="margin: 5px 0; text-align: center; font-size: 0.95em;">
+                                    Example: âš«âš«âš« = <strong>3</strong>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- TENS -->
+                        <div style="background: #fff; border: 3px solid #ed8936; border-radius: 12px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                            <div style="text-align: center; margin-bottom: 15px;">
+                                <div style="font-size: 50px; margin: 10px 0;">ðŸ“</div>
+                                <h5 style="color: #ed8936; margin: 10px 0; font-size: 1.3em;">TENS (Rods)</h5>
+                            </div>
+                            <p style="text-align: center; font-size: 1.1em; margin: 10px 0;">
+                                <strong>1 long rod = 10</strong>
+                            </p>
+                            <div style="background: #fffaf0; padding: 12px; border-radius: 8px; margin-top: 10px;">
+                                <p style="margin: 5px 0; text-align: center; font-size: 0.95em;">
+                                    ðŸ“ðŸ“ + âš«âš«âš« = <strong>23</strong>
+                                </p>
+                                <p style="margin: 5px 0; text-align: center; font-size: 0.85em; color: #666;">
+                                    (2 tens + 3 ones)
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- HUNDREDS -->
+                        <div style="background: #fff; border: 3px solid #9f7aea; border-radius: 12px; padding: 20px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                            <div style="text-align: center; margin-bottom: 15px;">
+                                <div style="font-size: 70px; margin: 10px 0;">ðŸ”²</div>
+                                <h5 style="color: #9f7aea; margin: 10px 0; font-size: 1.3em;">HUNDREDS (Flats)</h5>
+                            </div>
+                            <p style="text-align: center; font-size: 1.1em; margin: 10px 0;">
+                                <strong>1 big flat = 100</strong>
+                            </p>
+                            <div style="background: #faf5ff; padding: 12px; border-radius: 8px; margin-top: 10px;">
+                                <p style="margin: 5px 0; text-align: center; font-size: 0.95em;">
+                                    ðŸ”² + ðŸ“ðŸ“ + âš« = <strong>121</strong>
+                                </p>
+                                <p style="margin: 5px 0; text-align: center; font-size: 0.85em; color: #666;">
+                                    (1 hundred + 2 tens + 1 one)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4 style="color: #5a67d8; border-bottom: 3px solid #5a67d8; padding-bottom: 10px; margin-top: 35px;">âœ¨ The Magic of Regrouping</h4>
+                    
+                    <div style="background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%); padding: 20px; border-radius: 12px; margin: 20px 0; border-left: 5px solid #f39c12;">
+                        <p style="margin: 8px 0; font-size: 1.05em;"><strong>ðŸ”„ 10 ones (âš«âš«âš«âš«âš«âš«âš«âš«âš«âš«)</strong> = <strong>1 ten (ðŸ“)</strong></p>
+                        <p style="margin: 8px 0; font-size: 1.05em;"><strong>ðŸ”„ 10 tens (ðŸ“ðŸ“ðŸ“ðŸ“ðŸ“ðŸ“ðŸ“ðŸ“ðŸ“ðŸ“)</strong> = <strong>1 hundred (ðŸ”²)</strong></p>
+                        <p style="margin: 12px 0 0 0; font-size: 0.95em; font-style: italic; color: #333;">
+                            ðŸ’¡ We can trade (regroup) blocks to make larger or smaller units!
+                        </p>
+                    </div>
+                    
+                    <h4 style="color: #5a67d8; border-bottom: 3px solid #5a67d8; padding-bottom: 10px; margin-top: 35px;">ðŸŽ¯ Why Base Ten Matters</h4>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0;">
+                        <div style="background: #e6fffa; padding: 15px; border-radius: 10px; border-left: 4px solid #319795;">
+                            <strong>ðŸ“ˆ Count bigger numbers</strong> more easily
+                        </div>
+                        <div style="background: #fef5e7; padding: 15px; border-radius: 10px; border-left: 4px solid #d68910;">
+                            <strong>âž•âž– Add and subtract</strong> with regrouping
+                        </div>
+                        <div style="background: #fce4ec; padding: 15px; border-radius: 10px; border-left: 4px solid #c2185b;">
+                            <strong>ðŸ”¢ Understand place value</strong> (ones, tens, hundreds)
+                        </div>
+                        <div style="background: #f3e5f5; padding: 15px; border-radius: 10px; border-left: 4px solid #7b1fa2;">
+                            <strong>ðŸ§© Break numbers apart</strong> to work with them
+                        </div>
+                    </div>
+                    
+                    <div style="background: linear-gradient(135deg, #a8e6cf 0%, #56ab2f 100%); color: white; padding: 20px; border-radius: 15px; margin-top: 30px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        <p style="font-size: 1.2em; margin: 0;">
+                            <strong>ðŸš€ Ready to explore?</strong> Watch the videos, play with the interactive tool, and practice with worksheets below!
+                        </p>
+                    </div>
+                </div>
+            `,
+            isVideo: false
+        },
+        {
+            title: 'Ones and Tens â€” Video 1',
+            type: 'Video',
+            description: 'Learn about ones and tens with visual examples.',
+            url: 'https://www.youtube.com/watch?v=eC1dPiC9PyM',
+            isVideo: true
+        },
+        {
+            title: 'Ones and Tens â€” Video 2',
+            type: 'Video',
+            description: 'More practice understanding ones and tens.',
+            url: 'https://www.youtube.com/watch?v=_dHu5TFxPtk',
+            isVideo: true
+        },
+        {
+            title: 'Ones, Tens and Hundreds â€” Video 1',
+            type: 'Video',
+            description: 'Understand all three place values together.',
+            url: 'https://www.youtube.com/watch?v=0uL5H5yw5tI',
+            isVideo: true
+        },
+        {
+            title: 'Ones, Tens and Hundreds â€” Video 2',
+            type: 'Video',
+            description: 'Additional practice with ones, tens, and hundreds.',
+            url: 'https://www.youtube.com/watch?v=omkDLmfvetk',
+            isVideo: true
+        },
+        {
+            title: 'Regrouping with Base 10 Blocks â€” Video',
+            type: 'Video',
+            description: 'Learn how to regroup and trade base ten blocks (Untangling Numbers).',
+            url: 'https://youtu.be/2nEHGAuJOKA',
+            isVideo: true
+        },
+        {
+            title: 'Base Ten Blocks Interactive Tool',
+            type: 'Interactive',
+            description: 'Play with virtual base ten blocks! Drag and arrange ones, tens, and hundreds.',
+            url: 'https://www.coolmath4kids.com/manipulatives/base-ten-blocks',
+            isVideo: false
+        },
+        {
+            title: 'Creating Sets with Blocks â€” Worksheet 1',
+            type: 'Worksheet',
+            description: 'Practice grouping blocks into tens and ones.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-creating-sets-1.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Creating Sets with Blocks â€” Worksheet 2',
+            type: 'Worksheet',
+            description: 'More practice creating sets with base ten blocks.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-creating-sets-2.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Creating Sets with Blocks â€” Worksheet 3',
+            type: 'Worksheet',
+            description: 'Additional grouping practice.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-creating-sets-3.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Count with Tens and Ones â€” Worksheet 1',
+            type: 'Worksheet',
+            description: 'Count base ten blocks to find the total.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-count-tens-ones-1.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Count with Tens and Ones â€” Worksheet 2',
+            type: 'Worksheet',
+            description: 'More counting practice with tens and ones.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-count-tens-ones-2.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Count with Tens and Ones â€” Worksheet 3',
+            type: 'Worksheet',
+            description: 'Continue practicing counting with base ten blocks.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-count-tens-ones-3.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Count with Tens and Ones â€” Worksheet 4',
+            type: 'Worksheet',
+            description: 'Additional counting exercises.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-count-tens-ones-4.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Tens and Ones Practice',
+            type: 'Worksheet',
+            description: 'Practice identifying tens and ones.',
+            url: 'https://www.mathworksheets4kids.com/blocks/tens-ones-1.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Draw Blocks â€” Worksheet 1',
+            type: 'Worksheet',
+            description: 'Break numbers into tens and ones by drawing blocks.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-draw-blocks-1.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Draw Blocks â€” Worksheet 2',
+            type: 'Worksheet',
+            description: 'More practice drawing base ten blocks.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-draw-blocks-2.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Draw Blocks â€” Worksheet 3',
+            type: 'Worksheet',
+            description: 'Additional drawing and breaking numbers practice.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-draw-blocks-3.pdf',
+            isVideo: false
+        },
+        {
+            title: '2-Digit Addition with Blocks â€” Worksheet 1',
+            type: 'Worksheet',
+            description: 'Add 2-digit numbers using base ten blocks.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-addition-tens-ones-1.pdf',
+            isVideo: false
+        },
+        {
+            title: '2-Digit Addition with Blocks â€” Worksheet 2',
+            type: 'Worksheet',
+            description: 'More 2-digit addition practice.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-addition-tens-ones-2.pdf',
+            isVideo: false
+        },
+        {
+            title: '2-Digit Addition with Blocks â€” Worksheet 4',
+            type: 'Worksheet',
+            description: 'Continue practicing 2-digit addition.',
+            url: 'https://www.k5learning.com/worksheets/math/1st-grade-base-ten-blocks-addition-tens-ones-4.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Hundreds, Tens and Ones',
+            type: 'Worksheet',
+            description: 'Practice with 3-digit numbers and base ten blocks.',
+            url: 'https://www.mathworksheets4kids.com/blocks/hundreds-tens-ones-1.pdf',
+            isVideo: false
+        },
+        {
+            title: 'Regrouping Numbers â€” Worksheet',
+            type: 'Worksheet',
+            description: 'Practice representing numbers with regrouping.',
+            url: 'https://math-drills.com/baseten/baseten_represent_numbers_regrouping_no_thousands_all.1485980107.pdf',
+            isVideo: false
+        }
+    ],
+    subtraction: [
+        {
+            title: '1. Basics',
+            titleEs: '1. Conceptos basicos',
+            type: 'PDF',
+            description: 'Quick intro to subtraction.',
+            descriptionEs: 'Introduccion rapida a la resta.',
+            url: resolveProjectAssetUrl('Subtraction/1 Subtraction for first graders.pdf'),
+            category: 'apoyo',
+            isVideo: false
+        },
+        {
+            title: '2. Starter Practice',
+            titleEs: '2. Practica inicial',
+            type: 'PDF',
+            description: 'Initial subtraction practice.',
+            descriptionEs: 'Practica inicial de resta.',
+            url: resolveProjectAssetUrl('Subtraction/2 Subtraction â€“ Practice exercises 1Â°.pdf'),
+            category: 'apoyo',
+            isVideo: false
+        },
+        {
+            title: '3. Flashcards (Regrouping)',
+            titleEs: '3. Tarjetas (Reagrupando)',
+            type: 'PDF',
+            description: 'Flashcards for regrouping subtraction.',
+            descriptionEs: 'Tarjetas para resta con reagrupacion.',
+            url: resolveProjectAssetUrl('Subtraction/3 Subtraction â€“ With regrouping - FlashCard.pdf'),
+            category: 'con_reagrupacion',
+            isVideo: false
+        },
+        {
+            title: '4. Flashcards (No Regrouping)',
+            titleEs: '4. Tarjetas (Sin reagrupar)',
+            type: 'PDF',
+            description: 'Flashcards without regrouping.',
+            descriptionEs: 'Tarjetas de resta sin reagrupar.',
+            url: resolveProjectAssetUrl('Subtraction/4 Subtraction â€“ Without regrouping - FlashCard.pdf'),
+            category: 'sin_reagrupacion',
+            isVideo: false
+        },
+        {
+            title: '5. Template',
+            titleEs: '5. Plantilla',
+            type: 'PDF',
+            description: 'Template for subtraction practice.',
+            descriptionEs: 'Plantilla para practicar resta.',
+            url: resolveProjectAssetUrl('Subtraction/5 Subtraction template.pdf'),
+            category: 'apoyo',
+            isVideo: false
+        },
+        {
+            title: '6. Mixed A',
+            titleEs: '6. Mixtos A',
+            type: 'PDF',
+            description: '2-digit mixed practice (A).',
+            descriptionEs: 'Practica mixta de 2 digitos (A).',
+            url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-a.pdf',
+            category: 'mixtos',
+            isVideo: false
+        },
+        {
+            title: '7. Mixed B',
+            titleEs: '7. Mixtos B',
+            type: 'PDF',
+            description: '2-digit mixed practice (B).',
+            descriptionEs: 'Practica mixta de 2 digitos (B).',
+            url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-b.pdf',
+            category: 'mixtos',
+            isVideo: false
+        },
+        {
+            title: '8. No Regrouping 1',
+            titleEs: '8. Sin reagrupar 1',
+            type: 'PDF',
+            description: 'No regrouping worksheet (1).',
+            descriptionEs: 'Hoja sin reagrupar (1).',
+            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-no-regrouping-1.pdf',
+            category: 'sin_reagrupacion',
+            isVideo: false
+        },
+        {
+            title: '9. No Regrouping 2',
+            titleEs: '9. Sin reagrupar 2',
+            type: 'PDF',
+            description: 'No regrouping worksheet (2).',
+            descriptionEs: 'Hoja sin reagrupar (2).',
+            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-no-regrouping-2.pdf',
+            category: 'sin_reagrupacion',
+            isVideo: false
+        },
+        {
+            title: '10. Mixed C',
+            titleEs: '10. Mixtos C',
+            type: 'PDF',
+            description: '2-digit mixed practice (C).',
+            descriptionEs: 'Practica mixta de 2 digitos (C).',
+            url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-c.pdf',
+            category: 'mixtos',
+            isVideo: false
+        },
+        {
+            title: '11. Mixed D',
+            titleEs: '11. Mixtos D',
+            type: 'PDF',
+            description: '2-digit mixed practice (D).',
+            descriptionEs: 'Practica mixta de 2 digitos (D).',
+            url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-d.pdf',
+            category: 'mixtos',
+            isVideo: false
+        },
+        {
+            title: '12. Mixed E',
+            titleEs: '12. Mixtos E',
+            type: 'PDF',
+            description: '2-digit mixed practice (E).',
+            descriptionEs: 'Practica mixta de 2 digitos (E).',
+            url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-e.pdf',
+            category: 'mixtos',
+            isVideo: false
+        },
+        {
+            title: '13. Mixed F',
+            titleEs: '13. Mixtos F',
+            type: 'PDF',
+            description: '2-digit mixed practice (F).',
+            descriptionEs: 'Practica mixta de 2 digitos (F).',
+            url: 'https://www.k5learning.com/worksheets/math-drills/add-subtract-2-digits-f.pdf',
+            category: 'mixtos',
+            isVideo: false
+        },
+        {
+            title: '14. Mixed 2',
+            titleEs: '14. Mixtos 2',
+            type: 'PDF',
+            description: 'Mixed worksheet (2).',
+            descriptionEs: 'Hoja mixta (2).',
+            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-2.pdf',
+            category: 'mixtos',
+            isVideo: false
+        },
+        {
+            title: '15. Mixed 3',
+            titleEs: '15. Mixtos 3',
+            type: 'PDF',
+            description: 'Mixed worksheet (3).',
+            descriptionEs: 'Hoja mixta (3).',
+            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-3.pdf',
+            category: 'mixtos',
+            isVideo: false
+        },
+        {
+            title: '16. Mixed 4',
+            titleEs: '16. Mixtos 4',
+            type: 'PDF',
+            description: 'Mixed worksheet (4).',
+            descriptionEs: 'Hoja mixta (4).',
+            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-4.pdf',
+            category: 'mixtos',
+            isVideo: false
+        },
+        {
+            title: '17. Mixed 5',
+            titleEs: '17. Mixtos 5',
+            type: 'PDF',
+            description: 'Mixed worksheet (5).',
+            descriptionEs: 'Hoja mixta (5).',
+            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-5.pdf',
+            category: 'mixtos',
+            isVideo: false
+        },
+        {
+            title: '18. Mixed 6',
+            titleEs: '18. Mixtos 6',
+            type: 'PDF',
+            description: 'Mixed worksheet (6).',
+            descriptionEs: 'Hoja mixta (6).',
+            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-6.pdf',
+            category: 'mixtos',
+            isVideo: false
+        },
+        {
+            title: '19. Challenge 1',
+            titleEs: '19. Reto 1',
+            type: 'PDF',
+            description: 'Mixed challenge worksheet (1).',
+            descriptionEs: 'Hoja de reto mixta (1).',
+            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-challenge-1.pdf',
+            category: 'mixtos',
+            isVideo: false
+        },
+        {
+            title: '20. Challenge 2',
+            titleEs: '20. Reto 2',
+            type: 'PDF',
+            description: 'Mixed challenge worksheet (2).',
+            descriptionEs: 'Hoja de reto mixta (2).',
+            url: 'https://math-salamanders.s3.us-west-1.amazonaws.com/Addition-Subtraction/2-Digit-Addition-and-Subtraction/2-digit-addition-and-subtraction-challenge-2.pdf',
+            category: 'mixtos',
+            isVideo: false
+        }
+    ]
+};
 
 // Topic titles for the modal
 const topicTitles = {

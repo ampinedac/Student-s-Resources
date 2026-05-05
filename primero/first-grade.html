@@ -1,21 +1,46 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>First Grade Math - Angela's Learning Space</title>
-	<link rel="stylesheet" href="../css/style.css">
-	<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Grade Math - Angela's Learning Space</title>
+    <link rel="stylesheet" href="css/primero.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-	<!-- Background animations -->
-	<div class="background-shapes">
-		<div class="shape shape-1">📐</div>
-		<div class="shape shape-2">🧮</div>
-		<div class="shape shape-3">📏</div>
-		<div class="shape shape-4">📊</div>
-		<div class="shape shape-5">🎯</div>
-		<div class="shape shape-6">📈</div>
-	</div>
-	<!-- ...resto del contenido... -->
+    <div class="background-shapes" aria-hidden="true">
+        <div class="shape shape-1">📐</div>
+        <div class="shape shape-2">🧮</div>
+        <div class="shape shape-3">📏</div>
+        <div class="shape shape-4">📊</div>
+        <div class="shape shape-5">🎯</div>
+        <div class="shape shape-6">📈</div>
+    </div>
+    <main class="main-content">
+        <h1>Primer Grado - Recursos de Matemáticas</h1>
+        <div class="tematicas-menu">
+            <button onclick="showResources('sets')">Conjuntos</button>
+            <button onclick="showResources('comparison')">Comparación</button>
+            <button onclick="showResources('wordproblems')">Problemas de Palabras</button>
+            <button onclick="showResources('patterns')">Patrones</button>
+            <button onclick="showResources('tessellations')">Teselaciones</button>
+            <button onclick="showResources('writing')">Escritura de Números</button>
+            <button onclick="showResources('baseten')">Sistema Decimal</button>
+            <button onclick="showResources('addition')">Suma</button>
+            <button onclick="showResources('subtraction')">Resta</button>
+            <button onclick="showResources('practiceworksheets')">Hojas de Práctica</button>
+        </div>
+
+        <!-- Modal para mostrar recursos -->
+        <div id="resourcesModal" class="modal" aria-hidden="true">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="modalTitle">Recursos</h2>
+                <div id="resourcesContainer"></div>
+            </div>
+        </div>
+    </main>
+    <script src="js/primero.js"></script>
+</body>
+</html>
